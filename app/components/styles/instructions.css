@@ -1,0 +1,83 @@
+.max-width {
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
+}
+
+.section intro-section {
+  padding: 100px 0;
+}
+.max-width {
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
+}
+
+.carousel {
+  display: block;
+  padding-bottom: 6rem;
+  padding-top: 4rem;
+}
+
+.owl-stage-outer {
+  position: relative;
+  overflow: hidden;
+}
+
+.owl-stage {
+  position: relative;
+  touch-action: manipulation;
+}
+
+.owl-item {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.card {
+  background: rgba(206, 228, 235, 0.51);
+  border-radius: 33px;
+  padding: 20px 20px; 
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.box {
+  border: 1px solid #3390ad;
+  border-radius: 33px;
+  padding: 195px 135px;
+  text-align: center;
+}
+
+.register {
+  display: flex;
+  align-content: space-around;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.btn-register {
+  padding: 0.85rem 11.81rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+div.scrollmenu {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+
+
+@media (max-width: 970px) {
+  .card {
+    display: inline-table;
+  }
+
+}
+
+
