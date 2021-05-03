@@ -113,7 +113,7 @@ export default class MainRouter extends Component {
               />
             )}
           />
-          <Route
+          {/* <Route
             path="/quiz"
             render={(props) => (
               <Quiz
@@ -124,7 +124,7 @@ export default class MainRouter extends Component {
                 logout={this.logout}
               />
             )}
-          />
+          /> */}
           
           <Route
             path="/audioplayer"
