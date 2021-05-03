@@ -7,7 +7,7 @@ body {
   padding-bottom: 1rem;
 }
 
-.join-main-section {
+.main-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,43 +30,8 @@ body {
   background-color: #83a6ba;
   width: 50vw;
   max-width: 50%;
-  padding: 2rem 4rem;
+  padding: 3rem 4rem;
   border-radius: 20px;
-}
-
-.input-group {
-  margin-bottom: 2rem;
-  display: flex;
-  flex-direction: column;
-  
-}
-
-.input-group:last-child {
-  margin-bottom: 0;
-  padding: 1rem 1.5rem;
-}
-
-.input-group label {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.input-group input {
-  outline: none;
-  background: none;
-  border: 1px solid #2e3852;
-  font-size: 1em;
-  padding: 0.5em;
-  color: inherit;
-  border-radius: 5px;
-  max-height: 3.7rem;
-}
-
-
-
-
-.input-group input:focus {
-  border-color: #135e8a;
 }
 
 @media (max-width: 900px) {

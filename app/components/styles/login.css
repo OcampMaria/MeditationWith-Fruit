@@ -4,7 +4,7 @@ body {
 
 .usertitle{
   text-align: center;
- 
+  padding-bottom: 2rem;
 }
 .join-main-section {
   display: flex;
@@ -28,7 +28,7 @@ body {
   background-color: #83A6BA;
   width: 50vw;
   max-width: 50%;
-  padding: 10rem 5rem;
+  padding: 5rem 5rem;
   border-radius: 20px;
 }
 
@@ -40,6 +40,7 @@ body {
 
 .input-group:last-child {
   margin-bottom: 0;
+  padding: 1rem 1.5rem;
 }
 
 .input-group label {

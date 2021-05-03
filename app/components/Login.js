@@ -7,7 +7,7 @@ import Footer from "./children/Footer";
 // import Nav from "./children/Nav";
 
 require("./styles/login.css");
-require("./main.css");
+// require("./main.css");
 
 export default class Login extends Component {
   constructor(props) {
@@ -106,43 +106,58 @@ export default class Login extends Component {
           </nav>
         </header>
         <div className="join-main-section">
-          <h1 className="join-text">Log In to Your Account</h1>
-          <br />
-          <form className="join-forms" onSubmit={this.handleSubmit}>
-          <h3 className="usertitle">- USER LOGIN -</h3>
-            <div className="input-group">
+          <h1 className="join-text">
+            Welcome!
+            <span className="accent-text"> Log Into Your Account</span>
+          </h1>
+
+          <form className="join-form" onSubmit={this.handleSubmit}>
+            <h3 className="usertitle">- USER LOGIN -</h3>
+            <div 
+              id="username-form"
+              ref="usernameForm"
+              className="form-group col-lg-12"
+            >
+              <label>Username</label>
               <input
                 id="username-input"
+                className="form-control"
                 ref="user"
                 type="text"
-                name="user"
+                name="username"
                 placeholder="Username"
                 onChange={this.handleUsernameChange}
                 value={this.state.username}
               />
+              
             </div>
-            <div className="input-group">
-             
+            <div 
+            id="password-form"
+            className="form-group col-lg-12"
+            ref="passwordForm"
+            >
+              <label>Password</label>
               <input
                 id="password-input"
+                className="form-control"
                 ref="password"
                 type="password"
-                name="pass"
+                name=""
                 placeholder="Password"
                 onChange={this.handlePasswordChange}
                 value={this.state.password}
               />
             </div>
-           
-            <div className="input-group">
-              <button type="submit" name="login" className="btn login" value="Login">
+
+            <div className="input-group col-lg-12">
+              <button type="submit" name="login" className="btn" value="Login">
                 <Link to="/profile"></Link>
                 Login
               </button>
             </div>
           </form>
         </div>
-        <Footer/>
+        <Footer />
       </div>
     );
   }

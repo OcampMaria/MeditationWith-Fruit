@@ -260,7 +260,7 @@ export default class Signup extends Component {
               <small
                 id="username-feedback"
                 ref="usernameFeedback"
-                className=""
+              
               ></small>
             </div>
 
@@ -354,7 +354,7 @@ export default class Signup extends Component {
               ></small>
             </div>
 
-            <div className="input-group col-lg-12 button-padding">
+            <div className="input-group col-lg-12 ">
               <button type="submit" className="btn ">
                 <Link to="/login"></Link>
                 Join Now
@@ -362,7 +362,7 @@ export default class Signup extends Component {
             </div>
           </form>
         </section>
-        <Footer/>
+        <Footer />
       </div>
     );
   }

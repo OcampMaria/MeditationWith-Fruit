@@ -105,3 +105,9 @@ body {
   font-size: 1.4em;
   margin-top: 2rem;
 }
+
+.form-control{
+  background-color: rgb(255 255 255 / 15%)
+}
+
+
