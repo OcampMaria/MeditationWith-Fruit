@@ -33,7 +33,7 @@ export default class Nav extends Component {
                 <a href="#page-top"></a>
               </li>
               <li>
-                <a className="page-scroll nav-right-text" href="/trips">
+                <a className="page-scroll nav-right-text" href="/session">
                   <p>New Session</p>
                 </a>
               </li>
