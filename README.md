@@ -17,7 +17,7 @@ The idea is for people to do a 5-minute relaxation activity where they will list
 
 # Application Link
 
-https://agile-fortress-41792.herokuapp.com/
+https://meditationwithfruits.herokuapp.com/
 
 # Application Demo
 
