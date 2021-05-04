@@ -233,7 +233,7 @@ export default class Signup extends Component {
           </nav>
         </header>
 
-        <section className="join-main-section">
+        <section className="join-main-section register">
           <h1 className="join-text">
             Join For 6 Minutes of
             <span className="accent-text"> Relaxation.</span>

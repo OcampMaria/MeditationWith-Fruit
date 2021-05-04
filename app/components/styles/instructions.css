@@ -60,14 +60,13 @@
   padding: 0.85rem 11.81rem;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+  margin-bottom: 9em;
 }
-
-.img {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+.ilustration{
+  max-width: 9em;
+    border: solid #3390ad;
+    border-radius: 10rem;
 }
-
 @media (max-width: 970px) {
   .card {
     display: inline-table;
@@ -78,7 +77,7 @@
 
   .owl-item {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-content: center;
     justify-content: space-around;
   }

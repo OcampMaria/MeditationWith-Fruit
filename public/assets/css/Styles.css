@@ -36,9 +36,16 @@ body {
   max-width: 8rem;
 }
 
-/* .brand-logo-name{
-  margin-left: 1rem;
-} */
+.display{
+  display: none;
+}
+
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
 
 .main-nav ul {
   display: flex;
@@ -93,7 +100,6 @@ body {
   text-align: center;
   font-size: 32px;
   font-weight: 500;
-
 }
 
 .btn {
@@ -106,19 +112,19 @@ body {
   margin-top: 2rem;
 }
 
-.form-control{
-  background-color: rgb(255 255 255 / 15%)
+.form-control {
+  background-color: rgb(255 255 255 / 15%);
 }
 
-.text{
-  font-size: 1.4em;
-  padding: 4rem 12rem;
+.text {
+  font-size: 2.1em;
+  padding: 3rem 12rem;
   padding-bottom: 7rem;
 }
 
 @media (max-width: 970px) {
-  .text{
-    padding: 5px 1px;
-    padding-bottom: 30px;
+  .text {
+    font-size: 1.6em; 
+    padding: 2rem 0rem;
   }
 }
