@@ -2,12 +2,12 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
-import Auth from "./utils/Auth";
+// import Auth from "./utils/Auth";
 // import Nav from './children/Nav'
 import logo from "./images/orange.png";
 import Footer from "./children/Footer";
 
-require("./styles/signup.css");
+require("./styles/Signup.css");
 require("./main.css");
 
 export default class Signup extends Component {
