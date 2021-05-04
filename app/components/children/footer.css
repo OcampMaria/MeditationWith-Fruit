@@ -13,6 +13,7 @@ footer {
 } */
 
 /* footer */
+
 .footer-nav ul {
   display: flex;
   margin: 0;
@@ -48,7 +49,7 @@ footer {
 }
 
 .main-footer{
-  height: 70px;
+ 
   height: 70px;
   background-color: rgba(131, 166, 186, 1);
   display: flex;

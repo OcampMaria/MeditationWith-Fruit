@@ -1,7 +1,7 @@
 {
   "name": "5_minutes_with_fruit",
   "version": "1.0",
-  "homepage": "https://agile-fortress-41792.herokuapp.com/",
+  "homepage": "https://meditationwithfruits.herokuapp.com/",
   "author": "Power Rangers",
   "license": "MIT",
   "engines": {
@@ -32,7 +32,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/kwaspek104/5_Minutes_With_Fruit"
+    "url": "https://github.com/OcampMaria/MeditationWith-Fruit"
   },
   "dependencies": {
     "axios": "^0.21.1",

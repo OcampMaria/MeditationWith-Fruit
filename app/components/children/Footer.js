@@ -5,7 +5,7 @@ require("./footer.css");
 export default class Footer extends Component {
   render() {
     return (
-      <div >
+      <div>
         <footer className="main-footer">
           <div className="Footer-container">
             <nav className="footer-nav">

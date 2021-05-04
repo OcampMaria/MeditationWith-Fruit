@@ -2,12 +2,12 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
-import Auth from "./utils/Auth";
+// import Auth from "./utils/Auth";
 // import Nav from './children/Nav'
 import logo from "./images/orange.png";
 import Footer from "./children/Footer";
 
-require("./styles/signup.css");
+require("./styles/Signup.css");
 require("./main.css");
 
 export default class Signup extends Component {
@@ -233,7 +233,7 @@ export default class Signup extends Component {
           </nav>
         </header>
 
-        <section className="join-main-section">
+        <section className="join-main-section register">
           <h1 className="join-text">
             Join For 6 Minutes of
             <span className="accent-text"> Relaxation.</span>

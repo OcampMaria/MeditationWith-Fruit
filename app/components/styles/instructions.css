@@ -14,9 +14,13 @@
 }
 
 .carousel {
-  display: block;
-  padding-bottom: 6rem;
-  padding-top: 4rem;
+  display: flex;
+  padding-bottom: 2rem;
+  padding-top: 3rem;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .owl-stage-outer {
@@ -29,17 +33,10 @@
   touch-action: manipulation;
 }
 
-.owl-item {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: space-around;
-}
-
 .card {
   background: rgba(206, 228, 235, 0.51);
   border-radius: 33px;
-  padding: 20px 20px; 
+  padding: 20px 20px;
   text-align: center;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -48,7 +45,7 @@
 .box {
   border: 1px solid #3390ad;
   border-radius: 33px;
-  padding: 195px 135px;
+  padding: 27px;
   text-align: center;
 }
 
@@ -57,27 +54,31 @@
   align-content: space-around;
   align-items: center;
   justify-content: center;
-
 }
 
 .btn-register {
   padding: 0.85rem 11.81rem;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+  margin-bottom: 9em;
 }
-
-div.scrollmenu {
-  overflow: auto;
-  white-space: nowrap;
+.ilustration{
+  max-width: 9em;
+    border: solid #3390ad;
+    border-radius: 10rem;
 }
-
-
-
 @media (max-width: 970px) {
   .card {
     display: inline-table;
   }
+  .box {
+    padding: 20px 20px;
+  }
 
+  .owl-item {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+  }
 }
-
-
