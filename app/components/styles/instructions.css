@@ -63,10 +63,13 @@
   margin-bottom: 9em;
 }
 .ilustration{
-  max-width: 9em;
+    max-width: 12rem;
     border: solid #3390ad;
     border-radius: 10rem;
+    min-height: 12rem;
 }
+
+
 @media (max-width: 970px) {
   .card {
     display: inline-table;
@@ -80,5 +83,9 @@
     flex-direction: column;
     align-content: center;
     justify-content: space-around;
+  }
+
+  .display{
+    display: none;
   }
 }
