@@ -91,7 +91,7 @@ body {
   color: black;
   position: relative;
   text-align: center;
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 500;
 
 }
@@ -110,4 +110,15 @@ body {
   background-color: rgb(255 255 255 / 15%)
 }
 
+.text{
+  font-size: 1.4em;
+  padding: 4rem 12rem;
+  padding-bottom: 7rem;
+}
 
+@media (max-width: 970px) {
+  .text{
+    padding: 5px 1px;
+    padding-bottom: 30px;
+  }
+}
