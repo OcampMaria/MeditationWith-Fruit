@@ -64,13 +64,18 @@ export default class Instructions extends Component {
                     </div>
                   </div>
                 </div>
-                <Link to="#" className="register">
+                {/* <Link to="#" className="register">
                   <button
                     type="button"
                     className="btn btn-register"
                     onClick={() => this.handleClick()}
                   >
                     NEXT
+                  </button>
+                </Link> */}
+                <Link to="./signup" className="register">
+                  <button type="button" className="btn btn-register">
+                    Register
                   </button>
                 </Link>
               </div>
