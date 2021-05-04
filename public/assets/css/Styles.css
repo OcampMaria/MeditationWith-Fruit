@@ -36,9 +36,7 @@ body {
   max-width: 8rem;
 }
 
-.display{
-  display: none;
-}
+
 
 .img {
   display: flex;
@@ -122,9 +120,14 @@ body {
   padding-bottom: 7rem;
 }
 
+.display{
+  display: none;
+}
+
 @media (max-width: 970px) {
   .text {
     font-size: 1.6em; 
     padding: 2rem 0rem;
   }
+ 
 }
