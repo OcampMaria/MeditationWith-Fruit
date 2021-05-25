@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import logo from "./images/orange.png";
 import img1 from "./images/meditating.jpg";
 import img2 from "./images/sound.jpg";
@@ -10,14 +10,13 @@ import Footer from "./children/Footer";
 require("./styles/instructions.css");
 
 // Creating the Main component
-export default class Instructions extends Component {
-  
-  handleClick = () => {
-    console.log("this is:", this);
+export default function Instructions () {
+ 
+  function handleClick() {
+    console.log("yay");
+    
+  }
 
-  };
-
-  render() {
     return (
       <div className="container full-height-grow">
         <header className="main-header">
@@ -64,20 +63,21 @@ export default class Instructions extends Component {
                     </div>
                   </div>
                 </div>
-                {/* <Link to="#" className="register">
+                <Link to="#" className="register">
                   <button
                     type="button"
                     className="btn btn-register"
-                    onClick={() => this.handleClick()}
+                    onClick={handleClick}
                   >
                     NEXT
                   </button>
-                </Link> */}
-                <Link to="./signup" className="register">
+                  
+                </Link>
+                {/* <Link to="./signup" className="register">
                   <button type="button" className="btn btn-register">
                     Register
                   </button>
-                </Link>
+                </Link> */}
               </div>
 
               <div className="owl-item display" id="instruction2">
@@ -102,10 +102,12 @@ export default class Instructions extends Component {
                   </div>
                 </div>
                 <Link to="#" className="register">
-                  <button type="button" className="btn btn-register">
+                  <button type="next button" className="btn btn-register">
                     NEXT
                   </button>
                 </Link>
+
+               
               </div>
 
               <div className="owl-item display" id="instruction3">
@@ -135,13 +137,6 @@ export default class Instructions extends Component {
                 </Link>
               </div>
 
-              <div className="display">
-                <Link to="./signup" className="register">
-                  <button type="button" className="btn btn-register">
-                    Register
-                  </button>
-                </Link>
-              </div>
             </div>
           </div>
         </section>
@@ -149,5 +144,5 @@ export default class Instructions extends Component {
         <Footer />
       </div>
     );
-  }
+  
 }
