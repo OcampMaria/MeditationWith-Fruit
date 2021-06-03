@@ -6,6 +6,7 @@ import img3 from "./images/fruits.jpg";
 import { Link } from "react-router-dom";
 import Footer from "./children/Footer";
 import Slideshow from "./Slides/Slideshow";
+
 // require("./main.css");
 require("./styles/instructions.css");
 

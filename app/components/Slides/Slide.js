@@ -4,7 +4,7 @@ import React, { useState } from "react";
 const classNames = require("classnames");
 
 
-export default function Slide(props) {
+export default function Slide (props) {
   const classes = classNames({
     slide: true,
     "slide--active": props.active,
