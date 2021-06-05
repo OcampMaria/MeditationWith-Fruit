@@ -1,57 +1,61 @@
 import React, { useState } from "react";
-import { TitleActions } from "survey-react";
-
-const classNames = require("classnames");
 
 export default function Controls(props) {
+  const data = props.data;
+  const state = props.state;
+
+
+  console.log(props.state);
+
+
   // State transitions
-  var actions = {
+  const actions = {
     toggleNext: function () {
       console.log("something worked");
-      var current = state.currentSlide;
-      var next = current + 1;
+      const current = state.currentSlide;
+      const next = current + 1;
       if (next > state.data.length - 1) {
         next = 0;
       }
       state.currentSlide = next;
-      render(state);
+      return(state);
     },
     togglePrev: function () {
       console.log("something worked");
-      var current = state.currentSlide;
-      var prev = current - 1;
+      const current = state.currentSlide;
+      const prev = current - 1;
       if (prev < 0) {
         prev = state.data.length - 1;
       }
       state.currentSlide = prev;
-      render(state);
+      return(state);
     },
     toggleSlide: function (id) {
       console.log("something worked");
-      var index = state.data.map(function (el) {
+      const index = state.data.map(function (el) {
         return el.id;
       });
-      var currentIndex = index.indexOf(id);
+      const currentIndex = index.indexOf(id);
       state.currentSlide = currentIndex;
-      render(state);
+      return(state);
     },
   };
 
-  // Prev and Next buttons
-  togglePrev: () => {
+ 
+const togglePrev= () => {
     actions.togglePrev();
   };
 
-  toggleNext: () => {
+const toggleNext= () => {
     actions.toggleNext();
   };
 
   return (
     <div className="controls">
-      <div className="toggle toggle--prev" onClick={this.togglePrev}>
+      <div className="toggle toggle--prev" onClick={togglePrev}>
         Prev
       </div>
-      <div className="toggle toggle--next" onClick={this.toggleNext}>
+      <div className="toggle toggle--next" onClick={toggleNext}>
         Next
       </div>
     </div>

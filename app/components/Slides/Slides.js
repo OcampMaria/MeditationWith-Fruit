@@ -17,6 +17,8 @@ export default function Slides (props) {
             key={slideNode.id}
             imagePath={slideNode.imagePath}
             paragraph={slideNode.paragraph}
+            data={data}
+            state={state}
             />
         );       
     });
