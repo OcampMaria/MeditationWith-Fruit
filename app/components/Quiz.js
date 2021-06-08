@@ -117,7 +117,7 @@ export class Quiz extends Component {
     }
 
     return (
-      <div>
+      <div className="container full-height-grow">
         <header className="main-header">
           <a href="" className="brand-logo">
             <img className="logo-secondary" src={logo} alt="" />
