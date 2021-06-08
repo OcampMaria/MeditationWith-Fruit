@@ -127,6 +127,9 @@ export class Quiz extends Component {
               </li>
             ))}
           </ul> */}
+            <Link to="/">
+              <button type="button" className="btn">Done</button>
+            </Link>
           <Footer/>
         </div>
       );
