@@ -96,10 +96,25 @@ export class Quiz extends Component {
 
     if (quizEnd) {
       return (
-        <div>
+        <div className="container full-height-grow">
+           <header className="main-header">
+          <a href="" className="brand-logo">
+            <img className="logo-secondary" src={logo} alt="" />
+          </a>
+          <nav className="main-nav">
+            <ul>
+              <li className="nav-items secondary-nav">
+                <Link to={"/"}>Home</Link>
+              </li>
+              <li className="nav-items secondary-nav">
+                <Link to={"/login"}>Log In</Link>
+              </li>
+            </ul>
+          </nav>
+        </header>
           <h2>
             Based on your responses, the fruit that will be most effective for
-            this program is __.
+            this program is {fruit}.
           </h2>
           <p>
             Your first step is to go to the store and buy 7 servings of that
@@ -112,6 +127,7 @@ export class Quiz extends Component {
               </li>
             ))}
           </ul> */}
+          <Footer/>
         </div>
       );
     }
@@ -151,7 +167,7 @@ export class Quiz extends Component {
         ))}
         {currentIndex < Fruits.length - 1 && (
           <button
-            className="ui inverted button"
+            className="btn"
             disabled={this.state.disabled}
             onClick={this.nextQuestionHander}
           >
@@ -160,14 +176,16 @@ export class Quiz extends Component {
         )}
         {currentIndex === Fruits.length - 1 && (
           <button
-            className="ui inverted button"
+            className="btn"
             disabled={this.state.disabled}
             onClick={this.finishHandler}
           >
             Finish
           </button>
         )}
+        <Footer/>
       </div>
+      
     );
   }
 }
