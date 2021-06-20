@@ -21,7 +21,6 @@ export default function Instructions(props) {
   };
 
   const handleClick = () => {
-    console.log("yay");
     setcurrentIndex(currentIndex + 1);
   };
 
