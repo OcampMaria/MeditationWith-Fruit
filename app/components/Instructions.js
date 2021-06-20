@@ -12,25 +12,17 @@ export default function Instructions(props) {
   const [currentIndex, setcurrentIndex] = useState(0);
 
   const [paragraphs, setparagraphs] = useState("");
-  const [slideEnd, setslideEnd] = useState(false);
+
   const [image, setimage] = useState();
 
   const loadSlides = () => {
-    if (currentIndex === slideData.length - 1) {
-      setslideEnd(true);
-    } else {
-      setparagraphs(slideData[currentIndex].paragraph);
-      setimage(slideData[currentIndex].imagePath);
-    }
+    setparagraphs(slideData[currentIndex].paragraph);
+    setimage(slideData[currentIndex].imagePath);
   };
 
   const handleClick = () => {
     console.log("yay");
     setcurrentIndex(currentIndex + 1);
-  };
-
-  const finishHandler = () => {
-    slideEnd();
   };
 
   useEffect(() => {
@@ -90,11 +82,7 @@ export default function Instructions(props) {
 
               {currentIndex === slideData.length - 1 && (
                 <Link to="/Signup" className="register">
-                  <button
-                    type="button"
-                    className="btn btn-register"
-                    onClick={finishHandler}
-                  >
+                  <button type="button" className="btn btn-register">
                     NEXT
                   </button>
                 </Link>
