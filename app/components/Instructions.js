@@ -4,6 +4,7 @@ import logo from "./images/orange.png";
 import img1 from "./images/meditating.jpg";
 import img2 from "./images/sound.jpg";
 import img3 from "./images/fruits.jpg";
+import { slideData } from "./SlideData";
 import { Link } from "react-router-dom";
 import Footer from "./children/Footer";
 
@@ -16,49 +17,29 @@ export default function Instructions(props) {
   // const [disabled, setdisabled] = useState(false);
   const [paragraphs, setparagraphs] = useState("");
   const [slideEnd, setslideEnd] = useState(false);
-  // const [image, setimage] = useState({});
-
-  const slideData = [
-    {
-      id: "slide1",
-      imagePath: { logo },
-      paragraph:
-        "A lot of people are really stressed right now. One way people deal with stress is eating. Our program is designed to help people reduce their stress and get in some servings of fruit at the same time!",
-    },
-    {
-      id: "slide2",
-      imagePath: { img2 },
-      paragraph:
-        "In this 1 week program, you’ll start out by answering some questions that will help us pick the fruit that will be most effective in helping you de-stress. Then, once a day, you’ll listen to a lovely relaxing six minute exercise and eat your customized fruit at the end.",
-    },
-    {
-      id: "slide3",
-      imagePath: { img3 },
-      paragraph:
-        "Repeat 7 days.Our Research shows that simply eating your fruit will help bring that sense of relaxation     automatically! It’s a #bodyhack that we hope will help manage stress and eat more fruit.",
-    },
-  ];
+  const [image, setimage] = useState();
 
   const loadSlides = () => {
     if (currentIndex === slideData.length - 1) {
       setslideEnd(true);
     } else {
       setparagraphs(slideData[currentIndex].paragraph);
+      setimage(slideData[currentIndex].imagePath);
     }
   };
 
-  const handleClick= () => {
-    console.log("yay"); 
+  const handleClick = () => {
+    console.log("yay");
     setcurrentIndex(currentIndex + 1);
-  }
+  };
+
+  const finishHandler = () => {
+    slideEnd();
+  };
 
   useEffect(() => {
     loadSlides();
   });
-
-  if (slideEnd) {
-    return <div>HIIIII</div>;
-  }
 
   return (
     <div className="container full-height-grow">
@@ -92,41 +73,36 @@ export default function Instructions(props) {
                     <a href="" className="brand-logo">
                       <img
                         className="logo-secondary ilustration"
-                        src={img1}
+                        src={image}
                         alt=""
                       />
                     </a>
                   </div>
                 </div>
               </div>
-              <Link to="#" className="register">
-                <button
-                  type="button"
-                  className="btn btn-register"
-                  onClick={handleClick}
-                >
-                  NEXT
-                </button>
-              </Link>
-              <Link to="#" className="register">
-                <button
-                  type="button"
-                  className="btn btn-register"
-                  onClick={}
-                >
-                  Nextttt
-                </button>
-              </Link>
+              {currentIndex < slideData.length - 1 && (
+                <Link to="#" className="register">
+                  <button
+                    type="button"
+                    className="btn btn-register"
+                    onClick={handleClick}
+                  >
+                    NEXT
+                  </button>
+                </Link>
+              )}
 
-              {/* {currentIndex === slideData.length - 1 && (
-                <button
-                  className="btn btn-register"
-                  disabled={disabled}
-                  onClick={handleClick}
-                >
-                  Finish
-                </button>
-              )} */}
+              {currentIndex === slideData.length - 1 && (
+                <Link to="/Signup" className="register">
+                  <button
+                    type="button"
+                    className="btn btn-register"
+                    onClick={finishHandler}
+                  >
+                    NEXT
+                  </button>
+                </Link>
+              )}
             </div>
           </div>
         </div>
