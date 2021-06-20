@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Signup from "./Signup";
 import logo from "./images/orange.png";
-import img1 from "./images/meditating.jpg";
-import img2 from "./images/sound.jpg";
-import img3 from "./images/fruits.jpg";
 import { slideData } from "./SlideData";
 import { Link } from "react-router-dom";
 import Footer from "./children/Footer";
@@ -14,7 +10,7 @@ require("./styles/instructions.css");
 // Creating the Instructions component
 export default function Instructions(props) {
   const [currentIndex, setcurrentIndex] = useState(0);
-  // const [disabled, setdisabled] = useState(false);
+
   const [paragraphs, setparagraphs] = useState("");
   const [slideEnd, setslideEnd] = useState(false);
   const [image, setimage] = useState();
