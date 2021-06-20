@@ -120,13 +120,7 @@ export class Quiz extends Component {
             Your first step is to go to the store and buy 7 servings of that
             fruit so you’ll be ready to eat this week!
           </p>
-          {/* <ul>
-            {fruits.map((item, index) => (
-              <li className="ui floating message options" key={index}>
-                {item.answer}
-              </li>
-            ))}
-          </ul> */}
+      
             <Link to="/">
               <button type="button" className="btn">Done</button>
             </Link>
