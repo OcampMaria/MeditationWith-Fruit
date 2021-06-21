@@ -4,8 +4,10 @@ import React, { Component } from "react";
 import logo from "./images/orange.png";
 import { Link } from "react-router-dom";
 import Footer from "./children/Footer";
+import img1 from "./images/fruits.jpg";
 
 // require("./main.css");
+require("./styles/profile.css");
 
 // Creating the Main component
 export default class Main extends Component {
@@ -29,7 +31,60 @@ export default class Main extends Component {
           </nav>
         </header>
 
-      <Footer/>
+        <section className="intro-section">
+          <div className="max-with">
+            <h3 className="title-secondary">- Welcome Back! -</h3>
+
+            <div className="wrap">
+              <div className="one">
+                <div className="card">
+                  <div className="box">
+                    <p className="text">kkk</p>
+                    <div className="img ">
+                      <a href="" className="">
+                        <img className=" ilustration" src={img1} />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="one">
+                <div className="card">
+                  <div className="box">
+                    <p className="text">kkk</p>
+                    <div className="img ">
+                      <a href="" className="">
+                        <img className=" ilustration" src={img1} />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="one">
+                <div className="card">
+                  <div className="box">
+                    <p className="text">kkk</p>
+                    <div className="img ">
+                      <a href="" className="">
+                        <img className=" ilustration" src={img1} />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <Link to="#" className="register">
+            <button type="button" className="btn btn-register">
+              NEXT
+            </button>
+          </Link>
+        </section>
+
+        <Footer />
       </div>
     );
   }
