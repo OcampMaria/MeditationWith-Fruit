@@ -6,8 +6,9 @@ import Signup from "./Signup";
 import axios from "axios";
 import AudioPlayer from "./AudioPlayer";
 import About from "./About";
-import Quiz from "./Quiz"
+import Quiz from "./Questionnaire/Quiz"
 import Instructions from "./Instructions";
+import Profile from "./Profile";
 
 export default class MainRouter extends Component {
   constructor(props) {
@@ -152,6 +153,21 @@ export default class MainRouter extends Component {
                 logout={this.logout}
               />
             )}
+            
+          />
+          <Route
+            exact
+            path="/profile"
+            render={(props) => (
+              <Profile
+                {...props}
+                authenticate={this.authenticate}
+                deAuthenticate={this.deAuthenticate}
+                authenticated={this.state.authenticated}
+                logout={this.logout}
+              />
+            )}
+            
           />
         </Switch>
       </Router>

@@ -12,6 +12,7 @@ export default function Instructions(props) {
   const [currentIndex, setcurrentIndex] = useState(0);
   const [paragraphs, setparagraphs] = useState("");
   const [image, setimage] = useState();
+  
   const loadSlides = () => {
     setparagraphs(slideData[currentIndex].paragraph);
     setimage(slideData[currentIndex].imagePath);
