@@ -31,9 +31,20 @@ export default class Main extends Component {
           </nav>
         </header>
 
-        <section className="intro-section">
+        <section className="profile-section">
           <div className="max-with">
-            <h3 className="title-secondary">- Welcome Back! -</h3>
+            <div className="session">
+              <h3 className="title-secondary">- Welcome Back! -</h3>
+
+              <div>
+                <p className="subtitle-profile">New Session</p>
+                <Link to="/session" className="new-session">
+                  <button type="button" className="  btn-session">
+                    +
+                  </button>
+                </Link>
+              </div>
+            </div>
 
             <div className="wrap">
               <div className="one">
