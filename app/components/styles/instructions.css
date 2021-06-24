@@ -35,7 +35,7 @@
 
 .card {
   background: rgba(206, 228, 235, 0.51);
-  border-radius: 35px;
+  border-radius: 2rem;
   padding: 2rem;
   text-align: center;
   overflow: hidden;

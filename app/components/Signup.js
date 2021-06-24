@@ -57,7 +57,8 @@ export default class Signup extends Component {
       password: passwordVal,
     });
 
-    const passwordRegEx = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,}$/;
+    const passwordRegEx =
+      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,}$/;
     if (!passwordRegEx.test(passwordVal)) {
       passwordForm.classList.remove("has-success");
       passwordForm.classList.add("has-error");
@@ -234,134 +235,133 @@ export default class Signup extends Component {
         </header>
 
         <section className="join-main-section register">
-          <h1 className="join-text">
-            Join For 6 Minutes of
-            <span className="accent-text"> Relaxation.</span>
-          </h1>
+          <div className="items">
+            <h1 className="join-text">
+              Join For 6 Minutes of
+              <span className="accent-text"> Relaxation.</span>
+            </h1>
 
-          <form className="join-form" onSubmit={this.handleSubmit.bind(this)}>
-            <h3 className="registration-title"> - REGISTRATION -</h3>
+            <form className="join-form" onSubmit={this.handleSubmit.bind(this)}>
+              <h3 className="registration-title"> - REGISTRATION -</h3>
 
-            <div
-              id="username-form"
-              ref="usernameForm"
-              className="form-group col-lg-12"
-            >
-              <label>Username</label>
-              <input
-                type=""
-                name=""
-                ref="username"
-                className="form-control"
-                id="username-input"
-                value={this.state.username}
-                onChange={this.handleUsernameValidation}
-              />
-              <small
-                id="username-feedback"
-                ref="usernameFeedback"
-              
-              ></small>
-            </div>
+              <div
+                id="username-form"
+                ref="usernameForm"
+                className="form-group col-lg-12"
+              >
+                <label>Username</label>
+                <input
+                  type=""
+                  name=""
+                  ref="username"
+                  className="form-control"
+                  id="username-input"
+                  value={this.state.username}
+                  onChange={this.handleUsernameValidation}
+                />
+                <small id="username-feedback" ref="usernameFeedback"></small>
+              </div>
 
-            <div
-              id="password-form"
-              className="form-group col-lg-12"
-              ref="passwordForm"
-            >
-              <label>Password</label>
-              <input
-                type="password"
-                name=""
-                ref="password"
-                className="form-control"
-                id="password-input"
-                value={this.state.password}
-                onChange={this.handlePasswordValidation}
-              />
-              <small
-                id="password-feedback"
-                ref="passwordFeedback"
-                className=""
-              ></small>
-            </div>
+              <div
+                id="password-form"
+                className="form-group col-lg-12"
+                ref="passwordForm"
+              >
+                <label>Password</label>
+                <input
+                  type="password"
+                  name=""
+                  ref="password"
+                  className="form-control"
+                  id="password-input"
+                  value={this.state.password}
+                  onChange={this.handlePasswordValidation}
+                />
+                <small
+                  id="password-feedback"
+                  ref="passwordFeedback"
+                  className=""
+                ></small>
+              </div>
 
-            <div
-              id="repeat-password-form"
-              className="form-group col-lg-12"
-              ref="repeatPasswordForm"
-            >
-              <label>Repeat Password</label>
-              <input
-                type="password"
-                name=""
-                ref="repeatPassword"
-                className="form-control"
-                id="repeat-password-input"
-                value={this.state.passwordRepeat}
-                onChange={this.handlePasswordRepeat}
-              />
-              <small
-                id="repeat-password-feedback"
-                className=""
-                ref="repeatPasswordFeedback"
-              ></small>
-            </div>
+              <div
+                id="repeat-password-form"
+                className="form-group col-lg-12"
+                ref="repeatPasswordForm"
+              >
+                <label>Repeat Password</label>
+                <input
+                  type="password"
+                  name=""
+                  ref="repeatPassword"
+                  className="form-control"
+                  id="repeat-password-input"
+                  value={this.state.passwordRepeat}
+                  onChange={this.handlePasswordRepeat}
+                />
+                <small
+                  id="repeat-password-feedback"
+                  className=""
+                  ref="repeatPasswordFeedback"
+                ></small>
+              </div>
 
-            <div
-              id="email-form"
-              className="form-group col-lg-12"
-              ref="emailForm"
-            >
-              <label>Email Address</label>
-              <input
-                type="email"
-                name=""
-                ref="email"
-                className="form-control"
-                id="email-input"
-                value={this.state.email}
-                onChange={this.handleEmailValidation}
-              />
+              <div
+                id="email-form"
+                className="form-group col-lg-12"
+                ref="emailForm"
+              >
+                <label>Email Address</label>
+                <input
+                  type="email"
+                  name=""
+                  ref="email"
+                  className="form-control"
+                  id="email-input"
+                  value={this.state.email}
+                  onChange={this.handleEmailValidation}
+                />
 
-              <p id="email-feedback" className="" ref="emailFeedback"></p>
-              <small
-                id="email-additional-feedback"
-                ref="emailAdditionalFeedback"
-                className="form-text text-muted"
-              ></small>
-            </div>
+                <p id="email-feedback" className="" ref="emailFeedback"></p>
+                <small
+                  id="email-additional-feedback"
+                  ref="emailAdditionalFeedback"
+                  className="form-text text-muted"
+                ></small>
+              </div>
 
-            <div
-              id="email-repeat-form"
-              className="form-group col-lg-12"
-              ref="emailRepeatForm"
-            >
-              <label>Repeat Email Address</label>
-              <input
-                type="email"
-                name=""
-                ref="emailRepeat"
-                className="form-control"
-                id="repeat-email-input"
-                value={this.state.emailRepeat}
-                onChange={this.handleEmailRepeat}
-              />
-              <small
-                id="email-repeat-feedback"
-                className=""
-                ref="emailRepeatFeedback"
-              ></small>
-            </div>
+              <div
+                id="email-repeat-form"
+                className="form-group col-lg-12"
+                ref="emailRepeatForm"
+              >
+                <label>Repeat Email Address</label>
+                <input
+                  type="email"
+                  name=""
+                  ref="emailRepeat"
+                  className="form-control"
+                  id="repeat-email-input"
+                  value={this.state.emailRepeat}
+                  onChange={this.handleEmailRepeat}
+                />
+                <small
+                  id="email-repeat-feedback"
+                  className=""
+                  ref="emailRepeatFeedback"
+                ></small>
+              </div>
 
-            <div className="input-group col-lg-12 ">
-              <button type="submit" className="btn ">
-                <Link to="/login"></Link>
-                Join Now
-              </button>
-            </div>
-          </form>
+              <div className="input-group col-lg-12 ">
+                <button type="submit" className="btn ">
+                  <Link to="/login"></Link>
+                  Join Now
+                </button>
+              </div>
+            </form>
+          </div>
         </section>
+
         <Footer />
       </div>
     );

@@ -87,12 +87,6 @@ export default class Main extends Component {
               </div>
             </div>
           </div>
-
-          <Link to="#" className="register">
-            <button type="button" className="btn btn-register">
-              NEXT
-            </button>
-          </Link>
         </section>
 
         <Footer />
