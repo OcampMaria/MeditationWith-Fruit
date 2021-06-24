@@ -50,6 +50,8 @@ export default class Main extends Component {
               <button type="button" className="btn">START</button>
             </Link>
 
+            <h2>UNDER DEVELOPMENT...</h2>
+
             
           </div>
 
