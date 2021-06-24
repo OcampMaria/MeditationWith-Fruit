@@ -3,11 +3,12 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./Main";
 import Login from "./Login";
 import Signup from "./Signup";
-
 import axios from "axios";
 import AudioPlayer from "./AudioPlayer";
 import About from "./About";
+import Quiz from "./Questionnaire/Quiz"
 import Instructions from "./Instructions";
+import Profile from "./Profile";
 
 export default class MainRouter extends Component {
   constructor(props) {
@@ -87,6 +88,19 @@ export default class MainRouter extends Component {
               />
             )}
           />
+          <Route
+            exact
+            path="/quiz"
+            render={(props) => (
+              <Quiz
+                {...props}
+                authenticate={this.authenticate}
+                deAuthenticate={this.deAuthenticate}
+                authenticated={this.state.authenticated}
+                logout={this.logout}
+              />
+            )}
+          />
            <Route
             exact
             path="/instructions"
@@ -115,6 +129,7 @@ export default class MainRouter extends Component {
           />
          
           <Route
+            exact
             path="/audioplayer"
             render={(props) => (
               <AudioPlayer
@@ -125,6 +140,34 @@ export default class MainRouter extends Component {
                 logout={this.logout}
               />
             )}
+          />
+          <Route
+            exact
+            path="/quiz"
+            render={(props) => (
+              <Quiz
+                {...props}
+                authenticate={this.authenticate}
+                deAuthenticate={this.deAuthenticate}
+                authenticated={this.state.authenticated}
+                logout={this.logout}
+              />
+            )}
+            
+          />
+          <Route
+            exact
+            path="/profile"
+            render={(props) => (
+              <Profile
+                {...props}
+                authenticate={this.authenticate}
+                deAuthenticate={this.deAuthenticate}
+                authenticated={this.state.authenticated}
+                logout={this.logout}
+              />
+            )}
+            
           />
         </Switch>
       </Router>

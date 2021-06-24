@@ -10,8 +10,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-grow: 1;
-  padding-top: 5%;
+  padding-top: 10%;
 }
 
 .join-text {
