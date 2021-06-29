@@ -93,7 +93,7 @@ export default function Quiz() {
           so you’ll be ready to eat this week!
         </p>
 
-        <Link to="/">
+        <Link to="/profile">
           <button type="button" className="btn">
             Done
           </button>
@@ -112,10 +112,10 @@ export default function Quiz() {
         <nav className="main-nav">
           <ul>
             <li className="nav-items secondary-nav">
-              <Link to={"/"}>Home</Link>
+              <Link to={"/profile"}>Profile</Link>
             </li>
             <li className="nav-items secondary-nav">
-              <Link to={"/login"}>Log In</Link>
+              <Link to={"/"}>Log Out</Link>
             </li>
           </ul>
         </nav>

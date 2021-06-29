@@ -150,10 +150,11 @@ export default class Login extends Component {
             </div>
 
             <div className="input-group col-lg-12">
+              <Link to="/profile" className="register">
               <button type="submit" name="login" className="btn" value="Login">
-                <Link to="/profile"></Link>
-                Login
-              </button>
+                    SUBMIT
+                  </button>
+                </Link>
             </div>
           </form>
         </div>

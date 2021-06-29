@@ -20,12 +20,14 @@ export default class Main extends Component {
           </a>
           <nav className="main-nav">
             <ul>
-              <li className="nav-items secondary-nav">
-                <Link to={"/"}>Home</Link>
+            <li className="nav-items secondary-nav">
+                <Link to={"/instructions"}>Instructions</Link>
               </li>
-
               <li className="nav-items secondary-nav">
-                <Link to={"/login"}>Log In</Link>
+                <Link to={"/quiz"}>Retake Quiz</Link>
+              </li>
+              <li className="nav-items secondary-nav">
+                <Link to={"/"}>Log Out</Link>
               </li>
             </ul>
           </nav>
