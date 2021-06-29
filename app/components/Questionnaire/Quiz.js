@@ -14,8 +14,7 @@ export default function Quiz() {
   const [fruitIndex, setfruitIndex] = useState(0);
   const [options, setoptions] = useState([]);
   const [quizEnd, setquizEnd] = useState(false);
-
-  const [disabled, setdisabled] = useState(false);
+  const [disabled, setdisabled] = useState(true);
   const [question, setquestion] = useState("");
   const [fruit, setfruit] = useState("");
 
@@ -35,14 +34,13 @@ export default function Quiz() {
   const nextQuestionHander = () => {
     if (currentIndex === QuizData.length - 1) {
       setcurrentIndex(0);
-      // console.log(currentIndex, "if equal to length quizdata");
       setfruitIndex(fruitIndex + 1);
-      // setfruit(Fruits[currentIndex + 1].name);
       setquestion(QuizData[currentIndex].question);
+      setdisabled(true)
+      
     } else {
       setcurrentIndex(currentIndex + 1);
-      // console.log(currentIndex, "current");
-      // console.log(fruitIndex, "fruitI");
+      setdisabled(true)
     }
   };
 
