@@ -152,12 +152,11 @@ export default class Signup extends Component {
       })
       .then(
         function (data) {
-          console.log("data stuff", data.data);
+         
           if (data.duplicateUser) {
             // Replace with Modal
             alert("Sorry, that username has been taken");
           } else if (data.data.success) {
-            console.log("yay!");
             this.props.authenticate();
             this.setState({
               redirectToReferrer: true,

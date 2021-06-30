@@ -36,7 +36,7 @@ export default class Login extends Component {
       .post("/apis/users/login", submitObject)
       .then(
         function (data) {
-          console.log(data.data);
+       
           if (data.data.success) {
             this.props.authenticate();
             this.setState({

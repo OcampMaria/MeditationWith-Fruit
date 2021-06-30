@@ -54,14 +54,11 @@ export default function Quiz() {
     setuserAnswer(answer);
     setdisabled(false);
 
-    console.log(fruitIndex === Fruits.length - 1);
-    console.log(currentIndex === QuizData.length - 1);
   };
 
   const finishHandler = () => {
     if (currentIndex === Fruits.length - 2) {
       setquizEnd(true);
-      console.log("finished!");
     }
   };
 

@@ -55,7 +55,7 @@ exports.signUpUser = function(req,res) {
 
         // if there is no user with that email
         // create the user
-        console.log("new user", req.body);
+        // console.log("new user", req.body);
         const newUser       = new User();
 
         // set the user's local credentials
