@@ -20,8 +20,9 @@ export default function Quiz() {
 
   const loadQuiz = () => {
     if (
-      currentIndex === Fruits.length - 1 &&
-      currentIndex === QuizData.length - 1
+      (currentIndex === Fruits.length - 1 &&
+        currentIndex === QuizData.length - 1) ||
+      fruitIndex === Fruits.length
     ) {
       setquizEnd(true);
     } else {
@@ -36,17 +37,25 @@ export default function Quiz() {
       setcurrentIndex(0);
       setfruitIndex(fruitIndex + 1);
       setquestion(QuizData[currentIndex].question);
-      setdisabled(true)
-      
+      setdisabled(true);
+    } else if (
+      currentIndex === 0 &&
+      userAnswer === QuizData[currentIndex].options[1]
+    ) {
+      setfruitIndex(fruitIndex + 1);
+      setdisabled(true);
     } else {
       setcurrentIndex(currentIndex + 1);
-      setdisabled(true)
+      setdisabled(true);
     }
   };
 
   const checkAnswer = (answer) => {
     setuserAnswer(answer);
     setdisabled(false);
+
+    console.log(fruitIndex === Fruits.length - 1);
+    console.log(currentIndex === QuizData.length - 1);
   };
 
   const finishHandler = () => {
