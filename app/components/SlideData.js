@@ -2,7 +2,7 @@
 import img1 from "./images/meditating.jpg";
 import img2 from "./images/sound.jpg";
 import img3 from "./images/fruits.jpg";
-  
+
 export const slideData = [
     {
       id: "slide1",

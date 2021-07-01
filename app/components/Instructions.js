@@ -4,6 +4,7 @@ import { slideData } from "./SlideData";
 import { Link } from "react-router-dom";
 import Footer from "./children/Footer";
 
+
 // require("./main.css");
 require("./styles/instructions.css");
 

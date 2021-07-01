@@ -57,7 +57,7 @@
     "react-helmet": "^6.1.0",
     "react-router-dom": "^5.2.0",
     "react-survey": "^1.0.0",
-    "survey-react": "^1.8.44",
-    "webpack-cli": "^4.5.0"
+    "webpack-cli": "^4.5.0", 
+    "copy-webpack-plugin": "^4.5.2"
   }
 }
