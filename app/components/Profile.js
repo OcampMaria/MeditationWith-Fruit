@@ -36,11 +36,11 @@ export default class Main extends Component {
         <section className="profile-section">
           <div className="max-with">
             <div className="session">
-              <h3 className="title-secondary">- Welcome Back! -</h3>
+              <h3 className="title-secondary">- Welcome Back {}! -</h3>
 
               <div>
                 <p className="subtitle-profile">New Session</p>
-                <Link to="/session" className="new-session">
+                <Link to="/audioplayer" className="new-session">
                   <button type="button" className="  btn-session">
                     +
                   </button>
