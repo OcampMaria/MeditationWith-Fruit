@@ -19,6 +19,8 @@ export default function Quiz() {
   const [question, setquestion] = useState("");
   const [fruit, setfruit] = useState("");
 
+  const scores = [];
+
   const loadQuiz = () => {
     if (
       (currentIndex === Fruits.length - 1 &&
@@ -34,7 +36,7 @@ export default function Quiz() {
   };
 
   const savefruit = () => {
-    const scores = [];
+  
     console.log("answer:", userAnswer);
     // console.log(
     //   "name:",
@@ -50,16 +52,21 @@ export default function Quiz() {
   
       console.log("objIndx:", objIndex, "fruitID:", Fruits[fruitIndex].id);
 
-      const Fruits2 = Fruits[fruitIndex]['score'] = userAnswer;
-      // Fruits.map(score => 
-      //   Fruits[fruitIndex].score = score + userAnswer
-      //   );
-      console.log(Fruits2);
+      const fruitScore = Fruits[fruitIndex]['score'] = userAnswer;
+  
+      console.log(fruitScore);
       console.log(
         "name:",
         Fruits[fruitIndex].name,
-        "score:",Fruits2
+        "score:",fruitScore
       );
+
+    scores.push(
+      {
+        name:Fruits[fruitIndex].name,
+        score:fruitScore
+      });
+      console.log(scores)
     }
    
   };
@@ -93,6 +100,7 @@ export default function Quiz() {
       setquizEnd(true);
     }
     console.log(userAnswer);
+ 
   };
 
   const numbers = function getRandomInt(max) {

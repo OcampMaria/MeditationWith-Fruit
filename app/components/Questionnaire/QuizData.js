@@ -14,11 +14,11 @@ export const Fruits = [
     name: "Banana",
     score: 0,
   },
-  {
-    id: 3,
-    name: "Blueberries",
-    score: 0,
-  },
+  // {
+  //   id: 3,
+  //   name: "Blueberries",
+  //   score: 0,
+  // },
   // {
   //   id: 5,
   //   name: "Cantaloupe",
