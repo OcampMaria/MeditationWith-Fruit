@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { QuizData } from "./QuizData";
 import { Fruits } from "./QuizData";
 import logo from "../images/orange.png";
@@ -32,11 +33,43 @@ export default function Quiz() {
     }
   };
 
+  const savefruit = () => {
+    const scores = [];
+    console.log("answer:", userAnswer);
+    // console.log(
+    //   "name:",
+    //   Fruits[fruitIndex].name,
+    //   "score:",
+    //   Fruits[fruitIndex].score
+    // );
+    console.log("currentquestion2:", QuizData[1].id === currentIndex);
+    if (QuizData[1].id === currentIndex) {
+      const objIndex = Fruits.findIndex(
+        (obj) => obj.id === Fruits[fruitIndex].id
+      );
+  
+      console.log("objIndx:", objIndex, "fruitID:", Fruits[fruitIndex].id);
+
+      const Fruits2 = Fruits[fruitIndex]['score'] = userAnswer;
+      // Fruits.map(score => 
+      //   Fruits[fruitIndex].score = score + userAnswer
+      //   );
+      console.log(Fruits2);
+      console.log(
+        "name:",
+        Fruits[fruitIndex].name,
+        "score:",Fruits2
+      );
+    }
+   
+  };
   const nextQuestionHander = () => {
+    savefruit();
     if (currentIndex === QuizData.length - 1) {
       setcurrentIndex(0);
       setfruitIndex(fruitIndex + 1);
       setquestion(QuizData[currentIndex].question);
+
       setdisabled(true);
     } else if (
       currentIndex === 0 &&
@@ -53,18 +86,33 @@ export default function Quiz() {
   const checkAnswer = (answer) => {
     setuserAnswer(answer);
     setdisabled(false);
-
   };
 
   const finishHandler = () => {
     if (currentIndex === Fruits.length - 2) {
       setquizEnd(true);
     }
+    console.log(userAnswer);
   };
 
   const numbers = function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   };
+
+  // const assignFruit = (userData) => {
+  //   axios.post("/apis/users/fruit", {
+  //    fruit:userData.fruit
+  //   }).then (
+  //     (data)=> {
+  //       if (data){
+  //         console.log(data)
+  //       }
+  //     }
+  //   ).catch(function (err) {
+  //     console.log(err);
+  //   });
+
+  // }
 
   useEffect(() => {
     loadQuiz();
