@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 // import Nav from "./children/Nav";
-// import Footer from "./children/Footer";
 import logo from "./images/orange.png";
 import { Link } from "react-router-dom";
 import Footer from "./children/Footer";
@@ -40,7 +39,7 @@ export default class Main extends Component {
 
               <div>
                 <p className="subtitle-profile">New Session</p>
-                <Link to="/audioplayer" className="new-session">
+                <Link to="/sessioninstructions" className="new-session">
                   <button type="button" className="  btn-session">
                     +
                   </button>

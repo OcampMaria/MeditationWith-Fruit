@@ -7,8 +7,9 @@ import axios from "axios";
 import AudioPlayer from "./AudioPlayer";
 import About from "./About";
 import Quiz from "./Questionnaire/Quiz"
-import Instructions from "./Instructions";
+import Instructions from "./Instructions/Instructions";
 import Profile from "./Profile";
+import SessionInstructions from "./Session/sessionInstructions"
 
 export default class MainRouter extends Component {
   constructor(props) {
@@ -106,6 +107,19 @@ export default class MainRouter extends Component {
             path="/instructions"
             render={(props) => (
               <Instructions
+                {...props}
+                authenticate={this.authenticate}
+                deAuthenticate={this.deAuthenticate}
+                authenticated={this.state.authenticated}
+                logout={this.logout}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/sessioninstructions"
+            render={(props) => (
+              <SessionInstructions
                 {...props}
                 authenticate={this.authenticate}
                 deAuthenticate={this.deAuthenticate}
