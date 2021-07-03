@@ -19,8 +19,13 @@ export default function Quiz() {
   const [question, setquestion] = useState("");
   const [fruit, setfruit] = useState("");
 
-  const scores = [];
+  const setfruitItem = JSON.stringify({
+    name: Fruits[fruitIndex].name,
+    score: userAnswer,
+  });
 
+  const getfruitItem = JSON.parse(localStorage.getItem("fruit"))
+ 
   const loadQuiz = () => {
     if (
       (currentIndex === Fruits.length - 1 &&
@@ -36,42 +41,23 @@ export default function Quiz() {
   };
 
   const savefruit = () => {
-  
-    console.log("answer:", userAnswer);
-    // console.log(
-    //   "name:",
-    //   Fruits[fruitIndex].name,
-    //   "score:",
-    //   Fruits[fruitIndex].score
-    // );
-    console.log("currentquestion2:", QuizData[1].id === currentIndex);
     if (QuizData[1].id === currentIndex) {
-      const objIndex = Fruits.findIndex(
-        (obj) => obj.id === Fruits[fruitIndex].id
-      );
-  
-      console.log("objIndx:", objIndex, "fruitID:", Fruits[fruitIndex].id);
+      // const objIndex = Fruits.findIndex(
+      //   (obj) => obj.id === Fruits[fruitIndex].id
+      // );
+      console.log(QuizData[1].id === currentIndex);
+      // console.log("objIndx:", objIndex, "fruitID:", Fruits[fruitIndex].id);
 
-      const fruitScore = Fruits[fruitIndex]['score'] = userAnswer;
-  
-      console.log(fruitScore);
-      console.log(
-        "name:",
-        Fruits[fruitIndex].name,
-        "score:",fruitScore
-      );
+      localStorage.setItem("fruit", setfruitItem);
+      console.log(setfruitItem, "set");
+      console.log(getfruitItem, "get")
 
-    scores.push(
-      {
-        name:Fruits[fruitIndex].name,
-        score:fruitScore
-      });
-      console.log(scores)
     }
-   
   };
   const nextQuestionHander = () => {
+
     savefruit();
+
     if (currentIndex === QuizData.length - 1) {
       setcurrentIndex(0);
       setfruitIndex(fruitIndex + 1);
@@ -99,8 +85,8 @@ export default function Quiz() {
     if (currentIndex === Fruits.length - 2) {
       setquizEnd(true);
     }
-    console.log(userAnswer);
- 
+    // console.log(userAnswer);
+    console.log(fruitItem);
   };
 
   const numbers = function getRandomInt(max) {

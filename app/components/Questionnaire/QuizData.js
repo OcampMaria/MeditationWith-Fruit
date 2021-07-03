@@ -103,7 +103,7 @@ export const QuizData = [
     id: 1,
     question: `on a scale from 1-10, How familiar is this fruit to you?`,
     options: [
-      `1 (Not Familiar)`,
+      `0 (Not Familiar)`,
       `1`,
       `3`,
       `4`,
