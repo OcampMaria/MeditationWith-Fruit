@@ -10,6 +10,7 @@ require("../main.css");
 require("../styles/quiz.css");
 
 export default function Quiz() {
+  //setting up state
   const [userAnswer, setuserAnswer] = useState(null);
   const [currentIndex, setcurrentIndex] = useState(0);
   const [fruitIndex, setfruitIndex] = useState(0);
@@ -19,13 +20,7 @@ export default function Quiz() {
   const [question, setquestion] = useState("");
   const [fruit, setfruit] = useState("");
 
-  const setfruitItem = JSON.stringify({
-    name: Fruits[fruitIndex].name,
-    score: userAnswer,
-  });
-
-  const getfruitItem = JSON.parse(localStorage.getItem("fruit"))
- 
+  
   const loadQuiz = () => {
     if (
       (currentIndex === Fruits.length - 1 &&
@@ -40,22 +35,28 @@ export default function Quiz() {
     }
   };
 
+  //setting up localStorage
+  const reason = () => {
+    const drop = {
+      name: Fruits[fruitIndex].name,
+      score: userAnswer,
+    };
+    const dropHistory = JSON.parse(localStorage.getItem("fruitItems")) || [];
+
+    dropHistory.push(drop);
+    localStorage.setItem("fruitItems", JSON.stringify(dropHistory));
+  };
+
+  //save fruitItems to local storage if statement is true
   const savefruit = () => {
     if (QuizData[1].id === currentIndex) {
-      // const objIndex = Fruits.findIndex(
-      //   (obj) => obj.id === Fruits[fruitIndex].id
-      // );
       console.log(QuizData[1].id === currentIndex);
-      // console.log("objIndx:", objIndex, "fruitID:", Fruits[fruitIndex].id);
-
-      localStorage.setItem("fruit", setfruitItem);
-      console.log(setfruitItem, "set");
-      console.log(getfruitItem, "get")
-
+      reason();
     }
   };
-  const nextQuestionHander = () => {
 
+
+  const nextQuestionHander = () => {
     savefruit();
 
     if (currentIndex === QuizData.length - 1) {
@@ -76,6 +77,7 @@ export default function Quiz() {
     }
   };
 
+  //Adds state to user answer on click.  
   const checkAnswer = (answer) => {
     setuserAnswer(answer);
     setdisabled(false);
@@ -85,10 +87,10 @@ export default function Quiz() {
     if (currentIndex === Fruits.length - 2) {
       setquizEnd(true);
     }
-    // console.log(userAnswer);
-    console.log(fruitItem);
+    savefruit();
   };
 
+  //part of unique id for answer options
   const numbers = function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   };
