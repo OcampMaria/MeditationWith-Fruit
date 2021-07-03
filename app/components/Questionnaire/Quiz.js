@@ -20,7 +20,13 @@ export default function Quiz() {
   const [question, setquestion] = useState("");
   const [fruit, setfruit] = useState("");
 
-  
+  //setting up localStorage
+  const drop = {
+    name: Fruits[fruitIndex].name,
+    score: userAnswer,
+  };
+  const dropHistory = JSON.parse(localStorage.getItem("fruitItems")) || [];
+
   const loadQuiz = () => {
     if (
       (currentIndex === Fruits.length - 1 &&
@@ -35,26 +41,19 @@ export default function Quiz() {
     }
   };
 
-  //setting up localStorage
-  const reason = () => {
-    const drop = {
-      name: Fruits[fruitIndex].name,
-      score: userAnswer,
-    };
-    const dropHistory = JSON.parse(localStorage.getItem("fruitItems")) || [];
-
-    dropHistory.push(drop);
-    localStorage.setItem("fruitItems", JSON.stringify(dropHistory));
+  //selecting fruit with highest score
+  const getHighestFruit = () => {
+    console.log(dropHistory);
   };
 
   //save fruitItems to local storage if statement is true
   const savefruit = () => {
     if (QuizData[1].id === currentIndex) {
-      console.log(QuizData[1].id === currentIndex);
-      reason();
+      //setting up localStorage
+      dropHistory.push(drop);
+      localStorage.setItem("fruitItems", JSON.stringify(dropHistory));
     }
   };
-
 
   const nextQuestionHander = () => {
     savefruit();
@@ -77,7 +76,7 @@ export default function Quiz() {
     }
   };
 
-  //Adds state to user answer on click.  
+  //Adds state to user answer on click.
   const checkAnswer = (answer) => {
     setuserAnswer(answer);
     setdisabled(false);
@@ -88,6 +87,7 @@ export default function Quiz() {
       setquizEnd(true);
     }
     savefruit();
+    getHighestFruit();
   };
 
   //part of unique id for answer options
