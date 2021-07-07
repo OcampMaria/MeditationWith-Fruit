@@ -117,6 +117,7 @@ class AudioPlayer extends Component {
       <div>
         <header className="main-header">
           <a href="" className="brand-logo">
+            
             <img className="logo-secondary" src={logo} alt="" />
           </a>
           <nav className="main-nav">

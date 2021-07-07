@@ -5,10 +5,9 @@ import { Fruits } from "./QuizData";
 import logo from "../images/orange.png";
 import { Link } from "react-router-dom";
 import Footer from "../children/Footer";
-
+import { log } from "debug";
 require("../main.css");
 require("../styles/quiz.css");
-
 export default function Quiz() {
   //setting up state
   const [userAnswer, setuserAnswer] = useState(null);
@@ -19,14 +18,8 @@ export default function Quiz() {
   const [disabled, setdisabled] = useState(true);
   const [question, setquestion] = useState("");
   const [fruit, setfruit] = useState("");
-
   //setting up localStorage
-  const drop = {
-    name: Fruits[fruitIndex].name,
-    score: userAnswer,
-  };
   const dropHistory = JSON.parse(localStorage.getItem("fruitItems")) || [];
-
   const loadQuiz = () => {
     if (
       (currentIndex === Fruits.length - 1 &&
@@ -34,35 +27,45 @@ export default function Quiz() {
       fruitIndex === Fruits.length
     ) {
       setquizEnd(true);
+      savefruit();
+      getHighestFruit();
     } else {
       setquestion(QuizData[currentIndex].question);
       setoptions(QuizData[currentIndex].options);
       setfruit(Fruits[fruitIndex].name);
     }
   };
-
   //selecting fruit with highest score
   const getHighestFruit = () => {
-    console.log(dropHistory);
+    const max = Math.max.apply(
+      Math,
+      dropHistory.map((item) => {
+        return item.score;
+      })
+    );
+    console.log(max);
+    const found = dropHistory.filter(x => x.score == max);
+    const foundFruit = found[0].name
+    console.log(foundFruit);
   };
-
   //save fruitItems to local storage if statement is true
   const savefruit = () => {
     if (QuizData[1].id === currentIndex) {
+      const drop = {
+        name: Fruits[fruitIndex].name,
+        score: userAnswer,
+      };
       //setting up localStorage
       dropHistory.push(drop);
       localStorage.setItem("fruitItems", JSON.stringify(dropHistory));
     }
   };
-
   const nextQuestionHander = () => {
     savefruit();
-
     if (currentIndex === QuizData.length - 1) {
       setcurrentIndex(0);
       setfruitIndex(fruitIndex + 1);
       setquestion(QuizData[currentIndex].question);
-
       setdisabled(true);
     } else if (
       currentIndex === 0 &&
@@ -75,26 +78,25 @@ export default function Quiz() {
       setdisabled(true);
     }
   };
-
   //Adds state to user answer on click.
   const checkAnswer = (answer) => {
     setuserAnswer(answer);
     setdisabled(false);
   };
-
   const finishHandler = () => {
     if (currentIndex === Fruits.length - 2) {
       setquizEnd(true);
+      savefruit();
+      getHighestFruit();
     }
-    savefruit();
-    getHighestFruit();
   };
-
+  const clearLocal = () => {
+    localStorage.clear();
+  };
   //part of unique id for answer options
   const numbers = function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   };
-
   // const assignFruit = (userData) => {
   //   axios.post("/apis/users/fruit", {
   //    fruit:userData.fruit
@@ -107,13 +109,10 @@ export default function Quiz() {
   //   ).catch(function (err) {
   //     console.log(err);
   //   });
-
   // }
-
   useEffect(() => {
     loadQuiz();
   });
-
   if (quizEnd) {
     return (
       <div className="container full-height-grow">
@@ -140,9 +139,8 @@ export default function Quiz() {
           Your first step is to go to the store and buy 7 servings of that fruit
           so you’ll be ready to eat this week!
         </p>
-
         <Link to="/profile">
-          <button type="button" className="btn">
+          <button type="button" className="btn" onClick={clearLocal}>
             Done
           </button>
         </Link>
@@ -150,7 +148,6 @@ export default function Quiz() {
       </div>
     );
   }
-
   return (
     <div className="container full-height-grow">
       <header className="main-header">
@@ -168,10 +165,8 @@ export default function Quiz() {
           </ul>
         </nav>
       </header>
-
       <h1>{fruit}</h1>
       <h2>{question}</h2>
-
       <span>{`Question ${fruitIndex + 1} of ${Fruits.length}`}</span>
       {options.map((option) => (
         <p
@@ -203,7 +198,6 @@ export default function Quiz() {
             Next Question
           </button>
         )}
-
       {fruitIndex === Fruits.length - 1 &&
         currentIndex === QuizData.length - 1 && (
           <button
