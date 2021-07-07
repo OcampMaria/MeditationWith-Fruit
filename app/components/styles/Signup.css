@@ -22,6 +22,7 @@ body {
   font-weight: bold;
   margin: 0;
   text-align: center;
+  margin:2rem
 }
 
 .accent-text {
@@ -29,11 +30,22 @@ body {
 }
 
 .join-form {
-  background-color: #83a6ba;
+  /* background-color: #83a6ba;
   width: 50vw;
   max-width: 50%;
   padding: 3rem 4rem;
+  border-radius: 20px; */
+  background-color: #83a6ba;
+  width: 53vw;
+  max-width: 50%;
+  padding: 1rem;
+  margin: 2rem;
   border-radius: 20px;
+}
+
+.items{
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 900px) {

@@ -15,13 +15,13 @@
 
 .carousel {
   display: flex;
-  padding-bottom: 2rem;
-  padding-top: 3rem;
   flex-wrap: nowrap;
   align-content: center;
   justify-content: center;
   flex-direction: column;
 }
+
+
 
 .owl-stage-outer {
   position: relative;
@@ -35,32 +35,29 @@
 
 .card {
   background: rgba(206, 228, 235, 0.51);
-  border-radius: 33px;
-  padding: 20px 20px;
+  border-radius: 2rem;
+  padding: 2rem;
   text-align: center;
   overflow: hidden;
   transition: all 0.3s ease;
 }
 
-.box {
-  border: 1px solid #3390ad;
-  border-radius: 33px;
-  padding: 27px;
-  text-align: center;
-}
+
 
 .register {
   display: flex;
   align-content: space-around;
   align-items: center;
   justify-content: center;
+  padding:1.5rem
 }
 
 .btn-register {
   padding: 0.85rem 11.81rem;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  margin-bottom: 9em;
+  /* margin-bottom: 9em; */
+  margin:3rem
 }
 .ilustration{
     max-width: 12rem;

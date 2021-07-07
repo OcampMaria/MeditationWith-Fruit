@@ -36,7 +36,7 @@ export default class Login extends Component {
       .post("/apis/users/login", submitObject)
       .then(
         function (data) {
-          console.log(data.data);
+       
           if (data.data.success) {
             this.props.authenticate();
             this.setState({
@@ -150,10 +150,11 @@ export default class Login extends Component {
             </div>
 
             <div className="input-group col-lg-12">
+              <Link to="/profile" className="register">
               <button type="submit" name="login" className="btn" value="Login">
-                <Link to="/profile"></Link>
-                Login
-              </button>
+                    SUBMIT
+                  </button>
+                </Link>
             </div>
           </form>
         </div>

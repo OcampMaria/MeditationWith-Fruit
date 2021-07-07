@@ -1,18 +1,15 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-
   // This is the entry point or start of our react applicaton
   entry: "./app/app.js",
 
   // The plain compiled JavaScript will be output into this file
   output: {
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, "public"),
     filename: "bundle.js",
-    publicPath: '/'
+    publicPath: "/",
   },
-
-
 
   // This section desribes the transformations we will perform
   module: {
@@ -26,22 +23,23 @@ module.exports = {
         loader: "babel-loader",
         options: {
           presets: ["@babel/preset-react", "@babel/preset-env"],
-          plugins: ["@babel/plugin-proposal-class-properties"]
-        }
+          plugins: ["@babel/plugin-proposal-class-properties"],
+        },
       },
-      {test: /\.css$/, loaders: ['style-loader', 'css-loader']},
-      {test: /\.(png|jpg|jpeg)$/, loader: 'url-loader'},
+      { test: /\.css$/, loaders: ["style-loader", "css-loader"] },
+      { test: /\.(png|jpg|jpeg)$/, loader: "url-loader" },
       //added file loader mp3 test after installing file loader in npm
-        {test: /\.mp3$/,
-        loader: 'file-loader',
+      {
+        test: /\.mp3$/,
+        loader: "file-loader",
         query: {
-          name: 'static/media/[name].[hash:8].[ext]'
-        }
+          name: "static/media/[name].[hash:8].[ext]",
+        },
       },
-    ]
+    ],
   },
   // This lets us debug our react code in chrome dev tools. Errors will have lines and file names
   // Without this the console says all errors are coming from just coming from bundle.js
   devtool: "eval-source-map",
-  mode: 'development'
+  mode: "development",
 };
