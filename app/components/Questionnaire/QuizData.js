@@ -90,7 +90,6 @@ export const Fruits = [
   //   score: 0,
   // },
 ];
-
 export const QuizData = [
   {
     id: 0,
@@ -101,9 +100,9 @@ export const QuizData = [
   },
   {
     id: 1,
-    question: `on a scale from 1-10, How familiar is this fruit to you?`,
+    question: `on a scale from 1-10, How familiar is this fruit to you? 0 (Not Familiar)-10 (Very Familiar)`,
     options: [
-      `0 (Not Familiar)`,
+      `0`,
       `1`,
       `3`,
       `4`,
@@ -112,18 +111,16 @@ export const QuizData = [
       `7`,
       `8`,
       `9`,
-      `10 (Very Familiar)`,
+      `10`,
     ],
     quizEnd: false,
     score: 0,
     disabled: true,
   },
 ];
-
 export const UserAnswers = [
   {
     fruitName: '', 
     score: 0
   }
-
 ];
