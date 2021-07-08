@@ -3,8 +3,9 @@ import Nav from "./children/Nav";
 import audio from "./audio/meditation.mp3";
 import logo from "./images/orange.png";
 import { Link } from "react-router-dom";
+import Footer from "./children/Footer";
 
-require("./main.css");
+// require("./main.css");
 require("./styles/AudioPlayer.css");
 
 const audioSrc = audio;
@@ -114,20 +115,18 @@ class AudioPlayer extends Component {
   render() {
     const { playing, progress, mute } = this.state;
     return (
-      <div>
+      <div className="container full-height-grow">
         <header className="main-header">
           <a href="" className="brand-logo">
-            
             <img className="logo-secondary" src={logo} alt="" />
           </a>
           <nav className="main-nav">
             <ul>
               <li className="nav-items secondary-nav">
-                <Link to={"/"}>Logout</Link>
-              </li>
-
-              <li className="nav-items secondary-nav">
                 <Link to={"/profile"}>Profile</Link>
+              </li>
+              <li className="nav-items secondary-nav">
+                <Link to={"/"}>Log Out</Link>
               </li>
             </ul>
           </nav>
@@ -179,6 +178,7 @@ class AudioPlayer extends Component {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

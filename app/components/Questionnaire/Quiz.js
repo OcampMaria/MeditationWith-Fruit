@@ -61,6 +61,7 @@ export default function Quiz() {
     }
   };
   const nextQuestionHander = () => {
+    console.log("clicked")
     savefruit();
     if (currentIndex === QuizData.length - 1) {
       setcurrentIndex(0);
