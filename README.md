@@ -41,4 +41,4 @@ If you have any additional questions, feel free to the one of our team members a
 Email: [mariaocampo0513@gmail.com]() [kasper.kuzmicki@yahoo.com]() [julianpluas@gmail.com]() [sethmiller79@gmail.com]()
 
 # Notes  
-If you would like to see the first stages of the application, please visit https://github.com/kwaspek104/5_Minutes_With_Fruit
+If you would like to see the first stages of the application, please visit [this account](https://github.com/kwaspek104/5_Minutes_With_Fruit).
