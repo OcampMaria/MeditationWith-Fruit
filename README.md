@@ -1,4 +1,4 @@
-# 5-minutes-with-fruit
+# Meditation With Fruit
 
 # Table of Contents
 

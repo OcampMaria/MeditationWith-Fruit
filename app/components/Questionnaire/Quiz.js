@@ -5,6 +5,7 @@ import { Fruits } from "./QuizData";
 import logo from "../images/orange.png";
 import { Link } from "react-router-dom";
 import Footer from "../children/Footer";
+import { log } from "debug";
 
 require("../main.css");
 require("../styles/quiz.css");
@@ -21,11 +22,28 @@ export default function Quiz() {
   const [fruit, setfruit] = useState("");
 
   //setting up localStorage
-  const drop = {
-    name: Fruits[fruitIndex].name,
-    score: userAnswer,
-  };
+
   const dropHistory = JSON.parse(localStorage.getItem("fruitItems")) || [];
+
+  //selecting fruit with highest score
+  const getHighestFruit = () => {
+    if (dropHistory == ![]) {
+      console.log("empty");
+    } else {
+      const max = Math.max.apply(
+        Math,
+        dropHistory.map((item) => {
+          return item.score;
+        })
+      );
+      console.log(max);
+
+      const found = dropHistory.filter((x) => x.score == max);
+
+      const foundFruit = found[0].name;
+      console.log(foundFruit);
+    }
+  };
 
   const loadQuiz = () => {
     if (
@@ -34,6 +52,8 @@ export default function Quiz() {
       fruitIndex === Fruits.length
     ) {
       setquizEnd(true);
+      savefruit();
+      getHighestFruit();
     } else {
       setquestion(QuizData[currentIndex].question);
       setoptions(QuizData[currentIndex].options);
@@ -41,14 +61,14 @@ export default function Quiz() {
     }
   };
 
-  //selecting fruit with highest score
-  const getHighestFruit = () => {
-    console.log(dropHistory);
-  };
-
   //save fruitItems to local storage if statement is true
   const savefruit = () => {
     if (QuizData[1].id === currentIndex) {
+      const drop = {
+        name: Fruits[fruitIndex].name,
+        score: userAnswer,
+      };
+
       //setting up localStorage
       dropHistory.push(drop);
       localStorage.setItem("fruitItems", JSON.stringify(dropHistory));
@@ -85,9 +105,13 @@ export default function Quiz() {
   const finishHandler = () => {
     if (currentIndex === Fruits.length - 2) {
       setquizEnd(true);
+      savefruit();
+      getHighestFruit();
     }
-    savefruit();
-    getHighestFruit();
+  };
+
+  const clearLocal = () => {
+    localStorage.clear();
   };
 
   //part of unique id for answer options
@@ -142,7 +166,7 @@ export default function Quiz() {
         </p>
 
         <Link to="/profile">
-          <button type="button" className="btn">
+          <button type="button" className="btn" onClick={clearLocal}>
             Done
           </button>
         </Link>
