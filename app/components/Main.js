@@ -41,7 +41,7 @@ export default class Main extends Component {
 
         <section className="home-main-section">
           <div className="call-to-action">
-            <h1 className="title">6 Minutes With Fruit</h1>
+            <h1 className="title">Meditation With Fruit</h1>
             <span className="subtitle">
               Use Psychology to Hack Your Stress Eating
             </span>
