@@ -42,7 +42,7 @@ export default function Quiz() {
       const found = dropHistory.filter((x) => x.score == max);
     
       const foundFruit = found[0].name;
-      console.log(foundFruit);
+      // console.log(foundFruit);
       setfruit(foundFruit)
     }
   };
