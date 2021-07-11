@@ -26,6 +26,7 @@ export default function Quiz() {
   const dropHistory = JSON.parse(localStorage.getItem("fruitItems")) || [];
 
   //selecting fruit with highest score
+  // Note: add if max === 0 return "empty" & if two fruits equal the max number ask extra question
   const getHighestFruit = () => {
     if (dropHistory == ![]) {
       console.log("empty");
@@ -36,12 +37,13 @@ export default function Quiz() {
           return item.score;
         })
       );
-      console.log(max);
+      // console.log(max);
 
       const found = dropHistory.filter((x) => x.score == max);
-
+    
       const foundFruit = found[0].name;
       console.log(foundFruit);
+      setfruit(foundFruit)
     }
   };
 
