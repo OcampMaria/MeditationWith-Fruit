@@ -134,18 +134,21 @@ class AudioPlayer extends Component {
         </header>
 
         <div className="player-container">
-         
           <div>
             <a href="" className="brand-logo">
               <img className="img-secondary" src={audioImg} alt="audioimg" />
             </a>
           </div>
-           {/* audio image end*/}
-          
-          
+          {/* audio image end*/}
+
           <div className="player-options">
-           
             <div className="progress-waveform-wrap">
+             
+               <div className="time player-time" >
+                <span className="current-time">{this.state.currentTime}</span>{" "}
+                <span className="duration">{this.state.duration}</span>
+              </div>
+
               <audio
                 ref={(audio) => {
                   this.audio = audio;
@@ -153,6 +156,7 @@ class AudioPlayer extends Component {
                 src={this.state.src}
                 preload="auto"
               />
+
               <div
                 className="player-progress-container"
                 onClick={(e) => this.setProgress(e)}
@@ -163,11 +167,18 @@ class AudioPlayer extends Component {
                 />
               </div>
             </div>
-            <div className="player-buttons player-controls">
-              <div className="player-time">
+            {/* <div className="player-buttons player-controls"> */}
+              {/* <div className="player-time">
                 <span className="current-time">{this.state.currentTime}</span> /{" "}
                 <span className="duration">{this.state.duration}</span>
               </div>
+
+              <div className="time player-time" >
+                <span className="current-time">{this.state.currentTime}</span>{" "}
+                <span className="duration">{this.state.duration}</span>
+              </div> */}
+              {/* current Time ends */}
+
               {/* <div className="player-buttons">
                 <button
                   className="player-btn player-btn-mute"
@@ -179,18 +190,18 @@ class AudioPlayer extends Component {
                   />
                 </button>
               </div> */}
-            </div>
+            {/* </div> */}
           </div>
 
           <div>
-           <button
+            <button
               onClick={this.toggle}
               className="player-btn big"
               title="Play/Pause"
             >
               <i className={playing ? "fa fa-pause" : "fa fa-play"} />
             </button>
-           </div>
+          </div>
         </div>
         <Footer />
       </div>
