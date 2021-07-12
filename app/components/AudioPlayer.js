@@ -116,94 +116,72 @@ class AudioPlayer extends Component {
   render() {
     const { playing, progress, mute } = this.state;
     return (
-      <div className="container full-height-grow">
-        <header className="main-header">
-          <a href="" className="brand-logo">
-            <img className="logo-secondary" src={logo} alt="" />
-          </a>
-          <nav className="main-nav">
-            <ul>
-              <li className="nav-items secondary-nav">
-                <Link to={"/profile"}>Profile</Link>
-              </li>
-              <li className="nav-items secondary-nav">
-                <Link to={"/"}>Log Out</Link>
-              </li>
-            </ul>
-          </nav>
-        </header>
-
-        <div className="player-container">
-          <div>
+      <div>
+        <Nav />
+        <div className=" full-height-grow">
+          {/* <header className="main-header">
             <a href="" className="brand-logo">
-              <img className="img-secondary" src={audioImg} alt="audioimg" />
+              <img className="logo-secondary" src={logo} alt="" />
             </a>
-          </div>
-          {/* audio image end*/}
+            <nav className="main-nav">
+              <ul>
+                <li className="nav-items secondary-nav">
+                  <Link to={"/profile"}>Profile</Link>
+                </li>
+                <li className="nav-items secondary-nav">
+                  <Link to={"/"}>Log Out</Link>
+                </li>
+              </ul>
+            </nav>
+          </header> */}
 
-          <div className="player-options">
-            <div className="progress-waveform-wrap">
-             
-               <div className="time player-time" >
-                <span className="current-time">{this.state.currentTime}</span>{" "}
-                <span className="duration">{this.state.duration}</span>
-              </div>
+          <div className="player-container">
+            <div>
+              <a href="" className="brand-logo">
+                <img className="img-secondary" src={audioImg} alt="audioimg" />
+              </a>
+            </div>
+            {/* audio image end*/}
 
-              <audio
-                ref={(audio) => {
-                  this.audio = audio;
-                }}
-                src={this.state.src}
-                preload="auto"
-              />
+            <div className="player-options">
+              <div className="progress-waveform-wrap">
+                <div className="time player-time">
+                  <span className="current-time">{this.state.currentTime}</span>{" "}
+                  <span className="duration">{this.state.duration}</span>
+                </div>
 
-              <div
-                className="player-progress-container"
-                onClick={(e) => this.setProgress(e)}
-              >
-                <span
-                  className="player-progress-value"
-                  style={{ width: progress + "%" }}
+                <audio
+                  ref={(audio) => {
+                    this.audio = audio;
+                  }}
+                  src={this.state.src}
+                  preload="auto"
                 />
+
+                <div
+                  className="player-progress-container"
+                  onClick={(e) => this.setProgress(e)}
+                >
+                  <span
+                    className="player-progress-value"
+                    style={{ width: progress + "%" }}
+                  />
+                </div>
               </div>
             </div>
-            {/* <div className="player-buttons player-controls"> */}
-              {/* <div className="player-time">
-                <span className="current-time">{this.state.currentTime}</span> /{" "}
-                <span className="duration">{this.state.duration}</span>
-              </div>
 
-              <div className="time player-time" >
-                <span className="current-time">{this.state.currentTime}</span>{" "}
-                <span className="duration">{this.state.duration}</span>
-              </div> */}
-              {/* current Time ends */}
-
-              {/* <div className="player-buttons">
-                <button
-                  className="player-btn player-btn-mute"
-                  title="Mute/Unmute"
-                  onClick={this.toggleMute}
-                >
-                  <i
-                    className={mute ? "fa fa-volume-off" : "fa fa-volume-up"}
-                  />
-                </button>
-              </div> */}
-            {/* </div> */}
+            <div>
+              <button
+                onClick={this.toggle}
+                className="player-btn big"
+                title="Play/Pause"
+              >
+                <i className={playing ? "fa fa-pause" : "fa fa-play"} />
+              </button>
+            </div>
           </div>
-
-          <div>
-            <button
-              onClick={this.toggle}
-              className="player-btn big"
-              title="Play/Pause"
-            >
-              <i className={playing ? "fa fa-pause" : "fa fa-play"} />
-            </button>
-          </div>
+          <Footer />
         </div>
-        <Footer />
       </div>
     );
   }

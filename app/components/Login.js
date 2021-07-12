@@ -4,7 +4,7 @@ import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import logo from "./images/orange.png";
 import Footer from "./children/Footer";
-// import Nav from "./children/Nav";
+import Nav from "./children/Nav";
 
 require("./styles/login.css");
 // require("./main.css");
@@ -83,14 +83,14 @@ export default class Login extends Component {
     }
 
     return (
-      <div className="container full-height-grow">
-        {/* <Nav
+      <div className=" full-height-grow">
+        <Nav
           authenticated={this.props.authenticated}
           authenticate={this.props.authenticate}
           deAuthenticate={this.props.deAuthenticate}
           logout={this.props.logout}
-        /> */}
-        <header className="main-header">
+        />
+        {/* <header className="main-header">
           <a href="" className="brand-logo">
             <img className="logo-secondary" src={logo} alt="" />
           </a>
@@ -104,7 +104,7 @@ export default class Login extends Component {
               </li>
             </ul>
           </nav>
-        </header>
+        </header> */}
         <div className="join-main-section">
           <h1 className="join-text">
             Welcome!

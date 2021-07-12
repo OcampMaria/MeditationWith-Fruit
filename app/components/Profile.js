@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import Nav from "./children/Nav";
 import logo from "./images/orange.png";
 import { Link } from "react-router-dom";
@@ -9,12 +9,12 @@ import img1 from "./images/fruits.jpg";
 require("./styles/profile.css");
 
 // Creating the Main component
-export default class Main extends Component {
-  render() {
+export default function Profile() {
+
     return (
       <div>
         <Nav />
-        <div className="container full-height-grow">
+        <div className=" full-height-grow">
           <section className="profile-section">
             <div className="max-with">
               <div className="session">
@@ -77,5 +77,5 @@ export default class Main extends Component {
         </div>
       </div>
     );
-  }
+  
 }

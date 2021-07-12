@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
 // import Auth from "./utils/Auth";
-// import Nav from './children/Nav'
+import Nav from './children/Nav'
 import logo from "./images/orange.png";
 import Footer from "./children/Footer";
 
@@ -57,7 +57,8 @@ export default class Signup extends Component {
       password: passwordVal,
     });
 
-    const passwordRegEx = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,}$/;
+    const passwordRegEx =
+      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,}$/;
     if (!passwordRegEx.test(passwordVal)) {
       passwordForm.classList.remove("has-success");
       passwordForm.classList.add("has-error");
@@ -152,7 +153,6 @@ export default class Signup extends Component {
       })
       .then(
         function (data) {
-         
           if (data.duplicateUser) {
             // Replace with Modal
             alert("Sorry, that username has been taken");
@@ -209,159 +209,159 @@ export default class Signup extends Component {
     }
 
     return (
-      <div className="full-height-grow container">
-        {/* <Nav
+      <div>
+        <Nav />
+        <div className="full-height-grow ">
+          {/* <Nav
 				authenticated={this.props.authenticated}
 				authenticate={this.props.authenticate}
 				deAuthenticate={this.props.deAuthenticate}
 				logout={this.props.logout}
 			/> */}
-        <header className="main-header">
-          <a href="" className="brand-logo">
-            <img className="logo-secondary" src={logo} alt="" />
-          </a>
-          <nav className="main-nav">
-            <ul>
-              <li className="nav-items secondary-nav">
-                <Link to={"/"}>Homepage</Link>
-              </li>
-              <li className="nav-items secondary-nav">
-                <Link to={"/login"}>Log In</Link>
-              </li>
-            </ul>
-          </nav>
-        </header>
 
-        <section className="join-main-section register">
-          <h1 className="join-text">
-            Join For 6 Minutes of
-            <span className="accent-text"> Relaxation.</span>
-          </h1>
+          {/* <header className="main-header">
+            <a href="" className="brand-logo">
+              <img className="logo-secondary" src={logo} alt="" />
+            </a>
+            <nav className="main-nav">
+              <ul>
+                <li className="nav-items secondary-nav">
+                  <Link to={"/"}>Homepage</Link>
+                </li>
+                <li className="nav-items secondary-nav">
+                  <Link to={"/login"}>Log In</Link>
+                </li>
+              </ul>
+            </nav>
+          </header> */}
 
-          <form className="join-form" onSubmit={this.handleSubmit.bind(this)}>
-            <h3 className="registration-title"> - REGISTRATION -</h3>
+          <section className="join-main-section register">
+            <h1 className="join-text">
+              Join For 6 Minutes of
+              <span className="accent-text"> Relaxation.</span>
+            </h1>
 
-            <div
-              id="username-form"
-              ref="usernameForm"
-              className="form-group col-lg-12"
-            >
-              <label>Username</label>
-              <input
-                type=""
-                name=""
-                ref="username"
-                className="form-control"
-                id="username-input"
-                value={this.state.username}
-                onChange={this.handleUsernameValidation}
-              />
-              <small
-                id="username-feedback"
-                ref="usernameFeedback"
-              
-              ></small>
-            </div>
+            <form className="join-form" onSubmit={this.handleSubmit.bind(this)}>
+              <h3 className="registration-title"> - REGISTRATION -</h3>
 
-            <div
-              id="password-form"
-              className="form-group col-lg-12"
-              ref="passwordForm"
-            >
-              <label>Password</label>
-              <input
-                type="password"
-                name=""
-                ref="password"
-                className="form-control"
-                id="password-input"
-                value={this.state.password}
-                onChange={this.handlePasswordValidation}
-              />
-              <small
-                id="password-feedback"
-                ref="passwordFeedback"
-                className=""
-              ></small>
-            </div>
+              <div
+                id="username-form"
+                ref="usernameForm"
+                className="form-group col-lg-12"
+              >
+                <label>Username</label>
+                <input
+                  type=""
+                  name=""
+                  ref="username"
+                  className="form-control"
+                  id="username-input"
+                  value={this.state.username}
+                  onChange={this.handleUsernameValidation}
+                />
+                <small id="username-feedback" ref="usernameFeedback"></small>
+              </div>
 
-            <div
-              id="repeat-password-form"
-              className="form-group col-lg-12"
-              ref="repeatPasswordForm"
-            >
-              <label>Repeat Password</label>
-              <input
-                type="password"
-                name=""
-                ref="repeatPassword"
-                className="form-control"
-                id="repeat-password-input"
-                value={this.state.passwordRepeat}
-                onChange={this.handlePasswordRepeat}
-              />
-              <small
-                id="repeat-password-feedback"
-                className=""
-                ref="repeatPasswordFeedback"
-              ></small>
-            </div>
+              <div
+                id="password-form"
+                className="form-group col-lg-12"
+                ref="passwordForm"
+              >
+                <label>Password</label>
+                <input
+                  type="password"
+                  name=""
+                  ref="password"
+                  className="form-control"
+                  id="password-input"
+                  value={this.state.password}
+                  onChange={this.handlePasswordValidation}
+                />
+                <small
+                  id="password-feedback"
+                  ref="passwordFeedback"
+                  className=""
+                ></small>
+              </div>
 
-            <div
-              id="email-form"
-              className="form-group col-lg-12"
-              ref="emailForm"
-            >
-              <label>Email Address</label>
-              <input
-                type="email"
-                name=""
-                ref="email"
-                className="form-control"
-                id="email-input"
-                value={this.state.email}
-                onChange={this.handleEmailValidation}
-              />
+              <div
+                id="repeat-password-form"
+                className="form-group col-lg-12"
+                ref="repeatPasswordForm"
+              >
+                <label>Repeat Password</label>
+                <input
+                  type="password"
+                  name=""
+                  ref="repeatPassword"
+                  className="form-control"
+                  id="repeat-password-input"
+                  value={this.state.passwordRepeat}
+                  onChange={this.handlePasswordRepeat}
+                />
+                <small
+                  id="repeat-password-feedback"
+                  className=""
+                  ref="repeatPasswordFeedback"
+                ></small>
+              </div>
 
-              <p id="email-feedback" className="" ref="emailFeedback"></p>
-              <small
-                id="email-additional-feedback"
-                ref="emailAdditionalFeedback"
-                className="form-text text-muted"
-              ></small>
-            </div>
+              <div
+                id="email-form"
+                className="form-group col-lg-12"
+                ref="emailForm"
+              >
+                <label>Email Address</label>
+                <input
+                  type="email"
+                  name=""
+                  ref="email"
+                  className="form-control"
+                  id="email-input"
+                  value={this.state.email}
+                  onChange={this.handleEmailValidation}
+                />
 
-            <div
-              id="email-repeat-form"
-              className="form-group col-lg-12"
-              ref="emailRepeatForm"
-            >
-              <label>Repeat Email Address</label>
-              <input
-                type="email"
-                name=""
-                ref="emailRepeat"
-                className="form-control"
-                id="repeat-email-input"
-                value={this.state.emailRepeat}
-                onChange={this.handleEmailRepeat}
-              />
-              <small
-                id="email-repeat-feedback"
-                className=""
-                ref="emailRepeatFeedback"
-              ></small>
-            </div>
+                <p id="email-feedback" className="" ref="emailFeedback"></p>
+                <small
+                  id="email-additional-feedback"
+                  ref="emailAdditionalFeedback"
+                  className="form-text text-muted"
+                ></small>
+              </div>
 
-            <div className="input-group col-lg-12 ">
-              <button type="submit" className="btn ">
-                <Link to="/login"></Link>
-                Join Now
-              </button>
-            </div>
-          </form>
-        </section>
-        <Footer />
+              <div
+                id="email-repeat-form"
+                className="form-group col-lg-12"
+                ref="emailRepeatForm"
+              >
+                <label>Repeat Email Address</label>
+                <input
+                  type="email"
+                  name=""
+                  ref="emailRepeat"
+                  className="form-control"
+                  id="repeat-email-input"
+                  value={this.state.emailRepeat}
+                  onChange={this.handleEmailRepeat}
+                />
+                <small
+                  id="email-repeat-feedback"
+                  className=""
+                  ref="emailRepeatFeedback"
+                ></small>
+              </div>
+
+              <div className="input-group col-lg-12 ">
+                <button type="submit" className="btn ">
+                  <Link to="/login"></Link>
+                  Join Now
+                </button>
+              </div>
+            </form>
+          </section>
+          <Footer />
+        </div>
       </div>
     );
   }

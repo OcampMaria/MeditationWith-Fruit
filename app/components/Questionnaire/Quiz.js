@@ -6,6 +6,7 @@ import logo from "../images/orange.png";
 import { Link } from "react-router-dom";
 import Footer from "../children/Footer";
 import { log } from "debug";
+import Nav from "../children/Nav";
 
 require("../main.css");
 require("../styles/quiz.css");
@@ -143,8 +144,10 @@ export default function Quiz() {
 
   if (quizEnd) {
     return (
-      <div className="container full-height-grow">
-        <header className="main-header">
+      <div>
+         <Nav/>
+        <div className="container full-height-grow">
+        {/* <header className="main-header">
           <a href="" className="brand-logo">
             <img className="logo-secondary" src={logo} alt="" />
           </a>
@@ -158,7 +161,7 @@ export default function Quiz() {
               </li>
             </ul>
           </nav>
-        </header>
+        </header> */}
         <h2>
           Based on your responses, the fruit that will be most effective for
           this program is {fruit}.
@@ -175,12 +178,16 @@ export default function Quiz() {
         </Link>
         <Footer />
       </div>
+      </div>
+      
     );
   }
 
   return (
-    <div className="container full-height-grow">
-      <header className="main-header">
+    <div>
+      <Nav />
+      <div className="container full-height-grow">
+      {/* <header className="main-header">
         <a href="" className="brand-logo">
           <img className="logo-secondary" src={logo} alt="" />
         </a>
@@ -194,7 +201,7 @@ export default function Quiz() {
             </li>
           </ul>
         </nav>
-      </header>
+      </header> */}
 
       <h1>{fruit}</h1>
       <h2>{question}</h2>
@@ -241,7 +248,9 @@ export default function Quiz() {
             Finish
           </button>
         )}
-      {/* <Footer /> */}
+      <Footer />
     </div>
+    </div>
+    
   );
 }

@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-// import Nav from "./children/Nav";
+import React, { useEffect, useState } from "react";
 // import Footer from "./children/Footer";
 import logo from "./images/orange.png";
 import { Link } from "react-router-dom";
@@ -8,16 +7,11 @@ import { Helmet } from "react-helmet";
 require("./main.css");
 
 // Creating the Main component
-export default class Main extends Component {
-  render() {
+export default function Main({props}) {
+
     return (
       <div className="container full-height-grow">
-        {/* <Nav
-          authenticated={this.props.authenticated}
-          authenticate={this.props.authenticate}
-          deAuthenticate={this.props.deAuthenticate}
-          logout={this.props.logout}
-        /> */}
+       
 
         <Helmet>
           <style>{"body { background-color: rgba(131, 166, 186, 1); }"}</style>
@@ -67,5 +61,5 @@ export default class Main extends Component {
         
       </div>
     );
-  }
+  
 }
