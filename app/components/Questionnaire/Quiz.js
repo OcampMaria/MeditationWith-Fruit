@@ -29,7 +29,8 @@ export default function Quiz() {
   // Note: add if max === 0 return "empty" & if two fruits equal the max number ask extra question
   const getHighestFruit = () => {
     if (dropHistory == ![]) {
-      console.log("empty");
+      // console.log("empty");
+      setfruit("")
     } else {
       const max = Math.max.apply(
         Math,
@@ -186,7 +187,7 @@ export default function Quiz() {
         <nav className="main-nav">
           <ul>
             <li className="nav-items secondary-nav">
-              <Link to={"/profile"}>Profile</Link>
+              <Link to={"/profile"} >Profile</Link>
             </li>
             <li className="nav-items secondary-nav">
               <Link to={"/"}>Log Out</Link>

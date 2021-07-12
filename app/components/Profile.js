@@ -61,7 +61,7 @@ export default class Main extends Component {
                 </div>
               </div>
 
-              <div className="one">
+              {/* <div className="one">
                 <div className="card">
                   <div className="box">
                     <p className="text">kkk</p>
@@ -72,9 +72,9 @@ export default class Main extends Component {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
-              <div className="one">
+              {/* <div className="one">
                 <div className="card">
                   <div className="box">
                     <p className="text">kkk</p>
@@ -85,7 +85,7 @@ export default class Main extends Component {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>

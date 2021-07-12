@@ -4,6 +4,7 @@ import audio from "./audio/meditation.mp3";
 import logo from "./images/orange.png";
 import { Link } from "react-router-dom";
 import Footer from "./children/Footer";
+import audioImg from "./images/Audio1.png";
 
 // require("./main.css");
 require("./styles/AudioPlayer.css");
@@ -132,7 +133,14 @@ class AudioPlayer extends Component {
           </nav>
         </header>
 
+       
+
         <div className="player-container">
+        <div>
+        <a href="" className="brand-logo">
+            <img className="img-secondary" src={audioImg} alt="audioimg" />
+          </a>
+        </div>
           <div className="player-options">
             <button
               onClick={this.toggle}

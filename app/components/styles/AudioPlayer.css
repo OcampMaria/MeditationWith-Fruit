@@ -1,9 +1,20 @@
 /* Player */
+
+
+.img-secondary{
+  max-width: 16rem;
+}
+
+
+
+
 .player-container {
+  display: flex;
+  align-items:center;
+  flex-direction:column;
   margin: 15rem auto;
   width: 500px;
   overflow: hidden;
-  box-shadow: 0 10px 20px rgba(138, 198, 212, 0.701);
 }
 
 .player-progress-container {
