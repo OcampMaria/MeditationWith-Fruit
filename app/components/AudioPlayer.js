@@ -133,22 +133,18 @@ class AudioPlayer extends Component {
           </nav>
         </header>
 
-       
-
         <div className="player-container">
-        <div>
-        <a href="" className="brand-logo">
-            <img className="img-secondary" src={audioImg} alt="audioimg" />
-          </a>
-        </div>
+         
+          <div>
+            <a href="" className="brand-logo">
+              <img className="img-secondary" src={audioImg} alt="audioimg" />
+            </a>
+          </div>
+           {/* audio image end*/}
+          
+          
           <div className="player-options">
-            <button
-              onClick={this.toggle}
-              className="player-btn big"
-              title="Play/Pause"
-            >
-              <i className={playing ? "fa fa-pause" : "fa fa-play"} />
-            </button>
+           
             <div className="progress-waveform-wrap">
               <audio
                 ref={(audio) => {
@@ -172,7 +168,7 @@ class AudioPlayer extends Component {
                 <span className="current-time">{this.state.currentTime}</span> /{" "}
                 <span className="duration">{this.state.duration}</span>
               </div>
-              <div className="player-buttons">
+              {/* <div className="player-buttons">
                 <button
                   className="player-btn player-btn-mute"
                   title="Mute/Unmute"
@@ -182,9 +178,19 @@ class AudioPlayer extends Component {
                     className={mute ? "fa fa-volume-off" : "fa fa-volume-up"}
                   />
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
+
+          <div>
+           <button
+              onClick={this.toggle}
+              className="player-btn big"
+              title="Play/Pause"
+            >
+              <i className={playing ? "fa fa-pause" : "fa fa-play"} />
+            </button>
+           </div>
         </div>
         <Footer />
       </div>
