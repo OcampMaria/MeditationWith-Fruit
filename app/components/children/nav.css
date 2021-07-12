@@ -1,4 +1,8 @@
-
+.main-header{
+  background-color: rgba(131, 166, 186, 1);
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
 .navbar-brand {
   padding: 0;
   padding-top: 10px;
