@@ -1,8 +1,15 @@
 .nav-items {
   color: white;
+  padding: 2rem;
+  font-size: 1.4em;
+  overflow-y: auto;
+}
+
+.nav-items-main {
+  color: white;
   border-top: solid 1px;
   border-bottom: solid 1px;
-  border-color:rgba(51, 144, 173, 1);
+  border-color: rgba(51, 144, 173, 1);
   padding: 2rem;
   font-size: 1.4em;
 }

@@ -4,7 +4,7 @@ import audio from "./audio/meditation.mp3";
 import logo from "./images/orange.png";
 import { Link } from "react-router-dom";
 import Footer from "./children/Footer";
-import audioImg from "./images/Audio1.png";
+import audioImg from "./images/audio2.png";
 
 // require("./main.css");
 require("./styles/AudioPlayer.css");
@@ -114,7 +114,7 @@ class AudioPlayer extends Component {
   }
 
   render() {
-    const { playing, progress, mute } = this.state;
+    const { playing, progress } = this.state;
     return (
       <div>
         <Nav />
@@ -170,14 +170,61 @@ class AudioPlayer extends Component {
               </div>
             </div>
 
-            <div>
-              <button
-                onClick={this.toggle}
-                className="player-btn big"
-                title="Play/Pause"
-              >
-                <i className={playing ? "fa fa-pause" : "fa fa-play"} />
-              </button>
+            <div className="forms">
+              <div className="player-btns">
+                <button className="back">
+                  <i className="glyphicon glyphicon-backward" />
+                </button>
+                <button
+                  onClick={this.toggle}
+                  className="player-btn big"
+                  title="Play/Pause"
+                >
+                  <i
+                    className={
+                      playing
+                        ? "glyphicon glyphicon-pause"
+                        : "glyphicon glyphicon-play-circle"
+                    }
+                  />
+                </button>
+                <button className="back">
+                  <i className="glyphicon glyphicon-forward" />
+                </button>
+              </div>
+
+              <div className="forms">
+                <form
+
+                // onSubmit={this.handleSubmit}
+                >
+                  <div id="location-form" ref="locationform">
+                    <input
+                      id="location-input"
+                      className="form"
+                      ref="user"
+                      type="text"
+                      name="location"
+                      placeholder="Please Enter Location:"
+
+                      // onChange={this.handleUsernameChange}
+                      // value={this.state.username}
+                    />
+                  </div>
+                </form>
+                <div>
+                  <Link to="/profile">
+                    <button
+                      type="submit"
+                      name="login"
+                      className="btn btn-location"
+                      value="Login"
+                    >
+                      NEXT
+                    </button>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
           <Footer />

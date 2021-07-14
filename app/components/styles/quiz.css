@@ -7,14 +7,48 @@
     background-color: orange;
 }
 /* The list of options */
-.options {
-    padding: 8px;
+.options{
+    padding: .5rem 1rem;
     border: 2px solid #000;
-    cursor: pointer;
+    cursor: pointer; 
+   
 }
+
+.btn{
+    max-width: 32rem;
+}
+
 ul {
     list-style-type: none;
 }
+
+.fruit-selection{
+    max-width: 60rem;
+    margin: 16rem auto;
+    border-radius: 2rem;
+    padding: 3rem;
+    background: rgba(206, 228, 235, 1);
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+ 
+.quiz-container {
+    display: flex;
+    justify-content:space-evenly;
+    flex-direction:row;
+}
+
+.quiz-main-container {
+    margin: 0 auto;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 /* 
 body{
     font-family: Verdana;

@@ -1,7 +1,18 @@
 .main-header{
+  display: flex;
+  /* flex-direction: row-reverse; */
+  justify-content: space-between;
+  align-items: center;
+  height: 140px;
+}
+.header-secondary{
   background-color: rgba(131, 166, 186, 1);
   padding-right: 1rem;
   padding-left: 1rem;
+}
+
+.navbar{
+  padding-bottom: 0;
 }
 .navbar-brand {
   padding: 0;
@@ -85,6 +96,10 @@
 
 .navigation-icons {
   height: 34px;
+}
+
+.navbar-nav>li {
+  padding-right: 0;
 }
 /* 
 @media (max-width: 768px) {

@@ -23,10 +23,10 @@ export default function Main({props}) {
           </a>
           <nav className="main-nav">
             <ul>
-              <li className="nav-items">
+              <li className="nav-items-main">
                 <Link to={"/about"}>About</Link>
               </li>
-              <li className="nav-items">
+              <li className="nav-items-main">
                 <Link to={"/login"}>Log In</Link>
               </li>
             </ul>

@@ -31,7 +31,7 @@ export default function Quiz() {
   const getHighestFruit = () => {
     if (dropHistory == ![]) {
       // console.log("empty");
-      setfruit("")
+      setfruit("");
     } else {
       const max = Math.max.apply(
         Math,
@@ -42,10 +42,10 @@ export default function Quiz() {
       // console.log(max);
 
       const found = dropHistory.filter((x) => x.score == max);
-    
+
       const foundFruit = found[0].name;
       // console.log(foundFruit);
-      setfruit(foundFruit)
+      setfruit(foundFruit);
     }
   };
 
@@ -145,112 +145,91 @@ export default function Quiz() {
   if (quizEnd) {
     return (
       <div>
-         <Nav/>
-        <div className="container full-height-grow">
-        {/* <header className="main-header">
-          <a href="" className="brand-logo">
-            <img className="logo-secondary" src={logo} alt="" />
-          </a>
-          <nav className="main-nav">
-            <ul>
-              <li className="nav-items secondary-nav">
-                <Link to={"/"}>Home</Link>
-              </li>
-              <li className="nav-items secondary-nav">
-                <Link to={"/login"}>Log In</Link>
-              </li>
-            </ul>
-          </nav>
-        </header> */}
-        <h2>
-          Based on your responses, the fruit that will be most effective for
-          this program is {fruit}.
-        </h2>
-        <p>
-          Your first step is to go to the store and buy 7 servings of that fruit
-          so you’ll be ready to eat this week!
-        </p>
+        <Nav />
+        {/* Home, Logout */}
+        <div className="full-height-grow fruit-selection">
+          <h2>
+            Based on your responses, the fruit that will be most effective for
+            this program is {fruit}.
+          </h2>
+          <p>
+            Your first step is to go to the store and buy 7 servings of that
+            fruit so you’ll be ready to eat this week!
+          </p>
 
-        <Link to="/profile">
-          <button type="button" className="btn" onClick={clearLocal}>
-            Done
-          </button>
-        </Link>
-        <Footer />
+          <Link to="/profile">
+            <button type="button" className="btn" onClick={clearLocal}>
+              Done
+            </button>
+          </Link>
+          <Footer />
+        </div>
       </div>
-      </div>
-      
     );
   }
 
   return (
     <div>
       <Nav />
-      <div className="container full-height-grow">
-      {/* <header className="main-header">
-        <a href="" className="brand-logo">
-          <img className="logo-secondary" src={logo} alt="" />
-        </a>
-        <nav className="main-nav">
-          <ul>
-            <li className="nav-items secondary-nav">
-              <Link to={"/profile"} >Profile</Link>
-            </li>
-            <li className="nav-items secondary-nav">
-              <Link to={"/"}>Log Out</Link>
-            </li>
-          </ul>
-        </nav>
-      </header> */}
-
-      <h1>{fruit}</h1>
-      <h2>{question}</h2>
-
+      {/* profile, logout */}
+      <div className=" quiz-main-container">
       <span>{`Question ${fruitIndex + 1} of ${Fruits.length}`}</span>
-      {options.map((option) => (
-        <p
-          key={option + numbers}
-          className={`ui floating message options
+        {options.map((option) => (
+          <p
+            key={option + numbers}
+            className={`
+            ${userAnswer === option ? "" : null}
+            `}
+          ></p>
+        ))}
+        <h1>{fruit}</h1>
+        <h2>{question}</h2>
+       
+        <div className="container quiz-container full-height-grow">
+          {options.map((option) => (
+            <p
+              key={option + numbers}
+              className={`ui floating message options
             ${userAnswer === option ? "selected" : null}
             `}
-          onClick={() => checkAnswer(option)}
-        >
-          {option}
-        </p>
-      ))}
-      {fruitIndex < Fruits.length - 1 && (
-        <button
-          className="ui inverted button"
-          disabled={disabled}
-          onClick={nextQuestionHander}
-        >
-          Next Question
-        </button>
-      )}
-      {fruitIndex === Fruits.length - 1 &&
-        currentIndex === QuizData.length - 2 && (
+              onClick={() => checkAnswer(option)}
+            >
+              {option}
+            </p>
+          ))}
+        </div>
+        {fruitIndex < Fruits.length - 1 && (
           <button
-            className="ui inverted button"
+            className="btn quiz-btn"
             disabled={disabled}
             onClick={nextQuestionHander}
           >
             Next Question
           </button>
         )}
+        {fruitIndex === Fruits.length - 1 &&
+          currentIndex === QuizData.length - 2 && (
+            <button
+              className="btn quiz-btn"
+              disabled={disabled}
+              onClick={nextQuestionHander}
+            >
+              Next Question
+            </button>
+          )}
 
-      {fruitIndex === Fruits.length - 1 &&
-        currentIndex === QuizData.length - 1 && (
-          <button
-            className="ui inverted button"
-            disabled={disabled}
-            onClick={finishHandler}
-          >
-            Finish
-          </button>
-        )}
+        {fruitIndex === Fruits.length - 1 &&
+          currentIndex === QuizData.length - 1 && (
+            <button
+              className="btn quiz-btn"
+              disabled={disabled}
+              onClick={finishHandler}
+            >
+              Finish
+            </button>
+          )}
+      </div>
       <Footer />
     </div>
-    </div>
-    
   );
 }

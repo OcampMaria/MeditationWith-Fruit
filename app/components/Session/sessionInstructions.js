@@ -3,6 +3,7 @@ import logo from "../images/orange.png";
 import { slideData } from "./sessionSlides";
 import { Link } from "react-router-dom";
 import Footer from "../children/Footer";
+import Nav from "../children/Nav"
 
 
 // require("./main.css");
@@ -28,8 +29,10 @@ export default function Instructions(props) {
   });
 
   return (
-    <div className="container full-height-grow">
-      <header className="main-header">
+    <div>
+      <Nav/>
+      <div className="container full-height-grow">
+      {/* <header className="main-header">
         <a href="" className="brand-logo">
           <img className="logo-secondary" src={logo} alt="" />
         </a>
@@ -44,7 +47,7 @@ export default function Instructions(props) {
             </li>
           </ul>
         </nav>
-      </header>
+      </header> */}
 
       <section className="intro-section">
         <div className="max-with">
@@ -96,5 +99,7 @@ export default function Instructions(props) {
 
       <Footer />
     </div>
+    </div>
+    
   );
 }

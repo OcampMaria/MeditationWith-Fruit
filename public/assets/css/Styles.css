@@ -29,7 +29,7 @@ body {
   font-size: 1.25rem;
   color: inherit;
   text-decoration: none;
-  padding:1rem
+  padding:1.5rem
 }
 
 .logo {
@@ -69,12 +69,12 @@ body {
   color: rgb(17, 132, 167);
 }
 
-.main-header {
+.header-secondary {
   display: flex;
-  /* flex-direction: row-reverse; */
+
   justify-content: space-between;
   align-items: center;
-  height: 140px;
+
 }
 
 .container {
