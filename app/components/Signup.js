@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
 // import Auth from "./utils/Auth";
-import Nav from './children/Nav'
+import Nav from "./children/Nav";
 import logo from "./images/orange.png";
 import Footer from "./children/Footer";
 
@@ -354,9 +354,22 @@ export default class Signup extends Component {
 
               <div className="input-group col-lg-12 ">
                 <button type="submit" className="btn ">
-                  <Link to="/login"></Link>
+                  <Link className="register" to="/login"></Link>
                   Join Now
                 </button>
+              </div>
+
+              <div className="input-group col-lg-12">
+                <Link to="/login" className="register">
+                  <button
+                    type="submit"
+                    name="login"
+                    className="btn"
+                    value="Login"
+                  >
+                    Join Now
+                  </button>
+                </Link>
               </div>
             </form>
           </section>
