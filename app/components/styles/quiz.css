@@ -4,15 +4,22 @@
 } */
 /* The answer selecteed by the user */
 .selected {
-    background-color: orange;
+    background-color: #83a6ba;
+}
+
+.question{
+    text-align: center;
 }
 /* The list of options */
 .options{
-    padding: .5rem 1rem;
+    padding: 1rem;
+    margin: 1rem;
+    min-width: 7rem;
+    text-align: center;
     border: 2px solid #000;
-    cursor: pointer; 
-   
+    cursor: pointer;
 }
+
 
 .btn{
     max-width: 32rem;
@@ -35,7 +42,7 @@ ul {
  
 .quiz-container {
     display: flex;
-    justify-content:space-evenly;
+    justify-content:center;
     flex-direction:row;
 }
 

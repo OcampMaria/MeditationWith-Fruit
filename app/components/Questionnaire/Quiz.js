@@ -183,7 +183,7 @@ export default function Quiz() {
           ></p>
         ))}
         <h1>{fruit}</h1>
-        <h2>{question}</h2>
+        <h2 className="question">{question}</h2>
        
         <div className="container quiz-container full-height-grow">
           {options.map((option) => (
