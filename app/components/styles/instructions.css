@@ -56,8 +56,8 @@
   padding: 0.85rem 11.81rem;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  /* margin-bottom: 9em; */
-  margin:3rem
+  margin:3rem;
+  font-size:20px
 }
 .ilustration{
     max-width: 12rem;
