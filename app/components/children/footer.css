@@ -83,3 +83,12 @@ a:hover {
   }
  
 }
+
+@media (max-width: 670px) {
+  .footer-container{
+   
+    justify-content: center;
+  
+  }
+ 
+}
