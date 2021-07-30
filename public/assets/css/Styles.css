@@ -29,7 +29,7 @@ body {
   font-size: 1.25rem;
   color: inherit;
   text-decoration: none;
-  padding:1rem
+  padding:1.5rem
 }
 
 .logo {
@@ -38,8 +38,8 @@ body {
 }
 
 .logo-secondary {
-    
   max-width: 8rem;
+  /* margin-left: 2rem; */
 }
 
 
@@ -69,19 +69,30 @@ body {
   color: rgb(17, 132, 167);
 }
 
-.main-header {
+.header-secondary {
   display: flex;
-  /* flex-direction: row-reverse; */
+
   justify-content: space-between;
   align-items: center;
-  height: 140px;
+
 }
 
 .container {
-  /* max-width: 1200px; */
+ 
   margin: 0 auto;
   padding: 0 40px;
+ 
 }
+
+.component-container{
+  
+  height: 62vh;
+  margin: 11vh;
+  align-self: center;
+
+}
+
+
 
 .title {
   color: white;
@@ -103,9 +114,9 @@ body {
   color: black;
   position: relative;
   text-align: center;
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 500;
-  margin:3rem
+  margin:3vh
 }
 
 .btn {
@@ -123,7 +134,7 @@ body {
 }
 
 .text {
-  font-size: 2.1em;
+  font-size: 20px;
   padding: 1.5rem;
   margin: 0;
 }
@@ -139,10 +150,25 @@ body {
   text-align: center;
 }
 
+
+
+
+
+
+
+
+
 @media (max-width: 970px) {
   .text {
     font-size: 1.6em; 
     padding: 2rem 0rem;
   }
- 
+  .component-container{
+  
+    height: 100vh;
+   
+  }
+
+  
+  
 }
