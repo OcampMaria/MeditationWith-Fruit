@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import logo from "../images/orange.png";
 import { slideData } from "./sessionSlides";
 import { Link } from "react-router-dom";
-import Footer from "../Children/Footer";
-// import Nav from "../Children/Nav"
+import Footer from "../children/Footer";
 
 
 // require("./main.css");
