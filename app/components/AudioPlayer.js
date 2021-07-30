@@ -114,11 +114,11 @@ class AudioPlayer extends Component {
   }
 
   render() {
-    const { playing, progress, mute } = this.state;
+    const { playing, progress } = this.state;
     return (
-      <div>
+      <div className="full-height-grow">
         <Nav />
-        <div className=" full-height-grow">
+        <div className="container component-container">
           {/* <header className="main-header">
             <a href="" className="brand-logo">
               <img className="logo-secondary" src={logo} alt="" />
@@ -143,7 +143,7 @@ class AudioPlayer extends Component {
             </div>
             {/* audio image end*/}
 
-            <div className="player-options">
+         
               <div className="progress-waveform-wrap">
                 <div className="time player-time">
                   <span className="current-time">{this.state.currentTime}</span>{" "}
@@ -168,25 +168,74 @@ class AudioPlayer extends Component {
                   />
                 </div>
               </div>
-            </div>
+           
 
-            <div>
-              <button
-                onClick={this.toggle}
-                className="player-btn big"
-                title="Play/Pause"
-              >
-                <i className={playing ? "fa fa-pause" : "fa fa-play"} />
-              </button>
+            <div className="forms">
+              <div className="player-btns">
+                <button className="back">
+                  <i className="glyphicon glyphicon-backward" />
+                </button>
+                <button
+                  onClick={this.toggle}
+                  className="player-btn big"
+                  title="Play/Pause"
+                >
+                  <i
+                    className={
+                      playing
+                        ? "glyphicon glyphicon-pause"
+                        : "glyphicon glyphicon-play-circle"
+                    }
+                  />
+                </button>
+                <button className="back">
+                  <i className="glyphicon glyphicon-forward" />
+                </button>
+              </div>
+
+              <div className="forms">
+                <form
+
+                // onSubmit={this.handleSubmit}
+                >
+                  <div id="location-form" ref="locationform">
+                    <input
+                      id="location-input"
+                      className="form"
+                      ref="user"
+                      type="text"
+                      name="location"
+                      placeholder="Please Enter Location:"
+
+                      // onChange={this.handleUsernameChange}
+                      // value={this.state.username}
+                    />
+                  </div>
+                </form>
+                <div>
+                  <Link to="/profile">
+                    <button
+                      type="submit"
+                      name="login"
+                      className="btn btn-location"
+                      value="Login"
+                    >
+                      NEXT
+                    </button>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
-          <Footer />
+        
         </div>
+        <Footer />
       </div>
     );
   }
 }
 
 export default AudioPlayer;
+
 
 //rendor AudioPlayer in seperate component and link it to Audio page in Navbar

@@ -86,8 +86,8 @@ body {
 
 .component-container{
   
-  height: 62vh;
-  margin: 11vh;
+  /* height: 62vh;
+  margin: 11vh; */
   align-self: center;
 
 }
@@ -163,11 +163,11 @@ body {
     font-size: 1.6em; 
     padding: 2rem 0rem;
   }
-  .component-container{
+  /* .component-container{
   
     height: 100vh;
    
-  }
+  } */
 
   
   
