@@ -3,7 +3,7 @@ import logo from "../images/orange.png";
 import { slideData } from "./sessionSlides";
 import { Link } from "react-router-dom";
 import Footer from "../Children/Footer";
-import Nav from "../Children/Nav"
+// import Nav from "../Children/Nav"
 
 
 // require("./main.css");
