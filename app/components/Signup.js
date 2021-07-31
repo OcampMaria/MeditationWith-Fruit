@@ -341,8 +341,13 @@ export default class Signup extends Component {
                   <Link to="/login"></Link>
                   Join Now
                 </button>
-              </div>
+
               
+
+              </div>
+              <div className="redirect">
+                  <a href="/login">Log-In</a>
+                </div>
             </form>
           </section>
           <Footer />

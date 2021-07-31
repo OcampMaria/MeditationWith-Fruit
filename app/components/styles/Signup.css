@@ -3,6 +3,12 @@ body {
 }
 
 
+.redirect{
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
 .registration-title{
   text-align: center;
   padding-bottom: 1rem;
