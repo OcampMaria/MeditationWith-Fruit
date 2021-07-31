@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import logo from "./images/orange.png";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+// import Nav from "./children/Nav";
 
 require("./main.css");
 
@@ -10,28 +11,42 @@ require("./main.css");
 export default function Main({props}) {
 
     return (
-      <div className="container full-height-grow">
+      <div className=" full-height-grow">
        
 
         <Helmet>
           <style>{"body { background-color: rgba(131, 166, 186, 1); }"}</style>
         </Helmet>
-
-        <header className="main-header">
-          <a href="" className="brand-logo">
+        <nav className="header-secondary" id="navbar">
+        <a href="" className="brand-logo">
             <img className="logo" src={logo} alt="" />        
           </a>
-          <nav className="main-nav">
-            <ul>
-              <li className="nav-items">
+        <nav className="">
+          <button
+            type="button"
+            className="navbar-toggle navbar-toggle-right"
+            data-toggle="collapse"
+            data-target="#navbarText"
+            aria-controls="navbarText"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            <i className="glyphicon glyphicon-menu-hamburger"></i>
+          </button>
+
+          <div className="collapse navbar-collapse" id="navbarText">
+            <ul className="navbar-nav mr-auto">
+            <li className="nav-items">
                 <Link to={"/about"}>About</Link>
               </li>
               <li className="nav-items">
                 <Link to={"/login"}>Log In</Link>
               </li>
             </ul>
-          </nav>
-        </header>
+          </div>
+        </nav>
+      </nav>
+
 
         <section className="home-main-section">
           <div className="call-to-action">

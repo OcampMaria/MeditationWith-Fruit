@@ -2,10 +2,18 @@
 
 .home-main-section {
   display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  flex-grow: 1;
-  padding-top:6rem;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-grow: 1;
+    width: 90%;
+    height: 50%;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 
 .home-main-section .img-wrapper {
@@ -44,7 +52,7 @@
   .home-main-section {
     display: flex;
     justify-content: center;
-    padding-top:30%;
+    padding-top:0;
     align-items: center;
     text-align: center;
 
@@ -52,7 +60,7 @@
 
   .logo{
     display: flex;
-    max-width: 6.5rem;
+    max-width: 8rem;
   }
   
 }
