@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { slideData } from "./SlideData";
 import { Link } from "react-router-dom";
 import Footer from "../children/Footer";
+import Nav from "../Children/Nav"
 
 
 // require("./main.css");
@@ -29,7 +30,7 @@ export default function Instructions(props) {
 
   return (
     <div className="full-height-grow">
-      {/* <Nav/> */}
+      <Nav/>
       <div className=" component-container">
         {/* home. login */}
 
