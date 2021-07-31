@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { slideData } from "./SlideData";
 import { Link } from "react-router-dom";
 import Footer from "../children/Footer";
-import Nav from "../Children/Nav"
+import Nav from "../children/Nav"
 
 
 // require("./main.css");
