@@ -29,7 +29,8 @@ body {
   font-size: 1.25rem;
   color: inherit;
   text-decoration: none;
-  padding:1.5rem
+  padding: 1.5rem;
+  padding-left: 3rem;
 }
 
 .logo {
@@ -42,15 +43,11 @@ body {
   /* margin-left: 2rem; */
 }
 
-
-
 .img {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-
 }
-
 
 .main-nav ul {
   display: flex;
@@ -74,31 +71,24 @@ body {
 
   justify-content: space-between;
   align-items: center;
-
 }
 
 .container {
- 
   margin: 0 auto;
   padding: 0 40px;
- 
 }
 
-.component-container{
-  
+.component-container {
   /* height: 62vh;
   margin: 11vh; */
   align-self: center;
   margin: 6rem;
-
 }
-
-
 
 .title {
   color: white;
   font-weight: 500;
-  font-size: 4em;
+  font-size: 5em;
   margin: bottom 1rem;
   margin-top: 0;
 }
@@ -117,7 +107,7 @@ body {
   text-align: center;
   font-size: 30px;
   font-weight: 500;
-  margin:3vh
+  margin: 3vh;
 }
 
 .btn {
@@ -140,7 +130,7 @@ body {
   margin: 0;
 }
 
-.display{
+.display {
   display: none;
 }
 
@@ -151,25 +141,29 @@ body {
   text-align: center;
 }
 
-
-
-
-
-
-
-
-
 @media (max-width: 970px) {
   .text {
-    font-size: 1.6em; 
+    font-size: 1.6em;
     padding: 2rem 0rem;
   }
-  /* .component-container{
-  
-    height: 100vh;
-   
-  } */
 
-  
-  
+  .main-header {
+    background-color: rgba(131, 166, 186, 1);
+    padding-right: 13rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (max-width: 335px) {
+  .title {
+    font-size: 4em;
+  }
+
+  .btn {
+    padding: 0.8rem 2em;
+    font-size: large;
+    margin-top: 0;
+  }
 }

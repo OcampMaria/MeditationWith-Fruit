@@ -55,7 +55,7 @@ export default function Instructions(props) {
                   </div>
                 </div>
                 {currentIndex < slideData.length - 1 && (
-                  <Link to="#" className="register">
+                  <Link to="#" className="next">
                     <button
                       type="button"
                       className="btn btn-register"
@@ -67,7 +67,7 @@ export default function Instructions(props) {
                 )}
 
                 {currentIndex === slideData.length - 1 && (
-                  <Link to="/Signup" className="register">
+                  <Link to="/Signup" className="next">
                     <button type="button" className="btn btn-register">
                       NEXT
                     </button>

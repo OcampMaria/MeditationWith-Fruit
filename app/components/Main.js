@@ -1,26 +1,23 @@
 import React, { useEffect, useState } from "react";
-// import Footer from "./children/Footer";
 import logo from "./images/orange.png";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-// import Nav from "./children/Nav";
 
 require("./main.css");
 
 // Creating the Main component
-export default function Main({props}) {
+export default function Main({ props }) {
+  return (
+    <div className=" full-height-grow">
+      <Helmet>
+        <style>{"body { background-color: rgba(131, 166, 186, 1); }"}</style>
+      </Helmet>
 
-    return (
-      <div className=" full-height-grow">
-       
-
-        <Helmet>
-          <style>{"body { background-color: rgba(131, 166, 186, 1); }"}</style>
-        </Helmet>
-        <nav className="header-secondary" id="navbar">
+      {/* Main */}
+      <nav className="main-header" id="navbar">
         <a href="" className="brand-logo">
-            <img className="logo" src={logo} alt="" />        
-          </a>
+          <img className="logo" src={logo} alt="" />
+        </a>
         <nav className="">
           <button
             type="button"
@@ -36,7 +33,7 @@ export default function Main({props}) {
 
           <div className="collapse navbar-collapse" id="navbarText">
             <ul className="navbar-nav mr-auto">
-            <li className="nav-items">
+              <li className="nav-items">
                 <Link to={"/about"}>About</Link>
               </li>
               <li className="nav-items">
@@ -47,34 +44,30 @@ export default function Main({props}) {
         </nav>
       </nav>
 
+      <section className="home-main-section">
+        <div className="call-to-action">
+          <h1 className="title">Meditation With Fruit</h1>
+          <span className="subtitle">
+            Use Psychology to Hack Your Stress Eating
+          </span>
 
-        <section className="home-main-section">
-          <div className="call-to-action">
-            <h1 className="title">Meditation With Fruit</h1>
-            <span className="subtitle">
-              Use Psychology to Hack Your Stress Eating
-            </span>
+          <Link to="/instructions">
+            <button type="button" className="btn">
+              START
+            </button>
+          </Link>
 
-            <Link to="/instructions">
-              <button type="button" className="btn">START</button>
-            </Link>
+          <h2>UNDER DEVELOPMENT...</h2>
+        </div>
 
-            <h2>UNDER DEVELOPMENT...</h2>
+        <div className="img-wrapper">
+          <div className="orange-feature-img"></div>
+        </div>
+      </section>
 
-            
-          </div>
-
-          <div className="img-wrapper">
-            <div className="orange-feature-img"></div>
-          </div>
-        </section>
-
-        <div className="home-page-circle-1"></div>
-        <div className="home-page-circle-2"></div>
-        <div className="home-page-circle-3"></div>
-
-        
-      </div>
-    );
-  
+      <div className="home-page-circle-1"></div>
+      <div className="home-page-circle-2"></div>
+      <div className="home-page-circle-3"></div>
+    </div>
+  );
 }

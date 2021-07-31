@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
 // import Auth from "./utils/Auth";
-import Nav from './children/Nav'
+import Nav from "./children/Nav";
 import logo from "./images/orange.png";
 import Footer from "./children/Footer";
 
@@ -219,22 +219,6 @@ export default class Signup extends Component {
 				logout={this.props.logout}
 			/> */}
 
-          {/* <header className="main-header">
-            <a href="" className="brand-logo">
-              <img className="logo-secondary" src={logo} alt="" />
-            </a>
-            <nav className="main-nav">
-              <ul>
-                <li className="nav-items secondary-nav">
-                  <Link to={"/"}>Homepage</Link>
-                </li>
-                <li className="nav-items secondary-nav">
-                  <Link to={"/login"}>Log In</Link>
-                </li>
-              </ul>
-            </nav>
-          </header> */}
-
           <section className="join-main-section register">
             <h1 className="join-text">
               Join For 6 Minutes of
@@ -358,6 +342,7 @@ export default class Signup extends Component {
                   Join Now
                 </button>
               </div>
+              
             </form>
           </section>
           <Footer />

@@ -1,8 +1,8 @@
 body {
-	color: black;
+  color: black;
 }
 
-.usertitle{
+.usertitle {
   text-align: center;
   padding-bottom: 2rem;
 }
@@ -10,7 +10,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 10%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .join-text {
@@ -20,11 +23,11 @@ body {
 }
 
 .accent-text {
-  color: #3390AD;
+  color: #3390ad;
 }
 
 .join-forms {
-  background-color: #83A6BA;
+  background-color: #83a6ba;
   width: 50vw;
   max-width: 50%;
   padding: 5rem 5rem;
@@ -44,15 +47,15 @@ body {
 
 .input-group label {
   font-weight: bold;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .input-group input {
   outline: none;
   background: none;
-  border: 1px solid #2E3852;
+  border: 1px solid #2e3852;
   font-size: 1em;
-  padding: .5em;
+  padding: 0.5em;
   color: inherit;
   border-radius: 5px;
   max-height: 3.7rem;
@@ -62,21 +65,26 @@ body {
   border-color: #135e8a;
 }
 
-
 @media (max-width: 900px) {
   .join-main-section {
-    flex-direction: column;
-    justify-content: center;
-	padding-top: 5rem;
-	padding-bottom: 10rem;
+    /* flex-direction: column;
+    justify-content: center; */
+    position: initial;
+    left: 0;
+    top: 0;
+    transform: initial;
+    
   }
+
+ 
+
 
   .join-forms {
     width: 80vw;
     max-width: inherit;
     margin: 2rem 0;
   }
-  .join-text{
-	  text-align: center;
+  .join-text {
+    text-align: center;
   }
 }

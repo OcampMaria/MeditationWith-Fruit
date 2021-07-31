@@ -44,16 +44,15 @@
 
 
 
-.register {
+.next {
   display: flex;
-  align-content: space-around;
-  align-items: center;
-  justify-content: center;
-  padding:1.5rem;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.next{
+  align-self: center;
 }
 
 .btn-register {

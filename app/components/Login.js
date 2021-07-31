@@ -36,7 +36,6 @@ export default class Login extends Component {
       .post("/apis/users/login", submitObject)
       .then(
         function (data) {
-       
           if (data.data.success) {
             this.props.authenticate();
             this.setState({
@@ -90,21 +89,7 @@ export default class Login extends Component {
           deAuthenticate={this.props.deAuthenticate}
           logout={this.props.logout}
         />
-        {/* <header className="main-header">
-          <a href="" className="brand-logo">
-            <img className="logo-secondary" src={logo} alt="" />
-          </a>
-          <nav className="main-nav">
-            <ul>
-              <li className="nav-items secondary-nav">
-                <Link to={"/"}>Homepage</Link>
-              </li>
-              <li className="nav-items secondary-nav">
-                <Link to={"/signup"}>Sign Up</Link>
-              </li>
-            </ul>
-          </nav>
-        </header> */}
+
         <div className="join-main-section">
           <h1 className="join-text">
             Welcome!
@@ -113,7 +98,7 @@ export default class Login extends Component {
 
           <form className="join-form" onSubmit={this.handleSubmit}>
             <h3 className="usertitle">- USER LOGIN -</h3>
-            <div 
+            <div
               id="username-form"
               ref="usernameForm"
               className="form-group col-lg-12"
@@ -129,12 +114,11 @@ export default class Login extends Component {
                 onChange={this.handleUsernameChange}
                 value={this.state.username}
               />
-              
             </div>
-            <div 
-            id="password-form"
-            className="form-group col-lg-12"
-            ref="passwordForm"
+            <div
+              id="password-form"
+              className="form-group col-lg-12"
+              ref="passwordForm"
             >
               <label>Password</label>
               <input
@@ -149,12 +133,29 @@ export default class Login extends Component {
               />
             </div>
 
-            <div className="input-group col-lg-12">
+            {/* <div className="input-group col-lg-12">
               <Link to="/profile" className="register">
-              <button type="submit" name="login" className="btn" value="Login">
-                    SUBMIT
-                  </button>
-                </Link>
+                <button
+                  type="submit"
+                  name="login"
+                  className="btn"
+                  value="Login"
+                >
+                  SUBMIT
+                </button>
+              </Link>
+            </div> */}
+
+            <div className="input-group col-lg-12 ">
+              <button 
+              type="submit" 
+              className="btn" 
+              name="login" 
+              value="Login"
+              >
+                <Link to="/profile"></Link>
+                SUBMIT
+              </button>
             </div>
           </form>
         </div>

@@ -1,19 +1,17 @@
-
-
 .home-main-section {
   display: flex;
-    align-items: stretch;
-    justify-content: space-between;
-    flex-grow: 1;
-    width: 90%;
-    height: 50%;
-    overflow: auto;
-    margin: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-grow: 1;
+  width: 80%;
+  height: 50%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .home-main-section .img-wrapper {
@@ -24,8 +22,6 @@
   justify-content: flex-end;
 }
 
-
-
 .home-main-section .orange-feature-img {
   background-image: url(images/orange.png);
   flex-grow: 1;
@@ -33,7 +29,7 @@
   min-width: 30vw;
   background-size: contain;
   background-repeat: no-repeat;
-  background-position:  right;
+  background-position: right;
 }
 
 .home-main-section .call-to-action {
@@ -43,8 +39,23 @@
   align-self: center;
 }
 
+.main-header{
+  background-color: rgba(131, 166, 186, 1);
+  padding-right: 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} 
 
-@media (max-width: 900px) {
+.navbar-nav>li>a {
+  /* padding-top: 15px;
+  padding-bottom: 15px; */
+  color: white;
+}
+
+
+
+@media (max-width: 970px) {
   .home-main-section .img-wrapper {
     display: none;
   }
@@ -52,24 +63,30 @@
   .home-main-section {
     display: flex;
     justify-content: center;
-    padding-top:0;
+    padding-top: 0;
     align-items: center;
     text-align: center;
-
+    width: auto;
+    height: auto;
   }
 
-  .logo{
+  .logo {
     display: flex;
     max-width: 8rem;
   }
-  
+
+  .main-header{
+    padding-right: 1rem;
+  }
 }
+
+
 .home-page-circle-1 {
   position: absolute;
   width: 25vw;
   height: 25vw;
   border-radius: 50%;
-  background-color: rgba(52, 87, 178, .1);
+  background-color: rgba(52, 87, 178, 0.1);
   bottom: 5vw;
   left: 5vw;
   z-index: -1;
@@ -80,7 +97,7 @@
   width: 15vw;
   height: 15vw;
   border-radius: 50%;
-  background-color: rgb(52, 87, 178, .1);
+  background-color: rgb(52, 87, 178, 0.1);
   top: 15vh;
   left: 30vw;
   z-index: -1;
@@ -97,13 +114,11 @@
 }
 
 .home-page-circle-3::before {
-  content: '';
+  content: "";
   transform: translate(40%, 40%);
   position: absolute;
   height: 100%;
   width: 100%;
   border-radius: 50%;
-  background-color: rgb(52, 87, 178, .1);
+  background-color: rgb(52, 87, 178, 0.1);
 }
-
-
