@@ -1,3 +1,5 @@
+
+
 /* Player */
 .player-container {
   margin: 15rem auto;
@@ -93,6 +95,9 @@
 }
 
 .player-controls .player-btn-mute {
-  color: #D9D9D9;
+  color: #e90404;
 }
+
+
+
 

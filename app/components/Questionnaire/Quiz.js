@@ -6,8 +6,10 @@ import logo from "../images/orange.png";
 import { Link } from "react-router-dom";
 import Footer from "../children/Footer";
 import { log } from "debug";
+
 require("../main.css");
 require("../styles/quiz.css");
+
 export default function Quiz() {
   //setting up state
   const [userAnswer, setuserAnswer] = useState(null);
@@ -44,8 +46,8 @@ export default function Quiz() {
       })
     );
     console.log(max);
-    const found = dropHistory.filter(x => x.score == max);
-    const foundFruit = found[0].name
+    const found = dropHistory.filter((x) => x.score == max);
+    const foundFruit = found[0].name;
     console.log(foundFruit);
   };
   //save fruitItems to local storage if statement is true
