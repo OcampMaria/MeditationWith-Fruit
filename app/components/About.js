@@ -10,9 +10,9 @@ require("./styles/about.css");
 export default class About extends Component {
   render() {
     return (
-      <div className=" full-height-grow">
+      <div className=" full-height-grow ">
         <header className="main-header">
-          <a href="" className="brand-logo">
+          <a href="" className="">
             <img className="logo-secondary" src={logo} alt="" />
           </a>
           <nav className="main-nav">

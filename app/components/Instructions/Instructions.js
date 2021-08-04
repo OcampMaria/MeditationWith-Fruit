@@ -44,7 +44,7 @@ export default function Instructions(props) {
                   <div className="box" id="one">
                     <p className="text">{paragraphs}</p>
                     <div className="img ilustrations">
-                      <a href="" className="brand-logo">
+                      <a href="" className="">
                         <img
                           className="logo-secondary ilustration"
                           src={image}

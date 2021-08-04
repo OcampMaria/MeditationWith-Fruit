@@ -1,23 +1,31 @@
-/* .App{
-    text-align: center;
-    font-family: Arial;
-} */
+.quiz-div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /* -webkit-transform: translate(-50%, -50%); */
+  transform: translate(-50%, -50%);
+  align-items: center;
+}
+
 /* The answer selecteed by the user */
 .selected {
-    background-color: orange;
+  background-color: orange;
 }
+
 /* The list of options */
 .options {
-    padding: 8px;
-    border: 2px solid #000;
-    cursor: pointer;
+  min-width: 6rem;
+  padding: 8px;
+  text-align: center;
+  border: 2px solid #000;
+  cursor: pointer;
 }
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
-/* 
-body{
-    font-family: Verdana;
-    font-size: 18px;
-    background-color: #2980B9; 
-} */
+
+.option-div {
+  display: flex;
+  column-gap: 1rem;
+  justify-content:center
+}

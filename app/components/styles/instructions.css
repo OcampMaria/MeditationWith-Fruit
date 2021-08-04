@@ -63,10 +63,14 @@
   font-size:20px
 }
 .ilustration{
-    max-width: 12rem;
-    border: solid #3390ad;
-    border-radius: 10rem;
-    min-height: 12rem;
+  min-width: 12rem;
+  border: solid #3390ad;
+  min-height: 12rem;
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 2rem;
 }
 
 

@@ -21,6 +21,7 @@ export default function Quiz() {
   const [disabled, setdisabled] = useState(true);
   const [question, setquestion] = useState("");
   const [fruit, setfruit] = useState("");
+  const [image, setimage] = useState("");
 
   //setting up localStorage
 
@@ -31,7 +32,7 @@ export default function Quiz() {
   const getHighestFruit = () => {
     if (dropHistory == ![]) {
       // console.log("empty");
-      setfruit("")
+      setfruit("");
     } else {
       const max = Math.max.apply(
         Math,
@@ -42,10 +43,14 @@ export default function Quiz() {
       // console.log(max);
 
       const found = dropHistory.filter((x) => x.score == max);
-    
+      console.log(found);
+
       const foundFruit = found[0].name;
-      // console.log(foundFruit);
-      setfruit(foundFruit)
+      const fruitImg = found[0].img[0];
+      console.log(fruitImg);
+
+      setfruit(foundFruit);
+      // setImage(fruitImg);
     }
   };
 
@@ -62,6 +67,7 @@ export default function Quiz() {
       setquestion(QuizData[currentIndex].question);
       setoptions(QuizData[currentIndex].options);
       setfruit(Fruits[fruitIndex].name);
+      setimage(Fruits[fruitIndex].imagePath);
     }
   };
 
@@ -71,6 +77,7 @@ export default function Quiz() {
       const drop = {
         name: Fruits[fruitIndex].name,
         score: userAnswer,
+        img: Fruits[fruitIndex].imagePath,
       };
 
       //setting up localStorage
@@ -145,90 +152,63 @@ export default function Quiz() {
   if (quizEnd) {
     return (
       <div>
-         <Nav/>
-        <div className="container full-height-grow">
-        {/* <header className="main-header">
-          <a href="" className="brand-logo">
-            <img className="logo-secondary" src={logo} alt="" />
+        <Nav />
+        <div className="full-height-grow quiz-div">
+        <div className="img ilustrations">
+          <a href="" className="">
+            <img className="logo-secondary ilustration" src={image} alt="" />
           </a>
-          <nav className="main-nav">
-            <ul>
-              <li className="nav-items secondary-nav">
-                <Link to={"/"}>Home</Link>
-              </li>
-              <li className="nav-items secondary-nav">
-                <Link to={"/login"}>Log In</Link>
-              </li>
-            </ul>
-          </nav>
-        </header> */}
-        <h2>
-          Based on your responses, the fruit that will be most effective for
-          this program is {fruit}.
-        </h2>
-        <p>
-          Your first step is to go to the store and buy 7 servings of that fruit
-          so you’ll be ready to eat this week!
-        </p>
+        </div>
+          <h2>
+            Based on your responses, the fruit that will be most effective for
+            this program is {fruit}.
+          </h2>
+          <p>
+            Your first step is to go to the store and buy 7 servings of that
+            fruit so you’ll be ready to eat this week!
+          </p>
 
-        <Link to="/profile">
-          <button type="button" className="btn" onClick={clearLocal}>
-            Done
-          </button>
-        </Link>
+          <Link to="/profile">
+            <button type="button" className="btn" onClick={clearLocal}>
+              Done
+            </button>
+          </Link>
+        </div>
         <Footer />
       </div>
-      </div>
-      
     );
   }
 
   return (
     <div>
       <Nav />
-      <div className="container full-height-grow">
-      {/* <header className="main-header">
-        <a href="" className="brand-logo">
-          <img className="logo-secondary" src={logo} alt="" />
-        </a>
-        <nav className="main-nav">
-          <ul>
-            <li className="nav-items secondary-nav">
-              <Link to={"/profile"} >Profile</Link>
-            </li>
-            <li className="nav-items secondary-nav">
-              <Link to={"/"}>Log Out</Link>
-            </li>
-          </ul>
-        </nav>
-      </header> */}
+      <div className="full-height-grow quiz-div">
+        <span>{`Question ${fruitIndex + 1} of ${Fruits.length}`}</span>
 
-      <h1>{fruit}</h1>
-      <h2>{question}</h2>
+        <h1>{fruit}</h1>
+        <div className="img ilustrations">
+          <a href="" className="">
+            <img className="logo-secondary ilustration" src={image} alt="" />
+          </a>
+        </div>
 
-      <span>{`Question ${fruitIndex + 1} of ${Fruits.length}`}</span>
-      {options.map((option) => (
-        <p
-          key={option + numbers}
-          className={`ui floating message options
+        <h2>{question}</h2>
+
+        <div className="option-div">
+          {options.map((option) => (
+            <p
+              key={option + numbers}
+              className={`ui floating message options
             ${userAnswer === option ? "selected" : null}
             `}
-          onClick={() => checkAnswer(option)}
-        >
-          {option}
-        </p>
-      ))}
-      {fruitIndex < Fruits.length - 1 && (
-        <button
-          className="ui inverted button"
-          disabled={disabled}
-          onClick={nextQuestionHander}
-        >
-          Next Question
-        </button>
-      )}
-      {fruitIndex === Fruits.length - 1 &&
-        currentIndex === QuizData.length - 2 && (
+              onClick={() => checkAnswer(option)}
+            >
+              {option}
+            </p>
+          ))}
+        </div>
+
+        {fruitIndex < Fruits.length - 1 && (
           <button
             className="ui inverted button"
             disabled={disabled}
@@ -237,20 +217,28 @@ export default function Quiz() {
             Next Question
           </button>
         )}
+        {fruitIndex === Fruits.length - 1 &&
+          currentIndex === QuizData.length - 2 && (
+            <button
+              className="ui inverted button"
+              disabled={disabled}
+              onClick={nextQuestionHander}
+            >
+              Next Question
+            </button>
+          )}
 
-      {fruitIndex === Fruits.length - 1 &&
-        currentIndex === QuizData.length - 1 && (
-          <button
-            className="ui inverted button"
-            disabled={disabled}
-            onClick={finishHandler}
-          >
-            Finish
-          </button>
-        )}
-      <Footer />
+        {fruitIndex === Fruits.length - 1 &&
+          currentIndex === QuizData.length - 1 && (
+            <button
+              className="ui inverted button"
+              disabled={disabled}
+              onClick={finishHandler}
+            >
+              Finish
+            </button>
+          )}
+      </div>
     </div>
-    </div>
-    
   );
 }
