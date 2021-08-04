@@ -67,7 +67,7 @@ export default function Quiz() {
       setquestion(QuizData[currentIndex].question);
       setoptions(QuizData[currentIndex].options);
       setfruit(Fruits[fruitIndex].name);
-      setimage(Fruits[fruitIndex].imagePath);
+      setimage(Fruits[fruitIndex].image);
     }
   };
 
@@ -77,7 +77,7 @@ export default function Quiz() {
       const drop = {
         name: Fruits[fruitIndex].name,
         score: userAnswer,
-        img: Fruits[fruitIndex].imagePath,
+        img: Fruits[fruitIndex].image,
       };
 
       //setting up localStorage

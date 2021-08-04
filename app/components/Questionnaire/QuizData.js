@@ -1,4 +1,4 @@
-import apple from "../Images/Fruits/apples.png";
+import apple from "../images/Fruits/apples.png";
 import apricots from "../images/Fruits/apricots.png";
 import banana from "../images/Fruits/banana.png";
 
@@ -8,19 +8,19 @@ export const Fruits = [
     id: 0,
     name: "Apple",
     score: 0,
-    imagePath: apple,
+    image: apple,
   },
   {
     id: 1,
     name: "Apricots",
     score: 0,
-    imagePath: apricots,
+    image: apricots,
   },
   {
     id: 2,
     name: "Banana",
     score: 0,
-    imagePath: banana,
+    image: banana,
   },
   // {
   //   id: 3,
