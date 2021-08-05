@@ -5,6 +5,10 @@
   /* -webkit-transform: translate(-50%, -50%); */
   transform: translate(-50%, -50%);
   align-items: center;
+  text-align: center;
+  border: 1px solid #3390ad;
+  border-radius: 2rem;
+  padding: 2rem;
 }
 
 /* The answer selecteed by the user */
@@ -28,4 +32,15 @@ ul {
   display: flex;
   column-gap: 1rem;
   justify-content:center
+}
+
+@media (max-width: 970px) {
+  .option-div {
+    flex-wrap: wrap;
+  }
+
+  .h2, h2 {
+    font-size: 24px;
+    padding-bottom: 1rem;
+}
 }

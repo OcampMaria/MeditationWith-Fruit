@@ -40,17 +40,19 @@ export default function Quiz() {
           return item.score;
         })
       );
-      // console.log(max);
 
       const found = dropHistory.filter((x) => x.score == max);
-      console.log(found);
 
       const foundFruit = found[0].name;
-      const fruitImg = found[0].img[0];
-      console.log(fruitImg);
 
       setfruit(foundFruit);
-      // setImage(fruitImg);
+
+      for (let i = 0; i < Fruits.length; i++) {
+        if (Fruits[i].name === foundFruit) {
+          // console.log(Fruits[i].name);
+          setimage(Fruits[i].image)
+        }
+      }
     }
   };
 
@@ -154,11 +156,11 @@ export default function Quiz() {
       <div>
         <Nav />
         <div className="full-height-grow quiz-div">
-        <div className="img ilustrations">
-          <a href="" className="">
-            <img className="logo-secondary ilustration" src={image} alt="" />
-          </a>
-        </div>
+          <div className="img ilustration">
+            <a href="" className="">
+              <img className="logo-secondary " src={image} alt="" />
+            </a>
+          </div>
           <h2>
             Based on your responses, the fruit that will be most effective for
             this program is {fruit}.
@@ -186,9 +188,9 @@ export default function Quiz() {
         <span>{`Question ${fruitIndex + 1} of ${Fruits.length}`}</span>
 
         <h1>{fruit}</h1>
-        <div className="img ilustrations">
+        <div className="img ilustration">
           <a href="" className="">
-            <img className="logo-secondary ilustration" src={image} alt="" />
+            <img className="logo-secondary " src={image} alt="" />
           </a>
         </div>
 
@@ -210,7 +212,7 @@ export default function Quiz() {
 
         {fruitIndex < Fruits.length - 1 && (
           <button
-            className="ui inverted button"
+            className="ui inverted btn"
             disabled={disabled}
             onClick={nextQuestionHander}
           >
@@ -231,7 +233,7 @@ export default function Quiz() {
         {fruitIndex === Fruits.length - 1 &&
           currentIndex === QuizData.length - 1 && (
             <button
-              className="ui inverted button"
+              className="ui inverted btn"
               disabled={disabled}
               onClick={finishHandler}
             >
@@ -239,6 +241,7 @@ export default function Quiz() {
             </button>
           )}
       </div>
+      <Footer />
     </div>
   );
 }
