@@ -9,13 +9,13 @@ export default class Footer extends Component {
         <div>
           <ul className="wrap">
             <li className="list">
-              <a className="item">DiSH Lab</a>
+              <a href="https://www.dishlab.org/" className="item">DiSH Lab</a>
             </li>
             <li>
-              <a href="">About Us</a>
+              <a href="https://www.dishlab.org/first.php">About Us</a>
             </li>
             <li>
-              <a href="">Contact</a>
+              <a href="https://www.dishlab.org/contact.php">Contact</a>
             </li>
           </ul>
         </div>
@@ -23,10 +23,10 @@ export default class Footer extends Component {
         <div>
           <ul className="wrap">
             <li>
-              <a href="">Resources</a>
+              <a href="https://twitter.com/DiSH_Lab">Twitter</a>
             </li>
             <li>
-              <a href="">Facebook</a>
+              <a href="https://www.facebook.com/dishlab">Facebook</a>
             </li>
             <li>
               <a href="">Facebook 👋</a>

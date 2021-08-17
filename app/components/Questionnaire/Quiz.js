@@ -158,7 +158,7 @@ export default function Quiz() {
         <div className="full-height-grow quiz-div">
           <div className="img ilustration">
             <a href="" className="">
-              <img className="logo-secondary " src={image} alt="" />
+              <img className="logo-secondary" src={image} alt="" />
             </a>
           </div>
           <h2>

@@ -4,6 +4,7 @@ import logo from "./images/orange.png";
 import { Link } from "react-router-dom";
 import Footer from "./children/Footer";
 import fruits from "./Images/Fruits/fruits_background.png";
+import apple from "./Images/Fruits/apples.png";
 
 // require("./main.css");
 require("./styles/profile.css");
@@ -21,7 +22,7 @@ export default function Profile() {
 
             <div>
               <p className="subtitle-profile">New Session</p>
-              
+
               <Link to="/sessioninstructions" className="new-session">
                 <button type="button" className="btn-session">
                   +
@@ -29,42 +30,58 @@ export default function Profile() {
               </Link>
 
               <div className="fruit-img">
-                <a href="" className="brand-logo">
+                <a href="" className="image-line">
                   <img className="profile-images" src={fruits} alt="" />
                 </a>
-                <a href="" className="brand-logo">
-                  <img
-                    className="profile-images"
-                    src={fruits}
-                    alt=""
-                  />
+                <a href="" className="image-line">
+                  <img className="profile-images" src={fruits} alt="" />
                 </a>
-                <a href="" className="brand-logo">
-                  <img
-                    className="profile-images "
-                    src={fruits}
-                    alt=""
-                  />
+                <a href="" className="image-line">
+                  <img className="profile-images " src={fruits} alt="" />
                 </a>
               </div>
-            </div>
-          </div>
 
-          {/* <div className="wrap">
-              <div className="one">
-                <div className="card">
-                  <div className="box">
-                    <p className="text">kkk</p>
-                    <div className="img ">
-                      <a href="" className="">
-                        <img className=" ilustration" src={img1} />
-                      </a>
+              <div className="cards">
+                <div className="wrap">
+                  <div className="one">
+                    <div className="card">
+                      <div className="box">
+                        <p className="text">example</p>
+                        <div className="img ilustration">
+                          <a href="" className="">
+                            <img
+                              className="logo-secondary"
+                              src={apple}
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="wrap">
+                  <div className="one">
+                    <div className="card">
+                      <div className="box">
+                        <p className="text">example</p>
+
+                        <div className="img ilustration">
+                          <a href="" className="">
+                            <img
+                              className="logo-secondary"
+                              src={apple}
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            
-            </div> */}
+            </div>
+          </div>
         </div>
         {/* </section> */}
       </div>

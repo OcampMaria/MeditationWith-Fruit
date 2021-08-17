@@ -1,50 +1,54 @@
-.profile-section{
+.profile-section {
   display: flex;
   flex-grow: 1;
   flex-direction: column;
 }
 
 .wrap {
-display: flex;
-flex-wrap: wrap;
-align-items: center;
-justify-content: center;
-
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
-.one {
-padding: 1rem;
-}
+/* .one {
+  padding: 1rem;
+} */
 .subtitle-profile {
-font-weight: 500;
-font-size: 1.7em;
+  font-weight: 500;
+  font-size: 1.7em;
 }
 
-.fruit-img{
+.fruit-img {
   display: flex;
 }
 
-.title-mobile{
+.image-line {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.title-mobile {
   display: none;
 }
 
-.profile-images{
+.profile-images {
   display: flex;
-  max-width: 50rem;
+  max-width: 40rem;
 }
-
 
 .session {
-display: flex;
-flex-direction: column;
-align-items: center;
-text-align: center;
-position: absolute;
-left: 50%;
-top: 50%;
-transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.new-session{
+.new-session {
   display: flex;
   justify-content: space-evenly;
   /* padding: 1.5rem; */
@@ -52,14 +56,21 @@ transform: translate(-50%, -50%);
 }
 
 .btn-session {
-color: white;
-background-color: rgba(51, 144, 173, 1);
-padding: 1rem 2rem;
-border-radius: 60%;
-font-size: 3rem;
-/* margin-top: 3rem; */
-border: rgba(51, 144, 173, 1);
-/* margin-bottom: 10rem; */
+  color: white;
+  background-color: rgba(51, 144, 173, 1);
+  padding: 1rem 2rem;
+  border-radius: 60%;
+  font-size: 3rem;
+  /* margin-top: 3rem; */
+  border: rgba(51, 144, 173, 1);
+  /* margin-bottom: 10rem; */
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
 }
 
 @media (max-width: 695px) {
@@ -67,16 +78,27 @@ border: rgba(51, 144, 173, 1);
     display: none;
   }
 
-  .title-mobile{
+  .title-mobile {
     display: flex;
   }
 
-  .profile-images{
+  .profile-images {
     max-width: 37rem;
   }
-  
+
+  .session {
+    position: initial;
+    left: 0;
+    top: 0;
+    transform: initial;
+  }
+
+  .cards{
+    display: flex;
+    flex-direction: column;
+  }
+
   /* .image-mobile{
     display: none;
   } */
-  
 }
