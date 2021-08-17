@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { QuizData } from "./QuizData";
 import { Fruits } from "./QuizData";
-import logo from "../images/orange.png";
 import { Link } from "react-router-dom";
 import Footer from "../children/Footer";
 import { log } from "debug";

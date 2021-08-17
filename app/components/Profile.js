@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import Nav from "./children/Nav";
-import logo from "./images/orange.png";
 import { Link } from "react-router-dom";
 import Footer from "./children/Footer";
 import fruits from "./Images/Fruits/fruits_background.png";
@@ -9,10 +8,21 @@ import apple from "./Images/Fruits/apples.png";
 // require("./main.css");
 require("./styles/profile.css");
 
-export default function Profile() {
+export default function Profile({ props }) {
+  const [authenticate, setauthenticate] = useState(props);
+  const [deAuthenticate, setdeAuthenticate] = useState(props);
+  const [authenticated, setauthenticated] = useState(props);
+  const [logout, setlogout] = useState(props);
+
+
   return (
     <div className=" full-height-grow">
-      <Nav />
+      <Nav
+          authenticated={authenticated}
+          authenticate={authenticate}
+          deAuthenticate={deAuthenticate}
+          logout={logout}
+      />
       <div className="">
         {/* <section className="profile-section"> */}
         <div className="max-with">

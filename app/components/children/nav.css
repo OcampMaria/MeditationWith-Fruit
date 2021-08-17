@@ -10,6 +10,7 @@
 
 .header-secondary {
   background-color: rgba(131, 166, 186, 1);
+  z-index: 3;
 }
 
 .nav-items {

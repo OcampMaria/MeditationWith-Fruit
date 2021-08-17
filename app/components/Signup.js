@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
 // import Auth from "./utils/Auth";
-import Nav from "./children/Nav";
+import InitialNav from "./children/InitialNav";
 import logo from "./images/orange.png";
 import Footer from "./children/Footer";
 
@@ -201,7 +201,9 @@ export default class Signup extends Component {
   };
 
   render() {
-    const { from } = this.props.location.state || { from: { pathname: "/" } };
+    const { from } = this.props.location.state || {
+      from: { pathname: "/login" },
+    };
     const { redirectToReferrer } = this.state;
 
     if (redirectToReferrer) {
@@ -210,15 +212,13 @@ export default class Signup extends Component {
 
     return (
       <div>
-        <Nav />
+        <InitialNav
+          authenticated={this.props.authenticated}
+          authenticate={this.props.authenticate}
+          deAuthenticate={this.props.deAuthenticate}
+          logout={this.props.logout}
+        />
         <div className="full-height-grow ">
-          {/* <Nav
-				authenticated={this.props.authenticated}
-				authenticate={this.props.authenticate}
-				deAuthenticate={this.props.deAuthenticate}
-				logout={this.props.logout}
-			/> */}
-
           <section className="join-main-section register">
             <h1 className="join-text">
               Join For 6 Minutes of
@@ -341,13 +341,10 @@ export default class Signup extends Component {
                   <Link to="/login"></Link>
                   Join Now
                 </button>
-
-              
-
               </div>
               <div className="redirect">
-                  <a href="/login">Log-In</a>
-                </div>
+                <a href="/login">Log-In</a>
+              </div>
             </form>
           </section>
           <Footer />

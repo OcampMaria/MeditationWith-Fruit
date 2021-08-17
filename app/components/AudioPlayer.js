@@ -117,7 +117,14 @@ class AudioPlayer extends Component {
     const { playing, progress } = this.state;
     return (
       <div className="full-height-grow">
-        <Nav />
+        
+        <Nav
+          authenticated={this.props.authenticated}
+          authenticate={this.props.authenticate}
+          deAuthenticate={this.props.deAuthenticate}
+          logout={this.props.logout}
+        />
+
         <div className="container component-container">
           {/* <header className="main-header">
             <a href="" className="brand-logo">
@@ -143,32 +150,30 @@ class AudioPlayer extends Component {
             </div>
             {/* audio image end*/}
 
-         
-              <div className="progress-waveform-wrap">
-                <div className="time player-time">
-                  <span className="current-time">{this.state.currentTime}</span>{" "}
-                  <span className="duration">{this.state.duration}</span>
-                </div>
-
-                <audio
-                  ref={(audio) => {
-                    this.audio = audio;
-                  }}
-                  src={this.state.src}
-                  preload="auto"
-                />
-
-                <div
-                  className="player-progress-container"
-                  onClick={(e) => this.setProgress(e)}
-                >
-                  <span
-                    className="player-progress-value"
-                    style={{ width: progress + "%" }}
-                  />
-                </div>
+            <div className="progress-waveform-wrap">
+              <div className="time player-time">
+                <span className="current-time">{this.state.currentTime}</span>{" "}
+                <span className="duration">{this.state.duration}</span>
               </div>
-           
+
+              <audio
+                ref={(audio) => {
+                  this.audio = audio;
+                }}
+                src={this.state.src}
+                preload="auto"
+              />
+
+              <div
+                className="player-progress-container"
+                onClick={(e) => this.setProgress(e)}
+              >
+                <span
+                  className="player-progress-value"
+                  style={{ width: progress + "%" }}
+                />
+              </div>
+            </div>
 
             <div className="forms">
               <div className="player-btns">
@@ -227,7 +232,6 @@ class AudioPlayer extends Component {
               </div>
             </div>
           </div>
-        
         </div>
         <Footer />
       </div>
@@ -236,6 +240,5 @@ class AudioPlayer extends Component {
 }
 
 export default AudioPlayer;
-
 
 //rendor AudioPlayer in seperate component and link it to Audio page in Navbar

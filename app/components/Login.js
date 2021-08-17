@@ -4,7 +4,7 @@ import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import logo from "./images/orange.png";
 import Footer from "./children/Footer";
-import Nav from "./children/Nav";
+import InitialNav from "./children/InitialNav";
 
 require("./styles/login.css");
 // require("./main.css");
@@ -74,7 +74,9 @@ export default class Login extends Component {
   };
 
   render() {
-    const { from } = this.props.location.state || { from: { pathname: "/" } };
+    const { from } = this.props.location.state || {
+      from: { pathname: "/profile" },
+    };
     const { redirectToReferrer } = this.state;
 
     if (redirectToReferrer) {
@@ -83,7 +85,7 @@ export default class Login extends Component {
 
     return (
       <div className=" full-height-grow">
-        <Nav
+        <InitialNav
           authenticated={this.props.authenticated}
           authenticate={this.props.authenticate}
           deAuthenticate={this.props.deAuthenticate}
@@ -147,15 +149,20 @@ export default class Login extends Component {
             </div> */}
 
             <div className="input-group col-lg-12 ">
-              <button 
-              type="submit" 
-              className="btn" 
-              name="login" 
-              value="Login"
-              >
-                <Link to="/profile"></Link>
-                SUBMIT
-              </button>
+              <Link to="/profile">
+                <button
+                  type="submit"
+                  className="btn"
+                  name="login"
+                  value="Login"
+                >
+                  SUBMIT
+                </button>
+              </Link>
+
+              <div className="redirect">
+                <a href="/signup">Sign-Up</a>
+              </div>
             </div>
           </form>
         </div>

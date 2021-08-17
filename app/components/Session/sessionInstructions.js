@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import logo from "../images/orange.png";
 import { slideData } from "./sessionSlides";
 import { Link } from "react-router-dom";
 import Footer from "../children/Footer";
@@ -13,6 +12,11 @@ export default function Instructions(props) {
   const [currentIndex, setcurrentIndex] = useState(0);
   const [paragraphs, setparagraphs] = useState("");
   const [image, setimage] = useState();
+
+  const [authenticate, setauthenticate] = useState(props);
+  const [deAuthenticate, setdeAuthenticate] = useState(props);
+  const [authenticated, setauthenticated] = useState(props);
+  const [logout, setlogout] = useState(props);
 
   const loadSlides = () => {
     setparagraphs(slideData[currentIndex].paragraph);
@@ -29,7 +33,12 @@ export default function Instructions(props) {
 
   return (
     <div className="">
-      <Nav />
+      <Nav
+        authenticated={authenticated}
+        authenticate={authenticate}
+        deAuthenticate={deAuthenticate}
+        logout={logout}
+      />
       <div className=" component-container">
         {/* home, log in */}
 

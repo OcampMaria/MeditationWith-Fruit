@@ -2,47 +2,31 @@ import React, { useEffect, useState } from "react";
 import logo from "./images/orange.png";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import InitialNav from "./children/InitialNav";
 
 require("./main.css");
 
 // Creating the Main component
 export default function Main({ props }) {
+  const [authenticate, setauthenticate] = useState(props);
+  const [deAuthenticate, setdeAuthenticate] = useState(props);
+  const [authenticated, setauthenticated] = useState(props);
+  const [logout, setlogout] = useState(props);
+
+
+
   return (
-    <div className=" full-height-grow">
+    <div className="full-height-grow">
       <Helmet>
         <style>{"body { background-color: rgba(131, 166, 186, 1); }"}</style>
       </Helmet>
 
-      {/* Main */}
-      <nav className="main-header" id="navbar">
-        <a href="" className="brand-logo">
-          <img className="logo" src={logo} alt="" />
-        </a>
-        <nav className="">
-          <button
-            type="button"
-            className="navbar-toggle navbar-toggle-right"
-            data-toggle="collapse"
-            data-target="#navbarText"
-            aria-controls="navbarText"
-            aria-label="Toggle navigation"
-            aria-expanded="false"
-          >
-            <i className="glyphicon glyphicon-menu-hamburger"></i>
-          </button>
-
-          <div className="collapse navbar-collapse" id="navbarText">
-            <ul className="navbar-nav mr-auto">
-              <li className="nav-items">
-                <Link to={"/about"}>About</Link>
-              </li>
-              <li className="nav-items">
-                <Link to={"/login"}>Log In</Link>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </nav>
+      <InitialNav
+        authenticate={authenticate}
+        deAuthenticate={deAuthenticate}
+        authenticated={authenticated}
+        logout={logout}
+      />
 
       <section className="home-main-section">
         <div className="call-to-action">

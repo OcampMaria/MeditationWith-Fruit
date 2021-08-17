@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import logo from "./images/orange.png";
 import { Link } from "react-router-dom";
 import Footer from "./children/Footer";
+import InitialNav from "./children/InitialNav";
 
 require("./main.css");
 require("./styles/about.css");
@@ -11,21 +12,12 @@ export default class About extends Component {
   render() {
     return (
       <div className=" full-height-grow ">
-        <header className="main-header">
-          <a href="" className="">
-            <img className="logo-secondary" src={logo} alt="" />
-          </a>
-          <nav className="main-nav">
-            <ul>
-              <li className="nav-items secondary-nav">
-                <Link to={"/"}>Home</Link>
-              </li>
-              <li className="nav-items secondary-nav">
-                <Link to={"/login"}>Log In</Link>
-              </li>
-            </ul>
-          </nav>
-        </header>
+        <InitialNav
+          authenticated={this.props.authenticated}
+          authenticate={this.props.authenticate}
+          deAuthenticate={this.props.deAuthenticate}
+          logout={this.props.logout}
+        />
 
         <Footer />
       </div>
