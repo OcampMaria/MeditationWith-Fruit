@@ -10,15 +10,15 @@ import InitialNav from "../children/InitialNav"
 require("../styles/instructions.css");
 
 // Creating the Instructions component
-export default function Instructions(props) {
+export default function Instructions({props}) {
   const [currentIndex, setcurrentIndex] = useState(0);
   const [paragraphs, setparagraphs] = useState("");
   const [image, setimage] = useState();
 
-  // const [authenticate, setauthenticate] = useState(props);
-  // const [deAuthenticate, setdeAuthenticate] = useState(props);
-  // const [authenticated, setauthenticated] = useState(props);
-  // const [logout, setlogout] = useState(props);
+  const authenticate = useState(props);
+  const deAuthenticate = useState(props);
+  const authenticated = useState(props);
+  const logout = useState(props);
 
 
 
@@ -38,10 +38,10 @@ export default function Instructions(props) {
   return (
     <div className="full-height-grow">
       <InitialNav
-          // authenticated={authenticated}
-          // authenticate={authenticate}
-          // deAuthenticate={deAuthenticate}
-          // logout={logout}
+          authenticated={authenticated}
+          authenticate={authenticate}
+          deAuthenticate={deAuthenticate}
+          logout={logout}
         />
       <div className=" component-container">
         {/* home. login */}

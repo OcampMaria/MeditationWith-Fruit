@@ -16,7 +16,7 @@ export default function Main({ props }) {
 
 
   return (
-    <div className="full-height-grow">
+    <div className=" full-height-grow">
       <Helmet>
         <style>{"body { background-color: rgba(131, 166, 186, 1); }"}</style>
       </Helmet>

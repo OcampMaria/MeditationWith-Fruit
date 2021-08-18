@@ -4,7 +4,6 @@ import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
 // import Auth from "./utils/Auth";
 import InitialNav from "./children/InitialNav";
-import logo from "./images/orange.png";
 import Footer from "./children/Footer";
 
 require("./styles/Signup.css");
