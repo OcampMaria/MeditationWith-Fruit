@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import logo from "./images/orange.png";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import InitialNav from "./children/InitialNav";
 
 require("./main.css");
 
@@ -21,12 +20,42 @@ export default function Main({ props }) {
         <style>{"body { background-color: rgba(131, 166, 186, 1); }"}</style>
       </Helmet>
 
-      <InitialNav
-        authenticate={authenticate}
-        deAuthenticate={deAuthenticate}
-        authenticated={authenticated}
-        logout={logout}
-      />
+
+      <nav className="main-header" id="navbar">
+      <a href="" className="brand-logo">
+        <img className="logo" src={logo} alt="" />
+      </a>
+      <nav 
+      className=""
+      authenticate={authenticate}
+      deAuthenticate={deAuthenticate}
+      authenticated={authenticated}
+      logout={logout}
+      >
+        <button
+          type="button"
+          className="navbar-toggle navbar-toggle-right"
+          data-toggle="collapse"
+          data-target="#navbarText"
+          aria-controls="navbarText"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <i className="glyphicon glyphicon-menu-hamburger"></i>
+        </button>
+
+        <div className="collapse navbar-collapse" id="navbarText">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-items">
+              <Link to={"/about"}>ABOUT</Link>
+            </li>
+            <li className="nav-items">
+              <Link to={"/login"}>LOGIN</Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </nav>
 
       <section className="home-main-section">
         <div className="call-to-action">

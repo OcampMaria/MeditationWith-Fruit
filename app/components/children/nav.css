@@ -8,6 +8,10 @@
   text-align: center;
 }
 
+.logo {
+  display: none;
+}
+
 .header-secondary {
   background-color: rgba(131, 166, 186, 1);
   z-index: 3;
@@ -88,4 +92,15 @@
 
 .navigation-icons {
   height: 34px;
+}
+
+
+
+@media (max-width: 970px) {
+  
+  .logo {
+    display: flex;
+    max-width: 8rem;
+  }
+
 }

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../images/orange.png";
 require("./nav.css");
 
-export default class Nav extends Component {
+export default class InitialNav extends Component {
   render() {
     return (
       <nav className="header-secondary" id="navbar">

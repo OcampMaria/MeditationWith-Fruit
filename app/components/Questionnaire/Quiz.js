@@ -49,7 +49,9 @@ export default function Quiz() {
       for (let i = 0; i < Fruits.length; i++) {
         if (Fruits[i].name === foundFruit) {
           // console.log(Fruits[i].name);
-          setimage(Fruits[i].image)
+          setimage(Fruits[i].image);
+        } else {
+          setimage("")
         }
       }
     }
@@ -221,7 +223,7 @@ export default function Quiz() {
         {fruitIndex === Fruits.length - 1 &&
           currentIndex === QuizData.length - 2 && (
             <button
-              className="ui inverted button"
+              className="ui inverted btn"
               disabled={disabled}
               onClick={nextQuestionHander}
             >
