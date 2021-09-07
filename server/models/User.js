@@ -24,10 +24,10 @@ var userSchema = mongoose.Schema({
         min: [8, 'Your password must be at least 8 characters large'],
         required: [true, 'Please enter a password.']
     },
-    fruit: {
-        type: String,
+    // fruit: {
+    //     type: String,
         
-    }
+    // }
 
 });
 

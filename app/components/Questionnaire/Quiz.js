@@ -49,6 +49,7 @@ export default function Quiz() {
       for (let i = 0; i < Fruits.length; i++) {
         if (Fruits[i].name === foundFruit) {
           // console.log(Fruits[i].name);
+          console.log(Fruits[i].name)
           setimage(Fruits[i].image);
         } else {
           setimage("")

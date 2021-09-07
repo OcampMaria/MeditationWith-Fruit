@@ -28,21 +28,21 @@ export default function Main({ props }) {
       <nav 
       className=""
       authenticate={authenticate}
-      deAuthenticate={deAuthenticate}
+      deauthenticate={deAuthenticate}
       authenticated={authenticated}
       logout={logout}
       >
         <button
-          type="button"
-          className="navbar-toggle navbar-toggle-right"
-          data-toggle="collapse"
-          data-target="#navbarText"
-          aria-controls="navbarText"
-          aria-label="Toggle navigation"
-          aria-expanded="false"
-        >
-          <i className="glyphicon glyphicon-menu-hamburger"></i>
-        </button>
+            type="button"
+            className="navbar-toggle navbar-toggle-right"
+            data-toggle="collapse"
+            data-target="#navbarText"
+            aria-controls="navbarText"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            <i className="glyphicon glyphicon-menu-hamburger"></i>
+          </button>
 
         <div className="collapse navbar-collapse" id="navbarText">
           <ul className="navbar-nav mr-auto">
