@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import Nav from "./children/Nav";
 import { Link } from "react-router-dom";
 import Footer from "./children/Footer";
-import fruits from "./Images/Fruits/fruits_background.png";
-import apple from "./Images/Fruits/apples.png";
+import fruits from "./images/Fruits/fruits_background.png";
+import apple from "./images/Fruits/apples.png";
 
 // require("./main.css");
 require("./styles/profile.css");
