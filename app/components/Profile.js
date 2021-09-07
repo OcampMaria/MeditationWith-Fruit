@@ -44,10 +44,10 @@ export default function Profile({ props }) {
                   <img className="profile-images" src={fruits} alt="" />
                 </a>
                 <a href="" className="image-line">
-                  <img className="profile-images" src={fruits} alt="" />
+                  <img className="profile-images image-500" src={fruits} alt="" />
                 </a>
                 <a href="" className="image-line">
-                  <img className="profile-images " src={fruits} alt="" />
+                  <img className="profile-images image-500 image-800" src={fruits} alt="" />
                 </a>
               </div>
 

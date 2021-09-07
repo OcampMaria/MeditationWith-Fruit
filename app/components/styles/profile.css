@@ -73,6 +73,20 @@
   justify-content: center;
 }
 
+@media (max-width: 900px) {
+  .profile-images {
+    max-width: 30rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .image-800 {
+    display: none;
+  }
+  .profile-images {
+    max-width: 36rem;
+  }
+}
 @media (max-width: 695px) {
   .title-secondary {
     display: none;
@@ -93,9 +107,13 @@
     transform: initial;
   }
 
-  .cards{
+  .cards {
     display: flex;
     flex-direction: column;
+  }
+
+  .image-500 {
+    display: none;
   }
 
   /* .image-mobile{

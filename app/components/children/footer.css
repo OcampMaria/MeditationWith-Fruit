@@ -22,7 +22,6 @@ a {
 }
 
 a:hover {
-  
   color: white;
 }
 
@@ -33,7 +32,7 @@ a:hover {
   justify-content: space-between;
   flex-direction: row;
   grid-gap: 2rem;
-  padding:0;
+  padding: 0;
   margin: 2rem;
 }
 
@@ -62,8 +61,6 @@ a:hover {
   animation: wave-animation 0.3s infinite;
 }
 
-
-
 @keyframes wave-animation {
   0%,
   100% {
@@ -77,18 +74,14 @@ a:hover {
   }
 }
 @media (max-width: 730px) {
-  .footer-container{
+  .footer-container {
     grid-gap: 0rem;
-  
   }
- 
 }
 
 @media (max-width: 670px) {
-  .footer-container{
-   
+  .footer-container {
     justify-content: center;
-  
+    display:inline
   }
- 
 }
