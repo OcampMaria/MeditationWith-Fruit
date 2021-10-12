@@ -53,7 +53,7 @@ exports.signUpUser = function (req, res) {
     } else {
       // if there is no user with that email
       // create the user
-      // console.log("new user", req.body);
+      console.log("new user", req.body);
       const newUser = new User();
 
       // set the user's local credentials
@@ -74,24 +74,3 @@ exports.signUpUser = function (req, res) {
   });
 };
 
-// exports.assignFruit = (req, res) => {
-//   User.create({ fruit: req.body.fruit }, function (err, fruit) {
-//     if (fruit) {
-//       res.send({ duplicateUser: true });
-//     }
-//     const newFruit = new Fruit();
-
-//     // set the user's local credentials
-//     newFruit.fruit = req.body.fruit;
-
-//     // save the fruit
-//     newUser
-//       .save()
-//       .then(function () {
-//         res.send({ success: true });
-//       })
-//       .catch(function (err) {
-//         res.json(err);
-//       });
-//   });
-// };

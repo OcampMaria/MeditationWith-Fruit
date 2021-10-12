@@ -49,10 +49,10 @@ export default function Quiz() {
       for (let i = 0; i < Fruits.length; i++) {
         if (Fruits[i].name === foundFruit) {
           // console.log(Fruits[i].name);
-          console.log(Fruits[i].name)
+          console.log(Fruits[i].name);
           setimage(Fruits[i].image);
         } else {
-          setimage("")
+          setimage("");
         }
       }
     }
@@ -117,11 +117,42 @@ export default function Quiz() {
     setdisabled(false);
   };
 
+  const assignFruit = (userData) => {
+    axios.post("/apis/fruits/createFruit", {
+     fruit:userData.fruit
+    }).then (
+      (data)=> {
+        if (data){
+          console.log(data)
+        }
+      }
+    ).catch(function (err) {
+      console.log(err);
+    });
+
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const fruit = fruit;
+
+    let userData = {
+      fruit: fruit,
+    };
+
+    assignFruit(userData);
+
+    console.log("fruit");
+  };
+
   const finishHandler = () => {
+    handleSubmit();
+
     if (currentIndex === Fruits.length - 2) {
       setquizEnd(true);
       savefruit();
       getHighestFruit();
+      console.log("hello!!");
     }
   };
 
@@ -133,21 +164,6 @@ export default function Quiz() {
   const numbers = function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   };
-
-  // const assignFruit = (userData) => {
-  //   axios.post("/apis/users/fruit", {
-  //    fruit:userData.fruit
-  //   }).then (
-  //     (data)=> {
-  //       if (data){
-  //         console.log(data)
-  //       }
-  //     }
-  //   ).catch(function (err) {
-  //     console.log(err);
-  //   });
-
-  // }
 
   useEffect(() => {
     loadQuiz();

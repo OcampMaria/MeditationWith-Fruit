@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
-// import Auth from "./utils/Auth";
+import Auth from "./utils/Auth";
 import InitialNav from "./children/InitialNav";
 import Footer from "./children/Footer";
 
