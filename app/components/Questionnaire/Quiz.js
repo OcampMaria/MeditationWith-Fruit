@@ -117,37 +117,25 @@ export default function Quiz() {
     setdisabled(false);
   };
 
-  const assignFruit = (userData) => {
-    axios.post("/apis/fruits/createFruit", {
-     fruit:userData.fruit
-    }).then (
-      (data)=> {
-        if (data){
-          console.log(data)
-        }
-      }
-    ).catch(function (err) {
-      console.log(err);
-    });
+  // const assignFruit = (userData) => {
+  //   axios.post("/apis/fruits/createFruit", {
+  //    fruit:userData.fruit
+  //   }).then (
+  //     (data)=> {
+  //       if (data){
+  //         console.log(data)
+  //       }
+  //     }
+  //   ).catch(function (err) {
+  //     console.log(err);
+  //   });
 
-  }
+  // }
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    const fruit = fruit;
-
-    let userData = {
-      fruit: fruit,
-    };
-
-    assignFruit(userData);
-
-    console.log("fruit");
-  };
+ 
 
   const finishHandler = () => {
-    handleSubmit();
-
+  
     if (currentIndex === Fruits.length - 2) {
       setquizEnd(true);
       savefruit();
