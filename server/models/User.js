@@ -5,6 +5,23 @@
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
 
+var sessionSchema= mongoose.Schema({
+    location:{
+        type:String,
+        required:true,
+        
+    },
+
+    sessionFruit:{
+        type:String,
+        required:true,
+    }
+},
+{ 
+    timestamps:true,
+}
+)
+
 // define the schema for our user model
 var userSchema = mongoose.Schema({
 
@@ -24,6 +41,11 @@ var userSchema = mongoose.Schema({
         min: [8, 'Your password must be at least 8 characters large'],
         required: [true, 'Please enter a password.']
     },
+    fruit: {
+        type: String,
+        required: false
+    },
+    sessions:[sessionSchema]
  
 
 });

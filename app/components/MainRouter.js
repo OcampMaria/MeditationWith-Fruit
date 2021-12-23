@@ -13,6 +13,7 @@ import SessionInstructions from "./Session/sessionInstructions";
 
 export default function MainRouter() {
   const [authenticated, setAuthenticated] = useState(false);
+  const [loggedUser, setLoggedUser] = useState({});
   //data, to update the data
 
   const authenticate = () => {
@@ -61,6 +62,7 @@ export default function MainRouter() {
               deAuthenticate={deAuthenticate}
               authenticated={authenticated}
               logout={logout}
+              setLoggedUser= {setLoggedUser}
             />
           )}
         />
@@ -87,6 +89,7 @@ export default function MainRouter() {
               deAuthenticate={deAuthenticate}
               authenticated={authenticated}
               logout={logout}
+              loggedUser={loggedUser}
             />
           )}
         />

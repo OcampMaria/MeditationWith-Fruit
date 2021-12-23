@@ -9,4 +9,6 @@ router.post('/login', users_api.loginUser);
 
 router.post('/signup', users_api.signUpUser);
 
+router.put('/:id/fruit', users_api.addUserFruit);
+
 module.exports = router;

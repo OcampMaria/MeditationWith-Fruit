@@ -10,7 +10,7 @@ import Nav from "../children/Nav";
 require("../main.css");
 require("../styles/quiz.css");
 
-export default function Quiz() {
+export default function Quiz(props) {
   //setting up state
   const [userAnswer, setuserAnswer] = useState(null);
   const [currentIndex, setcurrentIndex] = useState(0);
@@ -25,6 +25,15 @@ export default function Quiz() {
   //setting up localStorage
 
   const dropHistory = JSON.parse(localStorage.getItem("fruitItems")) || [];
+
+  // add to database
+  const postFruit = () => {
+    // add to user data
+    axios.put(`/apis/users/${props.loggedUser._id}/fruit`,{fruit:fruit})
+    .then((response) => {
+      console.log(response.data)
+    })
+  };
 
   //selecting fruit with highest score
   // Note: add if max === 0 return "empty" & if two fruits equal the max number ask extra question
@@ -45,6 +54,7 @@ export default function Quiz() {
       const foundFruit = found[0].name;
 
       setfruit(foundFruit);
+    
 
       for (let i = 0; i < Fruits.length; i++) {
         if (Fruits[i].name === foundFruit) {
@@ -117,25 +127,8 @@ export default function Quiz() {
     setdisabled(false);
   };
 
-  // const assignFruit = (userData) => {
-  //   axios.post("/apis/fruits/createFruit", {
-  //    fruit:userData.fruit
-  //   }).then (
-  //     (data)=> {
-  //       if (data){
-  //         console.log(data)
-  //       }
-  //     }
-  //   ).catch(function (err) {
-  //     console.log(err);
-  //   });
-
-  // }
-
- 
 
   const finishHandler = () => {
-  
     if (currentIndex === Fruits.length - 2) {
       setquizEnd(true);
       savefruit();
@@ -145,7 +138,9 @@ export default function Quiz() {
   };
 
   const clearLocal = () => {
+    postFruit();
     localStorage.clear();
+    // props.history.push("/profile")
   };
 
   //part of unique id for answer options
@@ -176,11 +171,9 @@ export default function Quiz() {
             fruit so you’ll be ready to eat this week!
           </p>
 
-          <Link to="/profile">
-            <button type="button" className="btn" onClick={clearLocal}>
-              Done
-            </button>
-          </Link>
+          <button type="button" className="btn" onClick={clearLocal}>
+            Save Fruit
+          </button>
         </div>
         <Footer />
       </div>

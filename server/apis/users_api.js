@@ -60,7 +60,7 @@ exports.signUpUser = function (req, res) {
       newUser.username = req.body.username;
       newUser.email = req.body.email;
       newUser.password = newUser.generateHash(req.body.password);
-
+      newUser.fruit= ""
       // save the user
       newUser
         .save()
@@ -74,3 +74,11 @@ exports.signUpUser = function (req, res) {
   });
 };
 
+exports.addUserFruit = async function (req, res) {
+  try {
+  const user = await User.findByIdAndUpdate(req.params.id, req.body);
+  res.status(201).json(user)
+} catch(error){
+  res.status(404).json(error)
+}
+}

@@ -36,8 +36,10 @@ export default class Login extends Component {
       .post("/apis/users/login", submitObject)
       .then(
         function (data) {
+          console.log("login data", data)
           if (data.data.success) {
             this.props.authenticate();
+            this.props.setLoggedUser(data.data.user);
             this.setState({
               redirectToReferrer: true,
             });
