@@ -82,3 +82,28 @@ exports.addUserFruit = async function (req, res) {
   res.status(404).json(error)
 }
 }
+
+exports.addUserSession = async function (req, res) {
+  try {
+  const user = await User.findByIdAndUpdate(req.params.id, {
+    $push:{
+      // property
+      sessions: req.body
+    }
+  });
+  res.status(201).json(user)
+} catch(error){
+  res.status(404).json(error)
+}
+}
+
+
+exports.getLoggedinUser = async function (req, res) {
+  try {
+    const user = await User.findById(req.params.id);
+    res.status(201).json(user)
+  } catch(error){
+    res.status(404).json(error)
+  }
+ 
+};

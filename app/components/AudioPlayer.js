@@ -5,9 +5,10 @@ import logo from "./images/orange.png";
 import { Link } from "react-router-dom";
 import Footer from "./children/Footer";
 import audioImg from "./images/Audio1.png";
+import axios from "axios";
 
 // require("./main.css");
-require("./styles/AudioPlayer.css");
+import "./styles/AudioPlayer.css";
 
 const audioSrc = audio;
 
@@ -19,7 +20,22 @@ class AudioPlayer extends Component {
     mute: false,
     currentTime: "0:00",
     duration: "...",
+    location: "",
   };
+
+  componentDidMount() {
+    const audio = this.audio;
+
+    audio.onloadedmetadata = () => {
+      this.setState({
+        duration: this.formatTime(audio.duration.toFixed(0)),
+      });
+    };
+
+    audio.addEventListener("timeupdate", (e) => {
+      this.updateProgress();
+    });
+  }
 
   updateProgress = () => {
     const duration = this.audio.duration;
@@ -90,20 +106,6 @@ class AudioPlayer extends Component {
     this.audio.volume = !!mute;
   };
 
-  componentDidMount() {
-    const audio = this.audio;
-
-    audio.onloadedmetadata = () => {
-      this.setState({
-        duration: this.formatTime(audio.duration.toFixed(0)),
-      });
-    };
-
-    audio.addEventListener("timeupdate", (e) => {
-      this.updateProgress();
-    });
-  }
-
   formatTime(seconds) {
     const h = Math.floor(seconds / 3600);
     const m = Math.floor((seconds % 3600) / 60);
@@ -113,35 +115,39 @@ class AudioPlayer extends Component {
       .join(":");
   }
 
+  // change state location
+  handleLocationChange = (e) => {
+    this.setState({
+      location: e.target.value,
+    });
+  };
+
+  handleDoneClick = () => {
+    if (this.state.location === "") {
+      alert("Location is required");
+      return;
+    }
+
+    const response = axios
+      .put(`/apis/users/${this.props.loggedUser._id}/session`, {
+        location: this.state.location,
+        sessionFruit: this.props.loggedUser.fruit,
+      })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+
+    this.props.history.push("/profile");
+  };
+
   render() {
     const { playing, progress } = this.state;
     return (
       <div className="full-height-grow">
-        
-        <Nav
-          authenticated={this.props.authenticated}
-          authenticate={this.props.authenticate}
-          deAuthenticate={this.props.deAuthenticate}
-          logout={this.props.logout}
-        />
-
         <div className="container component-container">
-          {/* <header className="main-header">
-            <a href="" className="brand-logo">
-              <img className="logo-secondary" src={logo} alt="" />
-            </a>
-            <nav className="main-nav">
-              <ul>
-                <li className="nav-items secondary-nav">
-                  <Link to={"/profile"}>Profile</Link>
-                </li>
-                <li className="nav-items secondary-nav">
-                  <Link to={"/"}>Log Out</Link>
-                </li>
-              </ul>
-            </nav>
-          </header> */}
-
           <div className="player-container">
             <div>
               <a href="" className="">
@@ -211,23 +217,20 @@ class AudioPlayer extends Component {
                       type="text"
                       name="location"
                       placeholder="Please Enter Location:"
-
-                      // onChange={this.handleUsernameChange}
-                      // value={this.state.username}
+                      onChange={this.handleLocationChange}
+                      value={this.state.location}
                     />
                   </div>
                 </form>
                 <div>
-                  <Link to="/profile">
-                    <button
-                      type="submit"
-                      name="login"
-                      className="btn btn-location"
-                      value="Login"
-                    >
-                      NEXT
-                    </button>
-                  </Link>
+                  <button
+                    onClick={this.handleDoneClick}
+                    name="login"
+                    className="btn btn-location"
+                    value="Login"
+                  >
+                    Done
+                  </button>
                 </div>
               </div>
             </div>

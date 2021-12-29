@@ -10,6 +10,7 @@ import Quiz from "./Questionnaire/Quiz";
 import Instructions from "./Instructions/Instructions";
 import Profile from "./Profile";
 import SessionInstructions from "./Session/sessionInstructions";
+import Nav from "./children/Nav";
 
 export default function MainRouter() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -38,6 +39,12 @@ export default function MainRouter() {
 
   return (
     <Router>
+      
+      <Nav
+      authenticated={authenticated}
+      logout={logout}
+      />
+
       <Switch>
         <Route
           exact
@@ -143,6 +150,7 @@ export default function MainRouter() {
               deAuthenticate={deAuthenticate}
               authenticated={authenticated}
               logout={logout}
+              loggedUser={loggedUser}
             />
           )}
         />
@@ -169,6 +177,8 @@ export default function MainRouter() {
               deAuthenticate={deAuthenticate}
               authenticated={authenticated}
               logout={logout}
+              loggedUser={loggedUser}
+              setLoggedUser={setLoggedUser}
             />
           )}
         />

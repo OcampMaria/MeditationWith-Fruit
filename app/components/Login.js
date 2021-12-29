@@ -87,12 +87,12 @@ export default class Login extends Component {
 
     return (
       <div className=" full-height-grow">
-        <InitialNav
+        {/* <InitialNav
           authenticated={this.props.authenticated}
           authenticate={this.props.authenticate}
           deAuthenticate={this.props.deAuthenticate}
           logout={this.props.logout}
-        />
+        /> */}
 
         <div className="join-main-section">
           <h1 className="join-text">

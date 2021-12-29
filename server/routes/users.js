@@ -11,4 +11,9 @@ router.post('/signup', users_api.signUpUser);
 
 router.put('/:id/fruit', users_api.addUserFruit);
 
+router.put('/:id/session', users_api.addUserSession);
+
+router.get('/:id/profile', users_api.getLoggedinUser);
+
+
 module.exports = router;

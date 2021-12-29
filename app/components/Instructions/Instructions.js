@@ -37,12 +37,12 @@ export default function Instructions({props}) {
 
   return (
     <div className="full-height-grow">
-      <InitialNav
+      {/* <InitialNav
           // authenticated={authenticated}
           // authenticate={authenticate}
           // deAuthenticate={deAuthenticate}
           // logout={logout}
-        />
+        /> */}
       <div className=" component-container">
         {/* home. login */}
 

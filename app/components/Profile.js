@@ -4,25 +4,41 @@ import { Link } from "react-router-dom";
 import Footer from "./children/Footer";
 import fruits from "./images/Fruits/fruits_background.png";
 import apple from "./images/Fruits/apples.png";
+import axios from "axios";
 
 // require("./main.css");
 require("./styles/profile.css");
 
-export default function Profile({ props }) {
-  const [authenticate, setauthenticate] = useState(props);
-  const [deAuthenticate, setdeAuthenticate] = useState(props);
-  const [authenticated, setauthenticated] = useState(props);
-  const [logout, setlogout] = useState(props);
-
+export default function Profile(props) {
+  // const [authenticate, setauthenticate] = useState(props);
+  // const [deAuthenticate, setdeAuthenticate] = useState(props);
+  // const [authenticated, setauthenticated] = useState(props);
+  // const [logout, setlogout] = useState(props);
+  useEffect(() => {
+    // cheeck value if logged in. if not authenticated then redirect. 
+    if (!props.authenticated) {
+      props.history.push("/login");
+    } else {
+      axios
+        .get(`/apis/users/${props.loggedUser._id}/profile`)
+        .then((response) => {
+          console.log(response.data);
+          props.setLoggedUser(response.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, []);
 
   return (
     <div className=" full-height-grow">
-      <Nav
+      {/* <Nav
           authenticated={authenticated}
           authenticate={authenticate}
           deAuthenticate={deAuthenticate}
           logout={logout}
-      />
+      /> */}
       <div className="">
         {/* <section className="profile-section"> */}
         <div className="max-with">
@@ -44,10 +60,18 @@ export default function Profile({ props }) {
                   <img className="profile-images" src={fruits} alt="" />
                 </a>
                 <a href="" className="image-line">
-                  <img className="profile-images image-500" src={fruits} alt="" />
+                  <img
+                    className="profile-images image-500"
+                    src={fruits}
+                    alt=""
+                  />
                 </a>
                 <a href="" className="image-line">
-                  <img className="profile-images image-500 image-800" src={fruits} alt="" />
+                  <img
+                    className="profile-images image-500 image-800"
+                    src={fruits}
+                    alt=""
+                  />
                 </a>
               </div>
 

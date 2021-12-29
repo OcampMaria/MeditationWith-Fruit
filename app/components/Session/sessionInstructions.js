@@ -33,12 +33,12 @@ export default function Instructions(props) {
 
   return (
     <div className="">
-      <Nav
+      {/* <Nav
         authenticated={authenticated}
         authenticate={authenticate}
         deAuthenticate={deAuthenticate}
         logout={logout}
-      />
+      /> */}
       <div className=" component-container">
         {/* home, log in */}
 

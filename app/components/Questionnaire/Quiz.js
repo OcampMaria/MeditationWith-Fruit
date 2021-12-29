@@ -5,7 +5,7 @@ import { Fruits } from "./QuizData";
 import { Link } from "react-router-dom";
 import Footer from "../children/Footer";
 import { log } from "debug";
-import Nav from "../children/Nav";
+// import Nav from "../children/Nav";
 
 require("../main.css");
 require("../styles/quiz.css");
@@ -155,7 +155,8 @@ export default function Quiz(props) {
   if (quizEnd) {
     return (
       <div>
-        <Nav />
+        {/* <Nav /> */}
+
         <div className="full-height-grow quiz-div">
           <div className="img ilustration">
             <a href="" className="">
@@ -182,7 +183,7 @@ export default function Quiz(props) {
 
   return (
     <div>
-      <Nav />
+      {/* <Nav /> */}
       <div className="full-height-grow quiz-div">
         <span>{`Question ${fruitIndex + 1} of ${Fruits.length}`}</span>
 
