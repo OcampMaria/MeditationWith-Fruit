@@ -12,27 +12,24 @@ export default function Main({ props }) {
   const [authenticated, setauthenticated] = useState(props);
   const [logout, setlogout] = useState(props);
 
-
-
   return (
     <div className=" full-height-grow">
       <Helmet>
         <style>{"body { background-color: rgba(131, 166, 186, 1); }"}</style>
       </Helmet>
 
-
-      <nav className="main-header" id="navbar">
-      <a href="" className="brand-logo">
-        <img className="logo" src={logo} alt="" />
-      </a>
-      <nav 
-      className=""
-      authenticate={authenticate}
-      deauthenticate={deAuthenticate}
-      authenticated={authenticated}
-      logout={logout}
-      >
-        <button
+      {/* <nav className="main-header" id="navbar">
+        <a href="" className="brand-logo">
+          <img className="logo" src={logo} alt="" />
+        </a>
+        <nav
+          className=""
+          authenticate={authenticate}
+          deauthenticate={deAuthenticate}
+          authenticated={authenticated}
+          logout={logout}
+        >
+          <button
             type="button"
             className="navbar-toggle navbar-toggle-right"
             data-toggle="collapse"
@@ -44,18 +41,18 @@ export default function Main({ props }) {
             <i className="glyphicon glyphicon-menu-hamburger"></i>
           </button>
 
-        <div className="collapse navbar-collapse" id="navbarText">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-items">
-              <Link to={"/about"}>ABOUT</Link>
-            </li>
-            <li className="nav-items">
-              <Link to={"/login"}>LOGIN</Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </nav>
+          <div className="collapse navbar-collapse" id="navbarText">
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-items">
+                <Link to={"/about"}>ABOUT</Link>
+              </li>
+              <li className="nav-items">
+                <Link to={"/login"}>LOGIN</Link>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </nav> */}
 
       <section className="home-main-section">
         <div className="call-to-action">

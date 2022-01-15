@@ -211,12 +211,12 @@ export default class Signup extends Component {
 
     return (
       <div>
-        <InitialNav
+        {/* <InitialNav
           authenticated={this.props.authenticated}
           authenticate={this.props.authenticate}
           deAuthenticate={this.props.deAuthenticate}
           logout={this.props.logout}
-        />
+        /> */}
         <div className="full-height-grow ">
           <section className="join-main-section register">
             <h1 className="join-text">
