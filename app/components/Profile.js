@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Nav from "./children/Nav";
 import { Link } from "react-router-dom";
 import Footer from "./children/Footer";
 import fruits from "./images/Fruits/fruits_background.png";
@@ -15,7 +14,8 @@ export default function Profile(props) {
   // const [authenticated, setauthenticated] = useState(props);
   // const [logout, setlogout] = useState(props);
   useEffect(() => {
-    // cheeck value if logged in. if not authenticated then redirect. 
+    // if reload or logged out, log out and rediredct to login page
+    // cheeck value if logged in. if not authenticated then redirect.
     if (!props.authenticated) {
       props.history.push("/login");
     } else {

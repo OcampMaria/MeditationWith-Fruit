@@ -35,6 +35,22 @@ class AudioPlayer extends Component {
     audio.addEventListener("timeupdate", (e) => {
       this.updateProgress();
     });
+
+    // if reload or logged out, log out and rediredct to login page
+    // cheeck value if logged in. if not authenticated then redirect.
+    if (!props.authenticated) {
+      props.history.push("/login");
+    } else {
+      axios
+        .get(`/apis/users/${props.loggedUser._id}/audioplayer`)
+        .then((response) => {
+          console.log(response.data);
+          props.setLoggedUser(response.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   }
 
   updateProgress = () => {

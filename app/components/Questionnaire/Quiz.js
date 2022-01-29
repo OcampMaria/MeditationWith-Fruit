@@ -29,10 +29,11 @@ export default function Quiz(props) {
   // add to database
   const postFruit = () => {
     // add to user data
-    axios.put(`/apis/users/${props.loggedUser._id}/fruit`,{fruit:fruit})
-    .then((response) => {
-      console.log(response.data)
-    })
+    axios
+      .put(`/apis/users/${props.loggedUser._id}/fruit`, { fruit: fruit })
+      .then((response) => {
+        console.log(response.data);
+      });
   };
 
   //selecting fruit with highest score
@@ -54,7 +55,6 @@ export default function Quiz(props) {
       const foundFruit = found[0].name;
 
       setfruit(foundFruit);
-    
 
       for (let i = 0; i < Fruits.length; i++) {
         if (Fruits[i].name === foundFruit) {
@@ -127,7 +127,6 @@ export default function Quiz(props) {
     setdisabled(false);
   };
 
-
   const finishHandler = () => {
     if (currentIndex === Fruits.length - 2) {
       setquizEnd(true);
@@ -150,7 +149,22 @@ export default function Quiz(props) {
 
   useEffect(() => {
     loadQuiz();
-  });
+    // if reload or logged out, log out and rediredct to login page
+    // cheeck value if logged in. if not authenticated then redirect.
+    if (!props.authenticated) {
+      props.history.push("/login");
+    } else {
+      axios
+        .get(`/apis/users/${props.loggedUser._id}/quiz`)
+        .then((response) => {
+          console.log(response.data);
+          props.setLoggedUser(response.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, []);
 
   if (quizEnd) {
     return (
