@@ -9,10 +9,6 @@ import axios from "axios";
 require("./styles/profile.css");
 
 export default function Profile(props) {
-  // const [authenticate, setauthenticate] = useState(props);
-  // const [deAuthenticate, setdeAuthenticate] = useState(props);
-  // const [authenticated, setauthenticated] = useState(props);
-  // const [logout, setlogout] = useState(props);
   useEffect(() => {
     // if reload or logged out, log out and rediredct to login page
     // cheeck value if logged in. if not authenticated then redirect.
@@ -33,12 +29,6 @@ export default function Profile(props) {
 
   return (
     <div className=" full-height-grow">
-      {/* <Nav
-          authenticated={authenticated}
-          authenticate={authenticate}
-          deAuthenticate={deAuthenticate}
-          logout={logout}
-      /> */}
       <div className="">
         {/* <section className="profile-section"> */}
         <div className="max-with">
@@ -75,31 +65,17 @@ export default function Profile(props) {
                 </a>
               </div>
 
-              <div className="cards">
-                <div className="wrap">
-                  <div className="one">
-                    <div className="card">
-                      <div className="box">
-                        <p className="text">example</p>
-                        <div className="img ilustration">
-                          <a href="" className="">
-                            <img
-                              className="logo-secondary"
-                              src={apple}
-                              alt=""
-                            />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="wrap">
-                  <div className="one">
-                    <div className="card">
-                      <div className="box">
-                        <p className="text">example</p>
+        
+              
 
+              <div className="cards">
+              {props.loggedUser.sessions.map(session => {
+                return(
+                  <div className="wrap">
+                  <div className="one">
+                    <div className="card">
+                      <div className="box">
+                        <p className="text">{session.sessionFruit}</p>
                         <div className="img ilustration">
                           <a href="" className="">
                             <img
@@ -109,10 +85,16 @@ export default function Profile(props) {
                             />
                           </a>
                         </div>
+                        <p className="text">{session.location}</p>
+                       
                       </div>
                     </div>
                   </div>
                 </div>
+                )
+              })}
+                
+               
               </div>
             </div>
           </div>

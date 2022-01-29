@@ -151,6 +151,7 @@ export default function Quiz(props) {
     loadQuiz();
     // if reload or logged out, log out and rediredct to login page
     // cheeck value if logged in. if not authenticated then redirect.
+
     if (!props.authenticated) {
       props.history.push("/login");
     } else {
@@ -169,8 +170,7 @@ export default function Quiz(props) {
   if (quizEnd) {
     return (
       <div>
-        {/* <Nav /> */}
-
+      
         <div className="full-height-grow quiz-div">
           <div className="img ilustration">
             <a href="" className="">

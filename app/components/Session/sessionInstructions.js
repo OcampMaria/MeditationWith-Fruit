@@ -29,16 +29,13 @@ export default function Instructions(props) {
 
   useEffect(() => {
     loadSlides();
+    
+
   });
 
   return (
     <div className="">
-      {/* <Nav
-        authenticated={authenticated}
-        authenticate={authenticate}
-        deAuthenticate={deAuthenticate}
-        logout={logout}
-      /> */}
+     
       <div className=" component-container">
         {/* home, log in */}
 
